@@ -1,0 +1,1 @@
+<?php/*** 欢迎页面* * @package View.Comment* @author robertyang*/?><div class = "wiki_content"><?php echo $wiki['text'] ;?><?php echo $myHtml->link(t('Edit this page'),'/wikis/edit/first_page/'.$wiki['revision']); ?></div>

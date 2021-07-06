@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TAPD UI Element</title>
+<link href="http://nvwa.oa.com/tapd3/css/tui-tapd.css" type="text/css" rel="stylesheet"/>
+<link href="http://top.oa.com/css/tui.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+	.demo_wrapper{ padding:20px;}
+	fieldset{ border:1px solid #ddd; padding:10px 20px; margin-bottom:30px;}
+	legend{ padding:0 10px; color:#666; font-family:Verdana, Geneva, sans-serif; font-weight:bold;}
+	.desc{ margin:10px 0; color:#999; font-family:Verdana, Geneva, sans-serif;}
+	.disable{ text-decoration:line-through;}
+</style>
+</head>
+
+<body>
+<div class="tui-d1 demo_wrapper" style="width:600px;">
+<h2> TAPD UI Element Demo</h2><br />
+
+<fieldset>
+	<legend>.tapd-box</legend>
+    <p class="desc">.tapd基础盒模型，content有nopadding的可选用class</p>
+	<div class="tapd-box">
+    	<h2 class="title">tapd-box's title</h2>
+        <div class="content">
+        	内容<br /><br />
+            <div class="tapd-box">
+            	<h2 class="title">嵌套box</h2>
+                <div class="content">内容2</div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+<fieldset>
+	<legend>.tapd-action</legend>
+    <p class="desc">基础动作条，常与其他元素搭配使用，默认左对齐，可加style="float:right"进行控制</p>
+    <div class="tapd-action" style="float:left;">
+    	我的视图:&nbsp;<select><option>测试</option></select>
+    </div>
+    <div class="tapd-action" style="float:right;">
+    	<b>树形</b>&nbsp;|&nbsp;<a href="#">列表</a>
+    </div>
+</fieldset>
+<fieldset>
+	<legend>.tapd-button</legend>
+    <p class="desc">按钮类型，<span class="disable">有 primary disabled等状态</span></p>
+    <button class="tapd-button">普通按钮</button>
+    <button class="tapd-button-disabled">重要程度高的按钮</button>
+    <button class="tapd-button-primary">禁用按钮</button>
+</fieldset>
+<fieldset>
+	<legend>.tapd-tab</legend>
+    <p class="desc">标签，有普通与secondary[<span class="primary">*</span>待改进]两种状态，前者需与tapd-box搭配使用</p>
+    <div class="tapd-box">
+    	<ul class="tapd-tab">
+        	<li><a href="#">标签一</a></li>
+            <li class="current"><a href="#">标签二</a></li>
+            <li><a href="#">标签三</a></li>
+            <li><a href="#">标签四</a></li>
+        </ul>
+        <div class="content">
+        	标签页内容
+        </div>
+    </div>
+    <br />
+   	<ul class="tapd-tab-secondary">
+       	<li><a href="#">标签一</a>|</li>
+        <li class="current"><a href="#">标签二</a>|</li>
+        <li><a href="#">标签三</a>|</li>
+     </ul>
+</fieldset>
+
+<fieldset>
+	<legend>.tapd-toolbar</legend>
+    <p class="desc">与tapd-box搭配使用</p>
+    <div class="tapd-toolbar">
+    	<button>按钮一</button>
+        <button>按钮二</button>
+        <button>按钮三</button>
+    </div>
+</fieldset>
+
+<fieldset>
+	<legend>.tapd-sidebar</legend>
+    <p class="desc">侧边栏，可以加styke="width:200px"自定义长度</p>
+    <div class="tapd-sidebar" style="width:200px;">
+    <h4 class="title">分类标题1</h4>
+    <ul>
+    	<li><a href="#">选项一</a></li>
+        <li><a href="#">选项二</a></li>
+        <li><a href="#">选项三</a></li>
+    </ul>
+    <h4 class="title">分类标题2</h4>
+    <ul>
+    	<li><a href="#">选项一</a></li>
+        <li><a href="#">选项二</a></li>
+        <li><a href="#">选项三</a></li>
+    </ul>    
+    </div>
+</fieldset>
+
+<fieldset>
+	<legend>.tapd-step</legend>
+    <p class="desc">步骤条</p>
+    <div class="tapd-step">
+		<span class="current step"><span class="num">1</span>定义发布目标</span>
+		<span class="step"><span class="num">2</span>规划发布范围</span>
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>.tapd-pagination</legend>
+    <p class="desc">分页，默认右对齐</p>
+    <div class="tapd-pagination">
+    	<b>1</b>
+	    <a href="#">2</a>
+	    <a href="#">3</a>
+	    <a href="#">4</a>
+	    <a title="Next page" href="#">下一页&nbsp;&gt;</a>
+    	<a title="Last page" href="#">末页&gt;&gt;</a>
+    </div>
+</fieldset>
+
+<fieldset>
+	<legend>各种按钮和标签</legend>
+    <p class="desc">如果需要跳转或触发事件可以将span标签替换成a标签，可以加上title属性进一步注释，嵌套的i标签为固定结构，勿丢失</p>
+        <span class="tapd-btn-add"><i>添加</i></span>
+        <span class="tapd-btn-add-launchform"><i>添加launchform</i></span>
+        <span class="tapd-btn-add-task"><i>添加任务</i></span>
+        <span class="tapd-btn-add-task-disabled"><i>添加任务</i></span>
+        <span class="tapd-btn-add-timesheet"><i>添加工时</i></span>
+        <span class="tapd-btn-add-timesheet-disabled"><i>添加工时</i></span>
+        <span class="tapd-btn-add-story"><i>添加需求</i></span>
+        <span class="tapd-btn-add-story-disabled"><i>添加需求</i></span>
+        <span class="tapd-btn-attachment"><i>附件</i></span>
+        <span class="tapd-btn-cancel"><i>撤销</i></span>
+        <span class="tapd-btn-ce"><i>CE</i></span>
+        <span class="tapd-btn-copy"><i>复制</i></span>
+        <span class="tapd-btn-del"><i>删除</i></span>
+        <span class="tapd-btn-edit"><i>编辑</i></span>
+        <span class="tapd-btn-error"><i>出错</i></span>
+        <span class="tapd-btn-from"><i>来自于</i></span>
+        <span class="tapd-btn-open"><i>打开</i></span>
+        <span class="tapd-btn-planning"><i>规划</i></span>
+        <span class="tapd-btn-save"><i>保存</i></span>
+        <span class="tapd-btn-setting"><i>设置</i></span>
+        <span class="tapd-btn-setting-selected"><i>设置</i></span>
+        <span class="tapd-btn-sync-svn"><i>同步SVN</i></span>
+        <span class="tapd-btn-split"><i>拆分</i></span>
+        <span class="tapd-btn-split-disabled"><i>拆分</i></span>
+        <span class="tapd-btn-to"><i>to</i></span>
+        <span class="tapd-btn-to-bug"><i>转bug</i></span>
+        <span class="tapd-btn-to-story"><i>转需求</i></span>
+        <span class="tapd-btn-view"><i>查看</i></span>
+        <span class="tapd-btn-worktable"><i>工作台</i></span>
+        <br />
+        <span>
+        <span class="tag_story"><i>需求</i></span>
+        <span class="tag_story_child"><i>子需求</i></span>
+        <span class="tag_bug"><i>bug</i></span>
+        <span class="tag_launch"><i>发布</i></span>
+        <span class="tag_request"><i>request</i></span>
+        <span class="tag_release"><i>release</i></span>
+        <span class="tag_iteration"><i>迭代</i></span>
+        <span class="tag_task"><i>任务</i></span>
+        <span class="tag_comment"><i>留言</i></span>
+        <span class="tag_attachment"><i>附件</i></span>
+        <span class="tag_organization"><i>组织</i></span>
+        <span class="tag_product"><i>产品</i></span>
+        <span class="tag_project"><i>项目</i></span>
+        <span class="tag_releaseform"><i>releaseform</i></span>
+        <br />
+        <span class="tag_mini_story"><i>需求</i></span>
+        <span class="tag_mini_story_child"><i>子需求</i></span>
+        <span class="tag_mini_bug"><i>bug</i></span>
+        <span class="tag_mini_launch"><i>发布</i></span>
+        <span class="tag_mini_request"><i>request</i></span>
+        <span class="tag_mini_release"><i>release</i></span>
+        <span class="tag_mini_iteration"><i>迭代</i></span>
+        <span class="tag_mini_task"><i>任务</i></span>
+        <span class="tag_mini_comment"><i>留言</i></span>
+        <span class="tag_mini_attachment"><i>附件</i></span>
+        <span class="tag_mini_organization"><i>组织</i></span>
+        <span class="tag_mini_product"><i>产品</i></span>
+        <span class="tag_mini_project"><i>项目</i></span>
+        <span class="tag_mini_releaseform"><i>releaseform</i></span>
+</fieldset>
+
+<fieldset>
+	<legend>.rank_list</legend>
+    <p class="desc">与tapd-box搭配使用</p>
+    <div class="tapd-box">
+    <h2 class="title">排行榜</h2>
+        <div class="content">
+            <ul class="rank_list">
+                <li class="top1">
+                    <span class="rank_lv">1</span>
+                    <a class="pic"><img alt="img" src="http://dayu.oa.com/avatar/ceilwu.jpg"></a>
+                    <a href="http://nvwa.oa.com/home/users/profile/ceilwu" class="name">ceilwu</a>
+                    <span class="int">9999分</span>
+                </li>
+                <li>
+                    <span class="rank_lv">2</span>
+                    <a href="http://nvwa.oa.com/home/users/profile/emilyzhang" class="name">emilyzhang</a>
+                    <span class="int">4908分</span>
+                </li>
+                <li>
+                    <span class="rank_lv">3</span>
+                    <a href="http://nvwa.oa.com/home/users/profile/frankychen" class="name">frankychen</a>
+                    <span class="int">4844分</span>
+                </li>
+                <li>
+                    <span class="rank_lv">4</span>
+                    <a href="http://nvwa.oa.com/home/users/profile/kuncai" class="name">kuncai</a>
+                    <span class="int">3591分</span>
+                </li>
+                <li>
+                    <span class="rank_lv">5</span>
+                    <a href="http://nvwa.oa.com/home/users/profile/markguo" class="name">markguo</a>
+                    <span class="int">3460分</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</fieldset>
+
+<fieldset>
+	<legend>.g_table</legend>
+    <p class="desc">
+    	仅用于列表数据显示，g_table默认为layout-fixde模式，如需使用常规的table可以加上g_table_autowidth的class<br />
+    	<span>&nbsp;- layout:fixed下table不会因内部内容过长而撑破，溢出部分会自动截断</span><br />
+        <span>&nbsp;- 普通模式下table会因内部内容过长而撑开，常用于需出现滚动条的场合</span>
+    </p>
+    <table class="g_table">
+    	<thead>
+        	<tr>
+                <th>标题一</th>
+                <th>标题二</th>
+                <th>标题三</th>
+                <th>标题四</th>
+                <th width="50">固定长度</th>
+            </tr>
+        </thead>
+        <tbody>
+	        <tr class="rowdone">
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+            </tr>
+	        <tr>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+            </tr>
+	        <tr>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+            </tr>                        
+        </tbody>
+    </table>
+    <br />
+     <table class="g_table g_table_autowidth">
+    	<thead>
+        	<tr>
+                <th>标题一</th>
+                <th>标题二</th>
+                <th>标题三</th>
+                <th>标题四</th>
+                <th width="50">固定长度</th>
+            </tr>
+        </thead>
+        <tbody>
+	        <tr class="rowuseless">
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+            </tr>
+	        <tr>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+            </tr>
+	        <tr>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+            </tr>                        
+        </tbody>
+    </table>
+</fieldset>
+
+<fieldset style="height:150px;">
+	<legend>.g_menu</legend>
+    <p class="desc">下拉菜单[*待改进]</p>
+    <div class="g_menu">
+    	<a href="#">菜单一</a>
+        <a href="#">菜单二</a>
+        <a href="#">菜单三</a>
+    </div>
+</fieldset>
+<fieldset>
+	<legend>文字修饰</legend>
+    <span>普通文字</span>
+    <span class="secondary">弱化的内容</span>
+    <span class="primary">强调显示的内容</span>
+</fieldset>
+
+<fieldset>
+	<legend>.g_hp 进度条</legend>
+    <p class="desc">默认为自适应长度</p>
+	<div class="progress_div">
+    	<div style="width: 100px;" class="g_hp_red">
+			<div style="width: 50px; height: 10px;" class="bar">
+				<div style="width: 12.5px;" class="bar_bg"></div>
+			</div>
+			<div class="bar_font">25%</div>
+        </div>
+    </div>
+	<div class="progress_div">
+    	<div style="width: 100px;" class="g_hp_yellow">
+			<div style="width: 50px; height: 10px;" class="bar">
+				<div style="width:35px;" class="bar_bg"></div>
+			</div>
+			<div class="bar_font">70%</div>
+        </div>
+    </div>    
+	<div class="progress_div">
+    	<div style="width: 100px;" class="g_hp_green">
+			<div style="width: 50px; height: 10px;" class="bar">
+				<div style="width:45px;" class="bar_bg"></div>
+			</div>
+			<div class="bar_font">90%</div>
+        </div>
+    </div>      
+</fieldset>
+</div>
+</body>
+</html>

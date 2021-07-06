@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS级联菜单</title>
+<style type="text/css">
+body{
+	font-size:12px;
+}
+a{ text-decoration:none;}
+p{ margin:0; padding:0;}
+ul{ margin:10px; padding:0;}
+.menu{ display:block; padding:8px; text-align:center; border:1px dashed #ccc;}
+.menu_item{
+	float:left;
+	display:block;
+	margin:0;
+	width:100px;
+	font-size:14px;
+	background-color:#9F9;
+}
+li.menu_item{ margin:0; padding:0;}
+.menu_item p{
+	font-size:12px;
+}
+.menu_item:hover{ position:relative;}
+.sub_menu_item{
+	display:none;
+	white-space:nowrap;
+	_position:absolute;
+	_top:30px;
+	_left:0;
+}
+.sub_menu_item a{ padding:5px 15px; background-color:#FC9; color:#930; line-height:30px; text-align:center; border:1px dashed #933;}
+.menu_item:hover .sub_menu_item{
+	display:block;
+}
+table{ text-align:center; width:100%;border-collapse:collapse;}
+</style>
+</head>
+
+<body>
+【IE6、IE7、IE8、FF、Chrome】
+<ul class="nav">
+	<li class="menu_item">
+    	<!--[if IE 6]><a href="#" class="menu_item"><table><tr><td><![endif]-->
+			<a href="#" class="menu">菜单1</a>
+    	    <p class="sub_menu_item">
+        		<a href="#" class="sub_menu">子菜单3</a>
+            	<a href="#" class="sub_menu">子菜单4</a>
+	            <a href="#" class="sub_menu">子菜单5</a>
+    	        <a href="#" class="sub_menu">子菜单55</a>
+        	    <a href="#" class="sub_menu">子菜单555</a>
+	        </p>
+		<!--[if IE 6]></td></tr></table></a><![endif]-->
+    </li>
+    <li class="menu_item" style="background-color:#9FF;">
+    	<!--[if IE 6]><a href="#" class="menu_item" style="background-color:#9FF;"><table><tr><td><![endif]-->
+			<a href="#" class="menu">菜单2</a>
+    	    <p class="sub_menu_item">
+        		<a href="#" class="sub_menu">子菜单3</a>
+            	<a href="#" class="sub_menu">子菜单4</a>
+	            <a href="#" class="sub_menu">子菜单5</a>
+    	        <a href="#" class="sub_menu">子菜单55</a>
+        	    <a href="#" class="sub_menu">子菜单555</a>
+	        </p>
+		<!--[if IE 6]></td></tr></table></a><![endif]-->
+    </li>
+    <li class="menu_item" style="background-color:#FFC;">
+	    <!--[if IE 6]><a href="#" class="menu_item" style="background-color:#FFC;"><table><tr><td><![endif]-->
+			<a href="#" class="menu">菜单3</a>
+	       	<p class="sub_menu_item">
+    	    	<a href="#" class="sub_menu">子菜单6</a>
+        	</p>
+		<!--[if IE 6]></td></tr></table></a><![endif]-->
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no" /> 
+<title>Ente Isla translater 安特伊苏拉语</title>
+<style>
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:16px;
+	text-align:center;
+}
+#wrapper{
+	width:600px;
+	padding:10px;
+	border:#FC9 1px solid;
+	background-color:#FFC;
+	text-align:left;
+	margin:10px auto;
+}
+h1{
+	font-size:18px;
+	color:#999;
+	font-weight:normal;
+	line-height:30px;
+}
+#english-box{
+	border:#0CF 1px solid;
+	background-color:#CFF;
+	padding:10px;
+}
+#english-box .type{ color:#069;}
+#enteisla-box{
+	border:#F9C 1px solid;
+	background-color:#FCF;
+	padding:10px;
+}
+#enteisla-box .type{ color:#C6C;}
+
+.type{
+	float:left;
+	width:160px;
+}
+
+#action{ padding:10px; text-align:center;}
+
+button{
+	width:280px;
+	height:60px;
+	/*line-height:50px;*/
+	font-size:20px;
+	border:2px solid #68b6ff;
+	border-bottom:5px solid #68b6ff;
+	background-color:#cae5ff;
+}
+button:active{
+	background-color:#0154a2;
+	color:#fff;
+}
+textarea{
+	width:400px;
+	height:100px;
+	font-size:18px;
+}
+
+</style>
+<script>
+var englishReg =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+var enteIslaReg = "AZYXEWVTISRLPNOMQKJHUGFDCBazyxewvtisrlpnomqkjhugfdcb";
+
+function translate(target){
+	//alert("aaa");
+	var txt1 = document.getElementById("txt1");
+	var txt2 = document.getElementById("txt2");
+
+	if(target == 0){
+		txt2.value = txtEncode(txt1.value);
+	}else{
+		txt1.value = txtEncode(txt2.value);
+	}
+}
+
+function txtEncode(txt){
+	//alert(txt);
+		txt = txt.replace(/./g, function(str) {
+			var index = englishReg.indexOf(str);
+			if(index > -1){
+				return enteIslaReg[index];
+			}
+			return str;
+		});
+	return txt;
+}
+
+
+function test2(){
+	var tmp = "BaiZjsdfjkl gDhdAk C"
+	for(var i=0;i<12;i++ ){
+		tmp = tmp + tmp;
+	}
+	txt = tmp;
+	txtLength = txt.length;
+	
+	var startDate = new Date().getTime();
+	
+	/*
+	for(var i=0; i<txt.length; i++){
+		var index = englishReg.indexOf(txt[i]);
+		if(index > -1){
+			txt = txt.substring(0, i) + enteIslaReg[index] + txt.substring(i+1, txtLength);
+		}
+	}
+	*/
+	
+	txt = txt.replace(/./g, function(str) {
+		var index = englishReg.indexOf(str);
+		if(index > -1){
+			return enteIslaReg[index];
+		}
+		return str;
+	});
+	
+	
+	alert(new Date().getTime() - startDate);
+	alert(txt.length);
+}
+
+
+</script>
+</head>
+
+<body>
+<header>
+	<img src="title.jpg" />
+	<h1>Enter Isla Translater v1.01</h1>
+</header>
+<div id="wrapper">
+    <div id="english-box">
+        <h2 class="type">English</h2>
+        <textarea id="txt1"></textarea>
+    </div>
+    
+    <div id="action">
+        <button id="btn1">&darr;&darr;&nbsp;English -&gt; Enteisla</button>
+        <button id="btn2">&uarr;&uarr;&nbsp;English &lt;- Enteisla</button>
+        <script>
+        	document.getElementById("btn1").onclick = function() {translate(0)};
+			document.getElementById("btn2").onclick = function() {translate(1)};
+        </script>
+    </div>
+    
+    <div id="enteisla-box">
+    <h2 class="type">Ente Isla</h2>
+    <textarea id="txt2"></textarea>
+    </div>
+</div>
+
+<footer>By <a href="http://www.ceilwoo.com" target="_blank">ceilwoo.com</a></footer>
+<br />
+
+</body>
+</html>

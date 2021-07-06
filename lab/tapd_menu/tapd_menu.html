@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS级联菜单</title>
+<link href="http://top.oa.com/css/tui.css" type="text/css" rel="stylesheet">
+<style type="text/css">
+a{ color:#266298;}
+#navigation{padding-left:140px;}
+#navigation a{text-decoration:none;}
+#navigation .comments span{ width:1800px;}
+#navigation .request span{ width:1700px;}
+#navigation .project span{ width:1600px;}
+#navigation .release span{ width:1560px;}
+#navigation .bug span{ width:1480px;}
+#navigation .report span{ width:1400px;}
+#navigation .admin span{ width:1320px;}
+.menu{
+	float:left;
+	display:block;
+	position:relative;
+	padding-left:6px;
+	width:80px;
+	font-size:14px;
+	z-index:4;
+}
+.menu_item{
+	display:block;
+	padding:5px 8px 5px 8px;
+	text-align:center;
+	font-weight:600;
+	background-color:#EAF2FF;
+	border:1px solid #B3D8EA;
+}
+li.menu{ _padding-left:0;}
+a.menu{
+	float:none;
+	padding-left:6px;
+	display:block;
+}
+.menu table{
+	width:100%;
+}
+.menu:hover{ border:none; z-index:8;}
+.menu:hover .menu_item,
+#navigation li.current .menu_item{
+	background-color:#fff;
+}
+.menu:hover .sub_menu{display:block;}
+.menu:hover .hide_sub_menu{
+	display:block;
+	left:-1024px;
+	height:30px;
+	background-color:#fff;
+	top:30px;
+	position:absolute;
+	z-index:6;
+
+}
+.sub_menu{
+	display:none;
+	white-space:nowrap;
+	position:absolute;
+	font-size:12px;
+	top:29px;
+	left:-23px;
+	z-index:7;
+}
+.sub_menu a{
+	padding:5px 15px;
+	line-height:30px;
+	text-align:center;
+	z-index:8;
+}
+.hide_sub_menu{
+	/*width:1000px;
+	left:-300px;*/
+	display:none;
+	cursor:default;
+}
+.sub_menu .current{ font-weight:bold;}
+#navigation li.current{ z-index:2;}
+#navigation .current .sub_menu{ display:block;}
+</style>
+</head>
+
+<body>
+<div class="tui-d1">
+<h2>CSS menu</h2>
+<br />
+<span style="color:#666;">【IE6、IE7、IE8、FF、Chrome】</span>
+<br />
+<br />
+<ul id="navigation">
+	<li class="menu comments current">
+		<!--[if IE 6]><a href="#" class="menu"><table><tr><td><![endif]-->
+		<a class="menu_item" href="/~ceilwu/tapd3/tapd/wikis/">交流区</a>
+		<p class="sub_menu">
+			<a href="#" class="sub_menu_item ">讨论</a>
+			<a href="#" class="sub_menu_item  current">Wiki</a>
+        </p>
+		<span class="hide_sub_menu"></span>
+		<!--[if IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="menu request">
+		<!--[if IE 6]><a href="#" class="menu"><table><tr><td><![endif]-->
+		<a class="menu_item" href="#">产品管理</a>
+		<p class="sub_menu">
+			<a href="#" class="sub_menu_item ">CE反馈</a>
+	        <a href="#" class="sub_menu_item ">需求</a>
+        </p>
+		<span class="hide_sub_menu"></span>
+		<!--[if IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="menu project">
+		<!--[if IE 6]><a href="#" class="menu"><table><tr><td><![endif]-->
+		<a class="menu_item" href="#">项目管理</a>
+		<p class="sub_menu">
+			<a href="#" class="sub_menu_item ">时间线</a>
+			<a href="#" class="sub_menu_item ">迭代</a>
+            <a href="#" class="sub_menu_item ">任务</a>
+        </p>
+		<span class="hide_sub_menu"></span>
+		<!--[if IE 6]></td></tr></table></a><![endif]-->
+	</li>
+    <li class="menu release">
+		<!--[if IE 6]><a href="#" class="menu"><table><tr><td><![endif]-->
+		<a class="menu_item" href="#">发布</a>
+		<p class="sub_menu">
+			<a href="#" class="sub_menu_item ">发布计划</a>
+			<a href="#" class="sub_menu_item ">发布评审</a>
+        </p>
+		<span class="hide_sub_menu"></span>
+		<!--[if IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="menu bug">
+		<!--[if IE 6]><a href="#" class="menu"><table><tr><td><![endif]-->
+		<a class="menu_item" href="#" target="_blank">Bug</a>
+		<p class="sub_menu">
+			<a href="#" class="sub_menu_item ">Bugtrace</a>
+			<a href="#" class="sub_menu_item ">创建缺陷</a>
+			<a href="#" class="sub_menu_item ">我定义的视图</a>
+			<a href="#" class="sub_menu_item ">Search Bug</a>
+			<a href="#" class="sub_menu_item ">Statistic</a>
+           </p>
+		<span class="hide_sub_menu"></span>
+		<!--[if IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="menu report">
+		<!--[if IE 6]><a href="#" class="menu"><table><tr><td><![endif]-->
+		<a class="menu_item" href="#">报表</a>
+		<p class="sub_menu">
+			<a href="#" class="sub_menu_item ">甘特图</a>
+			<a href="#" class="sub_menu_item ">Progress Tracking</a>
+		</p>
+		<span class="hide_sub_menu"></span>
+		<!--[if IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="menu admin ">
+		<!--[if IE 6]><a href="#" class="menu"><table><tr><td><![endif]-->
+		<a class="menu_item" href="#">设置</a>
+		<p class="sub_menu">
+			<a href="#" class="sub_menu_item ">我的设置</a>
+			<a href="#" class="sub_menu_item ">项目管理设置</a>
+        </p>
+		<span class="hide_sub_menu"></span>
+		<!--[if IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+	  <title>Hi, there</title>
+	    <meta charset="utf-8" />
+		  <meta name="author" content="name, ceilwoo#gmail.com"/>
+		    <meta http-equiv="Cache-Control" content="no-siteapp" />
+			  <meta name="apple-mobile-web-app-title" content="Hi,There">
+			    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+				  <meta name="format-detection" content="telephone=no" />
+				    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+					  <style type="text/css">
+						      body  { text-align: center;background-color: #000; color:#fff; font-size: 62.5%; }
+							      #main { padding-top:2rem; line-height: 3.5rem; font-size: 3rem; width:20rem; margin:0 auto;}
+								      #type { border: 0.3rem solid #fff; color:#fff; background-color: #000; font-size: 5rem; width: 20rem; line-height: 6rem;text-align: center;}
+									      #type:focus, #type:hover {font-size: 5rem;}
+										      .success{background-color: #fffcd5; color: #bea673;}
+											      /*#main {display: none;}*/
+												      #result {display: none;}
+													      #tips {display: none; font-size: 1.2rem; color:#666; margin: 0 auto; width: 20rem; background-color: #222; border-radius: 1rem;}
+
+														      #result{ margin: 0 auto; width: 20rem; padding-top: 4rem;}
+															      #code {border: 0.3rem solid #cdc2aa; color:#6a4902; background-color: #fffbc3; font-size: 3rem; width: 19rem; line-height: 6rem;text-align: center;}
+																      #result h3{font-size: 1rem; line-height: 4rem;}
+																	      #ajax_frame {display:none;}
+																		    </style>
+																		</head>
+																		<body id="background" class="">
+																			  <div id="tips">
+																				      wrong, I think you need hint: <span id="hint">1895</span>, 221B
+																					    </div>
+																						  <div id="main">
+																							      <h2>I AM</h2>
+																								      <div id="type" contenteditable="true"></div>
+																									      <h2>LOCKED</h2>
+																										    </div>
+																											  <div id="result">
+																												      <h3>Congratulations, you get the code</h3>
+																													      <div id="code">4D49535355</div>
+																														      <h3>bring the code to Ceil, and get your special gift.</h3>
+																															    </div>
+																																  <iframe id="ajax_frame" src="http://dianapi.com:11310/init?sv=1.0&name=sherlocked&v=1.0"></iframe>
+																																    <!--iframe id="ajax_frame" src="http://www.baidu.com"></iframe-->
+																																	  <script>
+																																		     var body = document.getElementById("background");
+																																			    var btn = document.getElementById("type");
+																																				   var main = document.getElementById("main");
+																																				      var result = document.getElementById("result");
+																																					     var hint = document.getElementById("hint");
+																																						    var ajax_frame = document.getElementById("ajax_frame");
+																																							   var wrong_time = 0;
+																																							      btn.addEventListener('input',function(){
+																																									       var content = btn.innerHTML;
+																																										        console.log(content);
+																																												     if(content.length == 4 && content.toLowerCase() != "sher"){
+																																														        wrong_time ++;
+																																																       if(wrong_time == 1){
+																																																		            tips.style.display = "block";
+																																																					         tips.innerHTML = "not right~";
+																																																							        }
+																																																									       if(wrong_time == 2){
+																																																											            tips.style.display = "block";
+																																																														         tips.innerHTML = "wrong again, I think you need hint: 1895";
+																																																																        }
+																																																																		       if(wrong_time == 3) {
+																																																																				            tips.style.display = "block";
+																																																																							         tips.innerHTML = "Ohhh no, poor guys, I think you need another hint: 221B";
+																																																																									        }
+
+																																																																											       if(wrong_time > 4) {
+																																																																													            tips.style.display = "block";
+																																																																																         tips.innerHTML = "Oh, my hell god, didn't u watch 《\"Sherlock\"》 ?";
+																																																																																		        }
+
+																																																																																				       btn.innerHTML = "";
+																																																																																					          btn.blur();
+																																																																																							       }
+
+																																																																																								        if(content.toLowerCase() == "sher" && content.length == 4){
+																																																																																											       //body.style.backgroundColor = "#fffcd5";
+																																																																																												          //body.style.color = "#90280c";
+																																																																																														         body.className = "success";
+																																																																																																        result.style.display = "block";
+																																																																																																		       main.style.display = "none";
+																																																																																																			          btn.innerHTML = "";
+																																																																																																					         btn.blur();
+																																																																																																							        tips.style.display = "none";
+																																																																																																									       ajax_frame.src = "http://dianapi.com:11310/init?sv=1.0&name=sherlocked&v=2.0";
+																																																																																																										        }
+																																																																																																												   });
+																																																																																																												     </script>
+																																																																																																												 </body>
+																																																																																																											 </html>
+

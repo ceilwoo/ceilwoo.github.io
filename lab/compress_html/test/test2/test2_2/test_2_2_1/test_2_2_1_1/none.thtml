@@ -1,0 +1,1 @@
+<?php/*** 国际版预留* * @package View.Comment* @author kuncai*/?><div style="padding:2em"><div><?php echo t('Not any thread yet.')?></div><div><a href="<?php echo $myHtml->url("/comments/add")?>"><?php echo t('Click here to create the first thread.')?></a></div></div>

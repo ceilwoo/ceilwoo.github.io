@@ -1,0 +1,1 @@
+<?php/*** 主导航栏页面* * @package View.Comment* @author robertyang*/?><?php echo $help_nav_wiki['text']; ?><script>$(document).ready(function(){try{document.domain = 'oa.com';}catch(e){}});</script>

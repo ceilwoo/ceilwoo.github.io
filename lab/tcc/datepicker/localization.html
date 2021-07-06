@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>jQuery UI Datepicker - Localize calendar</title>
+	<link type="text/css" href="http://top.oa.com/css/tui.css" rel="stylesheet" />
+	<link type="text/css" href="http://top.oa.com/css/themes/tcc/ui.css" rel="stylesheet" />
+	<script type="text/javascript" src="http://top.oa.com/js/jquery-1.3.2.extend.js"></script>
+	<script type="text/javascript" src="http://top.oa.com/js/tcc.js"></script>
+	<script type="text/javascript" src="http://top.oa.com/js/tcc/datepicker.js"></script>
+	<link type="text/css" href="../demos.css" rel="stylesheet" />
+	<script type="text/javascript">
+	$(function() {
+		$.datepicker.setDefaults($.extend({showMonthAfterYear: false}, $.datepicker.regional['']));
+		$("#datepicker").datepicker($.datepicker.regional['fr']);
+		$("#locale").change(function() {
+			$('#datepicker').datepicker('option', $.extend({showMonthAfterYear: false},
+				$.datepicker.regional[$(this).val()]));
+		});
+	});
+	</script>
+</head>
+<body>
+
+<div class="demo">
+	
+<p>Date: <input type="text" id="datepicker"/>&nbsp;
+	<select id="locale">
+		<option value="zh-CN">Chinese Simplified (&#31616;&#20307;&#20013;&#25991;)</option>
+		<option value="zh-TW">Chinese Traditional (&#32321;&#39636;&#20013;&#25991;)</option>
+	</select></p>
+
+</div><!-- End demo -->
+
+<div class="demo-description">
+
+<p>Localize the datepicker calendar language and format (English / Western formatting is the default).  The datepicker includes built-in support for languages that read right-to-left, such as Arabic and Hebrew.</p>
+
+</div><!-- End demo-description -->
+
+</body>
+</html>

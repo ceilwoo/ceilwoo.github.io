@@ -1,0 +1,257 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Caf Player v2.0 - by Ceil</title>
+<style>
+body{
+	text-align:center;
+	background:#FFF;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif, "Footlight MT Light";
+}
+header{
+	background:#54b1ff;
+	height:90px;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom:5px solid #ccc;
+}
+header h1{
+	display:block;
+	margin:0;
+	line-height:63px;
+	color:#fff;
+}
+#dropbox{
+	margin: 20px 0 20px 20px;
+	width:450px;
+	height:100px;
+	line-height:100px;
+	border-radius:10px;
+	font-size:20px;
+	border:dashed #bbb 5px;
+	color:#bbb;
+}
+#fileList{
+	border-radius:10px;
+	border:5px solid #CCC;
+	min-height:180px;
+	width:500px;
+	margin:0 auto;
+	background-color:#eee;
+}
+#fileList ol{
+	margin:0;
+	padding:0;
+	font-size:10px;
+}
+#fileList li{
+	height:30px;
+	line-height:30px;
+	padding: 2px 0px 2px 10px;
+	text-align:left;
+	list-style-position:inside;
+	cursor:pointer;
+	color:#aaa;
+}
+#fileList li:nth-child(2n+1){
+	background:#fff;
+}
+#fileList li:hover{
+	background-color:#72CCF9;
+	color:#fff;
+}
+#fileList li:active{
+	color:#0e8907;
+	font-weight:bold;
+}
+#fileList .title{
+	font-size:12px;
+	padding-left:10px;
+	color:#071a57;
+}
+#fileList .size{
+	float:right;
+}
+#fileList .del{
+	float:right;
+	margin:3px 2px 0 5px;
+	font-size:8px;
+	padding:2px 5px 10px 3px;
+	line-height:8px;
+	cursor:pointer;
+}
+#fileList .del:hover{
+	background-color:#81E3F6;
+	color:#000;
+}
+#fileList p{
+	color:#CCC;
+}
+#fileList li.active{
+	background-color:#4891ff;
+	color:#fff;
+}
+#player{
+	position:relative;
+	width:500px;
+	z-index:999;
+}
+footer{
+	color:#999;
+	line-height:40px;
+	font-size:12px;
+}
+</style>
+</head>
+<body >
+<section id="fileList">
+	<header>
+		<h1>Caf Player</h2>
+        <audio id="player" controls>
+  			<source id="mp4-source" src="" />
+		</audio>
+    </header>
+    <!--audio id="player2" controls>
+  		<source id="mp4-source" src="test.mp3" />
+	</audio>
+    <audio id="player3" controls>
+  		<source id="mp4-source" src="test.ogg" />
+	</audio>
+    <audio id="player4" controls>
+  		<source id="mp4-source" src="test.caf" />
+	</audio-->
+	<div id="dropbox">
+		Drag and Drop your audio file here.
+	</div>
+    <ol id="music-list">
+    </ol>
+</section>
+<!--embed id="player" width="100%" height="100%" name="plugin" src="" type="audio/x-caf"-->
+
+<footer>
+	Caf Player v2.01 - by <a href="http://blog.ceilwoo.com" target="_blank">Ceil</a>
+</footer>
+<script>
+	console.log("Hi, there");
+    var dropbox;
+	var CURRENT_MUSIC_ID;
+      
+    dropbox = document.getElementById("fileList");
+    dropbox.addEventListener("dragenter", dragenter, false);
+    dropbox.addEventListener("dragover", dragover, false);
+    dropbox.addEventListener("drop", drop, false);
+	
+    function dragenter(e) {  
+      e.stopPropagation();  
+      e.preventDefault();  
+    }  
+      
+    function dragover(e) {  
+      e.stopPropagation();  
+      e.preventDefault();  
+    }  
+	
+    function drop(e) {  
+      e.stopPropagation();  
+      e.preventDefault();  
+      
+      var dt = e.dataTransfer;  
+      var files = dt.files;  
+      
+      handleFiles(files);
+	  refreshList();
+	  document.getElementById("dropbox").setAttribute("style", "display:none");
+    }
+	
+	function handleFiles(files) {
+	  if (!files.length) {  
+		//fileList.innerHTML = "<p>No files selected!</p>";  
+	  } else {  
+		var list = document.getElementById("music-list");
+		for (var i = 0; i < files.length; i++) {
+		  var li = document.createElement("li");
+		  list.appendChild(li);
+		  var _file_url = window.URL.createObjectURL(files[i]);
+		  var _file_size = Math.ceil(files[i].size / 1000);
+		  li.setAttribute("onclick", "playAudio(null, this)");
+		  li.setAttribute("source-url", _file_url);
+		  playListData = "<span class='title'>" + files[i].name + "</span><span class=\"del\" onclick=\"delAudio(this, '"+ _file_url + "')\">X</span><span class='size'>" + _file_size + "k</span>";
+		  
+		  li.innerHTML = playListData;
+		}
+	  }
+	}
+	
+	function refreshList(){
+		var _list_li = document.getElementById("music-list").getElementsByTagName("li");
+		for ( var i = 0; i < _list_li.length; i++) {
+			_list_li[i].id = "music" + "-" + i
+		}
+		console.log("refreshList done");
+	}
+	
+	function delAudio(e,url){
+		window.URL.revokeObjectURL(url);
+		var _parentElement = e.parentNode.parentNode;
+		if(_parentElement){
+        	_parentElement.removeChild(e.parentNode); 
+        }
+		refreshList();
+	}
+
+	function playAudio(id, e){
+		var _url, _id;
+		if(e){
+			_url = e.getAttribute("source-url");
+			_id = e.getAttribute("id");
+		}else if(id){
+			_url = document.getElementById(id).getAttribute("source-url");
+			_id = id;
+		}
+		console.log("[playing] " + _id + " " + _url);
+		
+		if(CURRENT_MUSIC_ID){ document.getElementById(CURRENT_MUSIC_ID).setAttribute("class","");}
+		document.getElementById(_id).setAttribute("class","active");
+		
+		var _player = document.getElementById("player");
+		_player.removeChild(document.getElementById("mp4-source"));
+		_player.setAttribute("style","display:block");
+		_source = document.createElement("source");
+		_source.src = _url;
+		_source.id = "mp4-source";
+		_source.type = "audio/mp4";
+		_player.appendChild(_source);
+		_player.setAttribute("current-music", _id);
+		
+		_player.load();
+		_player.play();
+		CURRENT_MUSIC_ID = _id;
+	}
+	
+	function pickMusic(current_music){
+		_next_music_index = "music-" + (parseInt(current_music.split("-")[1]) + 1);
+		playAudio(_next_music_index, null)
+	}
+	
+	function audioEnd(){
+		_current_music = this.getAttribute("current-music");
+		console.log( "[audioEnd] " + _current_music);
+		pickMusic(_current_music);
+	}
+	
+	var _player = document.getElementById("player");
+	_player.addEventListener('ended', audioEnd);
+</script>
+<!--
++---------------------+-----+-----+-----+-----+-----+
+| Browser             | Ogg | MP3 | AAC | Wav | Caf |
++---------------------+-----+-----+-----+-----+-----+
+| Internet Explorer 9 | Yes | Yes | Yes | Yes |     |
+| Firefox 5           | Yes | Yes | No  | Yes | No  |
+| Chrome 46           | Yes | Yes | Yes | Yes | No  |
+| Safari 9            | No  | Yes | Yes | Yes | No  |
+| Opera 11.5          | Yes | No  | No  | Yes |     |
++---------------------+-----+-----+-----+-----+-----+
+-->
+</body>
+</html>

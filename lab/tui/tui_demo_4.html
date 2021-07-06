@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TUI Demo - (复合布局)</title>
+<link href="http://nvwa.oa.com/~ceilwu/top/css/tui.css" rel="stylesheet" type="text/css" />
+<link href="demo.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function change_width(page_width){
+	var bodyDom = document.getElementById("page_wrapper");
+	bodyDom.className = page_width;
+	}
+</script>
+</head>
+
+<body>
+<div class="tui-d1" id="page_wrapper">
+<div id="header">
+	<h1>TUI Demo - (复合布局)</h1>
+    <div style="float:right; height:50px; margin-left:30px; padding-top:20px; line-height:24px;">
+    	页宽:
+        <a href="javascript:change_width('tui-d0');">自适应</a>
+        <a href="javascript:change_width('tui-d1');">950px</a>
+        <a href="javascript:change_width('tui-d2');">974px</a>
+        <a href="javascript:change_width('tui-d3');">1190px</a>
+        <br />
+    	分栏:
+    	<a href="tui_demo_1.html">常用布局</a>
+        <a href="tui_demo_2.html">双栏布局</a>
+        <a href="tui_demo_3.html">百分比布局</a>        
+        <strong>复合布局</strong>
+	</div>
+</div>
+
+<h2>.tui-t2o + .tui-gd</h2>
+<div class="tui-t2o">
+	<div class="tui-main">
+    	<div class="tui-b tui-gd">
+        
+                <div class="tui-u first">
+                    <div class="demo_box3">
+                    	[33%]
+                    </div>
+                </div>
+                <div class="tui-u">
+                    <div class="demo_box1">
+                    	[66%]
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+
+	<div class="tui-b">
+        <div class="demo_box2">
+        	demo_box2<br />
+            [190px]
+        </div>
+    </div>
+
+</div>
+
+<h2>.tui-t1 + .tui-gc + 自定义间距</h2>
+<div class="tui-t1">
+	<div class="tui-main">
+    	<div class="tui-b tui-gc">
+                <div class="tui-u first">
+                    <div class="demo_box1" style="margin-left:20px;">
+                    	[66%]
+                    </div>
+                </div>
+                <div class="tui-u">
+                    <div class="demo_box3">
+                    	[33%]
+                    </div>
+                </div>
+        </div>
+    </div>
+
+	<div class="tui-b">
+        <div class="demo_box2">
+        	demo_box2<br />
+            [150px]
+        </div>
+    </div>
+
+</div>
+
+
+
+<div id="footer">
+	Copyright (c) 2009, Tencent TAPD team. Some rights reserved.<br />
+    TUI CSS Framework base on YUI.[<a href="http://rd.oa.com/tui" target="_blank">TUI wiki</a>]
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+/*預設的LINK灰白→金*/
+a:link {color:#CCCCCC;text-decoration:none}
+a:visited {color:#CCCCCC;text-decoration:none}
+a:hover {color:#FADC96;text-decoration:none}
+a:active {color:#FADC96;text-decoration:none}
+
+/*統一黑色變深紅，適用在白底*/
+.black:link {color:#000000;text-decoration:none;}
+.black:visited {color:#000000;text-decoration:none}
+.black:hover {color:#D90000;text-decoration:none}
+.black:active {color:#D90000;text-decoration:none}
+
+/*更多的金色變純白，適用在黑底*/
+.more_gold:link {color:#FADC96;text-decoration:none;}
+.more_gold:visited {color:#FADC96;text-decoration:none}
+.more_gold:hover {color:#FFFFFF;text-decoration:none}
+.more_gold:active {color:#FFFFFF;text-decoration: none;}
+
+/*更多的灰色變黃色，適用在黑底*/
+.more_yellow:link {color:#cccccc;text-decoration:underline}
+.more_yellow:visited {color:#ffccoo;text-decoration:none}
+.more_yellow:hover {color:#ffccoo;text-decoration:underline}
+.more_yellow:active {color:#ffccoo;text-decoration: underline}
+
+/*更多的灰色變粉紅色，適用在黑底*/
+.more_pink:link {color:#cccccc;text-decoration:underline}
+.more_pink:visited {color:#FF99CC;text-decoration:none}
+.more_pink:hover {color:#FF99CC;text-decoration:underline}
+.more_pink:active {color:#FF99CC;text-decoration: underline}
+
+/*更多的灰色變粉紅色，適用在黑底*/
+.more_blue:link {color:#cccccc;text-decoration:underline}
+.more_blue:visited {color:#66CCFF;text-decoration:none}
+.more_blue:hover {color:#66CCFF;text-decoration:underline}
+.more_blue:active {color:#66CCFF;text-decoration: underline}
+
+/*更多的深紅變深灰，適用在白底*/
+.more_red:link {color:#D90000;text-decoration:none;}
+.more_red:visited {color:#D90000;text-decoration:none}
+.more_red:hover {color:#666666;text-decoration:none}
+.more_red:active {color:#666666;text-decoration:none}
+
+/*討論區列表的深藍變紅，適用在白底*/
+.blue:link {color:#12435F;text-decoration:none;}
+.blue:visited {color:#3366CC;text-decoration:none}
+.blue:hover {color:#D90000;text-decoration:none}
+.blue:active {color:#D90000;text-decoration:none}
+
+/*討論區列表的淺土黃變白，適用在綠底*/
+.y:link {color:#c2b18d;text-decoration:none;}
+.y:visited {color:#CC9900;text-decoration:none}
+.y:hover {color:#ffffff;text-decoration:none}
+.y:active {color:#ffffff;text-decoration:none}
+
+/*討論區列表的深綠變深藍，適用在淺色底*/
+.g_hot:link {color:#003300;text-decoration:none;}
+.g_hot:visited {color:#12435F;text-decoration:none}
+.g_hot:hover {color:#12435F;text-decoration:none}
+.g_hot:active {color:#12435F;text-decoration:none}
+
+/*討論區列表的深藍變紅，有底線，適用在白底*/
+.blue_line:link {color:#12435F;text-decoration:underline}
+.blue_line:visited {color:#3366CC;text-decoration:underline}
+.blue_line:hover {color:#D90000;text-decoration:underline}
+.blue_line:active {color:#D90000;text-decoration:underline}
+
+/*討論區列表的深藍變紅，適用在白底10pt*/
+.blue_bold_general:link {color:#12435F;font-size:10pt;font-weight:bold}
+.blue_bold_general:visited {color:#12435F;font-size:10pt;font-weight:bold}
+.blue_bold_general:hover {color:#D90000;font-size:10pt;font-weight:bold}
+.blue_bold_general:active {color:#D90000;font-size:10pt;font-weight:bold}
+
+/*討論區列表的深藍變紅，適用在白底*/
+
+underline
+.gray {color:#666666;text-decoration:none;}
+
+.blue9:link {font-size:9pt;color:#12435F;text-decoration:none;}
+.blue9:visited {font-size:9pt;color:#12435F;text-decoration:none}
+.blue9:hover {font-size:9pt;color:#D90000;text-decoration:none}
+.blue9:active {font-size:9pt;color:#D90000;text-decoration:none}
+
+.moregline:link {color:#FADC96;text-decoration:underline;}
+.moregline:visited {color:#FADC96;text-decoration:underline}
+.moregline:hover {color:#FFFFFF;text-decoration:underline}
+.moregline:active {color:#FFFFFF;text-decoration: underline;word-spacing: 20pt;}
+
+/*更多較小的字*/
+.connected:link {font-size:8.5pt;color:#fadc96;text-decoration:none}
+.connected:visited {font-size:8.5pt;color:#fadc96;text-decoration:none}
+.connected:hover {font-size:8.5pt;color:#FFFFFF;text-decoration:none}
+.connected:active {font-size:8.5pt;color:#FFFFFF;text-decoration:none}
+
+.subtitle {font-size:10pt;color: #FFFFFF}
+
+.subtitle_gray {font-size:10pt;color: #cccccc}
+
+.part {font-size:9pt;color:cccccc}
+
+.general {font-size:11pt;color:ffffff}
+
+.general_gray {font-size:11pt;color:cccccc}
+
+.bold_general {font-size:11.5pt;color:ffffff;font-weight: bold}
+
+.bold_general_12pt {font-size:12pt;color:ffffff;font-weight: bold}
+
+/*統一黑色變深紅，適用在白底，forumm用第2組*/
+.bmf:link {font-size:9pt;color:#000000;text-decoration:none;}
+.bmf:visited {font-size:9pt;color:#000000;text-decoration:none}
+.bmf:hover {font-size:9pt;color:#D90000;text-decoration:none}
+.bmf:active {font-size:9pt;color:#D90000;text-decoration:none}
+
+.size12{font-size:12pt;color:000000}
+
+.size9{font-size:9pt;color:000000}
+
+.size10bold{font-size:10pt;color:#993300;font-weight:bold}
+
+/*更多的橙變茶，適用在白底*/
+.contenturl:link {color:#FF9900;text-decoration:none}
+.contenturl:visited {color:#FF9900;text-decoration:none}
+.contenturl:hover {color:#CC6600;text-decoration:none}
+.contenturl:active {color:#CC6600;text-decoration:none}
+
+/*更多的橙變茶，適用在白底*/
+.sixth:link {color:#FF9900;text-decoration:none}
+.sixth:visited {color:#FF9900;text-decoration:none}
+.sixth:hover {color:#CC6600;text-decoration:none}
+.sixth:active {color:#CC6600;text-decoration:none}
+
+/*討論區內文引文*/
+.contentquote{
+	font-size:9pt;color:#8089AC;background:#E0E2E9;border:1px dashed #C8C8C8;padding:8px;width:100%;margin:0px;font-weight:normal;}
+
+/*討論區內文強制折行*/
+.contenttext {font-size:11pt;color:#000000;table-layout:fixed;word-wrap:break-word;word-break:break-all;}
+
+/*討論區或其他地區左側 例如 討論版推薦連結 強制折行*/
+.more_gold_9:link {font-size:9pt;padding-top:5;color:#FADC96;text-decoration:none;table-layout:fixed;word-wrap:break-word;word-break:break-all;}
+.more_gold_9:visited {font-size:9pt;padding-top:5;color:#FADC96;text-decoration:none;table-layout:fixed;word-wrap:break-word;word-break:break-all;}
+.more_gold_9:hover {font-size:9pt;padding-top:5;color:#FFFFFF;text-decoration:none;table-layout:fixed;word-wrap:break-word;word-break:break-all;}
+.more_gold_9:active {font-size:9pt;padding-top:5;color:#FFFFFF;text-decoration: none;table-layout:fixed;word-wrap:break-word;word-break:break-all;}
+
+/*搜尋用*/
+.search_red:link {background-color:#FFFFCC;color:#FF0000;text-decoration:underline;}
+.search_red:visited {background-color:#FFFFCC;color:#FF0000;text-decoration:underline}
+.search_red:hover {background-color:#FFFFCC;color:#FF0000;text-decoration:underline}
+.search_red:active {background-color:#FFFFCC;color:#FF0000;text-decoration:underline}
+
+/*討論版標題列表*/
+.thread_content{font-size:10pt;color:#000000}
+.thread_title{font-size:9pt;color:#ffffff}
+
+/*討論版頁碼*/
+/*更多的灰色變黃色，適用在黑底*/
+.page_link:link {color:#cccccc;text-decoration:underline}
+.page_link:visited {color:#ffccoo;text-decoration:none}
+.page_link:hover {color:#ffccoo;text-decoration:underline}
+.page_link:active {color:#ffccoo;text-decoration: underline}
+
+.page_unlink{color:#66FF00;text-decoration:none}
+
+.page_content{color:#FFFFFF;text-decoration:none}
+
+.last_reply{font-size:9pt;color:#000000}
+
+/*更多的純白變金色有底線，適用在黑底*/
+.white:link {color:#FFFFFF;text-decoration:underline;}
+.white:visited {color:#FFFFFF;text-decoration:underline}
+.white:hover {color:#FADC96;text-decoration:underline}
+.white:active {color:#FADC96;text-decoration:underline}
+
+/*更多的純白變金色，適用在黑底*/
+.more_white:link {color:#FFFFFF;text-decoration:none;}
+.more_white:visited {color:#FFFFFF;text-decoration:none}
+.more_white:hover {color:#FADC96;text-decoration:none}
+.more_white:active {color:#FADC96;text-decoration:none}
+
+/*更多的純白變金色，適用在黑底*/
+.white_unlink {color:#FFFFFF;text-decoration:none;}
+
+.black_unlink {color:#000000;text-decoration:none;}
+
+.sin_subtitle{font-size:11pt;color: #000000;font-weight:bold}
+
+/*更多的鮮黃變白色，適用在黑底*/
+.more_yellow:link {color:#FFFFCC;text-decoration:none;}
+.more_yellow:visited {color:#FFFFCC;text-decoration:none}
+.more_yellow:hover {color:#FFFFFF;text-decoration:none}
+.more_yellow:active {color:#FFFFFF;text-decoration:none}
+
+/*較大黃的字*/
+.yellow12_unlink {font-size:12pt;color:#FFFFCC;font-weight: bold;text-decoration:none}
+
+/*粉紅的字*/
+.pink_unlink {font-size:10pt;color:#FF99CC;text-decoration:none}

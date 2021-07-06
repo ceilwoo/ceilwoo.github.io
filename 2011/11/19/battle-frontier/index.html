@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Ceil">
+  <meta name="keywords" content="">
+  
+  <title>Battle Frontier 开发手记 - Ceil Profile</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 30vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Ceil Profile</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/blog-header.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Battle Frontier 开发手记">
+              
+                Battle Frontier 开发手记
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2011-11-19 06:14" pubdate>
+        2011年11月19日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      880 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      15
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Battle Frontier 开发手记</h1>
+            
+            <div class="markdown-body">
+              <p>今天Battle Frontier更新到Beta 1.4，总算看到一点要完成的曙光了。抽空记录一下开发历程。 先show show Beta 1.4版的内容 <a href="https://ceilwoo.com/2011/11/battle-frontier/bg-icon/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/bg-icon.png" srcset="/img/loading.gif" lazyload title="bg-icon"></a> (Beta Logo) <a href="https://ceilwoo.com/2011/11/battle-frontier/bf-140/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/bf-140.png" srcset="/img/loading.gif" lazyload title="bf-140"></a> “<strong>Battle Frontier</strong>“ 是一款开放型SLG游戏，你可以招募任意的怪兽成为佣兵与主角一同冒险，而且佣兵们个个都身怀绝技，各种的佣兵与阵型组合能给你带来不同的惊喜。 目前设置有近80个佣兵种类，30多个特性技能，20多个不同关卡。 <a href="https://ceilwoo.com/2011/11/battle-frontier/slime_and_momo/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/slime_and_momo.png" srcset="/img/loading.gif" lazyload title="slime_and_momo"></a> 顺便介绍下游戏里的两只小怪兽，左边的momo出自于《日常》里一位伟大的艺术家之手。（爆内幕：升级进化后将会咸鱼大翻身） 右边的是路人皆知的史莱姆，弄这小家伙期间我偷懒综合症发作了，换了一个表情就丢给肥仔的软件当logo了，啊哈哈哈哈。 <a href="https://ceilwoo.com/2011/11/battle-frontier/monter-preview/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/monter-preview.png" srcset="/img/loading.gif" lazyload title="monter-preview"></a> 这几只是我比较满意的女性角色，游戏期间会慢慢遇上，而且很给力 :P 其他内容等开发完成后再一起介绍下。 ———————- <strong>更新历程：</strong> <strong>Beta v1.0 - prototype</strong> 貌似花了两个晚上就拼出来的界面，原本预计是款小游戏，两三周就搞定的了，过了几天后我突然燃起了要做一款好游戏的心，于是有了1.1版 <a href="https://ceilwoo.com/2011/11/battle-frontier/bf-100/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/bf-100.png" srcset="/img/loading.gif" lazyload title="bf-100"></a>   ———————- <strong><strong>Beta v1.1</strong> - 绘制佣兵，UI重新制作</strong> <a href="https://ceilwoo.com/2011/11/battle-frontier/monster-001/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/monster-001.png" srcset="/img/loading.gif" lazyload title="monster-001"></a> 大概用了1周时间做了一个骨架和几套职业套装，以后设计好新衣服套上就是一个新佣兵了。 <a href="https://ceilwoo.com/2011/11/battle-frontier/bf-110/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/bf-110.png" srcset="/img/loading.gif" lazyload title="bf-110"></a> 还有换了一个奇幻风格的游戏UI。 看似工作量不大，其实我花了1个多月时间才设计好上面的东西，在此之前还有N个飞机稿被我自己reject掉了。 ———————- <strong>Beta v1.2 -</strong> 写策划和数值文档，UI优化 <a href="https://ceilwoo.com/2011/11/battle-frontier/bf-120/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/bf-120.png" srcset="/img/loading.gif" lazyload title="bf-120"></a> 把游戏界面弄整齐了，增加多选佣兵和单选佣兵的切换，角色技能显示。期间eric忙着写Code，我就先写着数值策划了。 没错。。Battle Frontier的参与者只有eric和我，只能身兼数职了。 （界面虽然改动不大，其实这个又是建立在N个飞机稿之上） <a href="https://ceilwoo.com/2011/11/battle-frontier/bf-121/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/bf-121.png" srcset="/img/loading.gif" lazyload title="bf-121"></a> 另外添加了关卡选择，Battle Frontier将有7个探险地图，每个地图有若干关卡。 ———————- <strong>Beta v1.3</strong> <a href="https://ceilwoo.com/2011/11/battle-frontier/bf-130/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/bf-130.png" srcset="/img/loading.gif" lazyload title="bf-130"></a> Battle Frontier战斗界面的内容比较多，为了扩大棋盘的面积而不影响操作又弄死了不少脑细胞，诞生了1.3版，期间继续完善策划文档，添加音效、音乐、技能动画。。。 <a href="https://ceilwoo.com/2011/11/battle-frontier/monster-003/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/monster-003.png" srcset="/img/loading.gif" lazyload title="monster-003"></a> 偶尔内分泌失调了我就会加几款佣兵。。。。。 <a href="https://ceilwoo.com/2011/11/battle-frontier/bf-131/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/bf-131.png" srcset="/img/loading.gif" lazyload title="bf-131"></a> 还有主菜单界面，底下是一群佣兵追杀1只momo的动画。 ———————- <strong>Beta v1.4</strong> <a href="https://ceilwoo.com/2011/11/battle-frontier/bf-140/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/11/bf-140.png" srcset="/img/loading.gif" lazyload title="bf-140"></a> 虐了不少脑细胞后，又诞生了一个更加紧凑的操作界面。 为了确保良好的点击效果，每个按钮需设定成30x30 px以上的size， 于是好不容易才把一个12x10的棋盘、地图信息、角色信息、方向控制键。。等东西塞进一个480x320的界面。 接下来还得补充音效和关卡设计，每天都在奸爸爹，希望月底前能完成啦 :D   ———————- 偶然看到了Beta 1.0的日期，发现是6月28日。。。将近5个月的时间才到现在的阶段，不容易呀。 平时经常有人问我在做什么，我都是回答“在做游戏”,  现在应该能明白我为什么总是在做游戏了吧。。。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/art/">art</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Life/">Life</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Work/">Work</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Art/">Art</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Game/">Game</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Games/">Games</a>
+                    
+                      <a class="hover-with-bg" href="/tags/iPhone/">iPhone</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Battle-Frontier/">Battle Frontier</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2011/11/20/dinner/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">文艺青年的乌冬面</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2011/11/15/memory-cube-3d/">
+                        <span class="hidden-mobile">Memory Cube 3D (记忆魔方3D) for iPhone/iPad/iPod touch</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script>
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
+          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function() {
+            new DisqusJS({
+              shortname: 'Ceil Profile',
+              apikey: 'eLPa2ZBgNwFOKsbfPXTC67GiiffkVes24AptMX7fUwpq3jQ1VWKtimmP5KMORXhY'
+            });
+          });
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/script/duration.js"></script> </div> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?abd3e6cbc79a1f6c9626f35fd5f0ea22";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

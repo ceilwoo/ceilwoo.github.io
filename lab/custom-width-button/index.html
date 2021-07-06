@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Auto width button</title>
+<style>
+.acw-button div,
+.acw-button{
+	height:60px;
+	overflow:hidden;
+}
+.b1{
+	width:200px;
+}
+.b2{
+	width:400px;
+}
+.left{
+	width:37px;
+	float:left;
+	background:url(woodenBackBarButtonHighlighted@2x.png) no-repeat;
+}
+.right{
+	width:20px;
+	float:right;
+	background:url(woodenBackBarButtonHighlighted@2x.png) no-repeat right top;
+}
+.middle{
+	overflow:hidden;
+}
+.middle img{
+	width:5000px;
+	margin-left:-2500px;
+	height:60px;
+}
+.content{
+	margin-top:-60px;
+	line-height:60px;
+	font-size:25px;
+	color:#fff;
+	text-shadow:0 1px #000;
+}
+</style>
+</head><body>
+<h2>按钮原图</h2>
+<img src="woodenBackBarButtonHighlighted@2x.png">
+<h2>单图片实现自定义长度button</h2>
+<div class="b1 acw-button">
+	<div class="left"></div>
+    <div class="right"></div>
+    <div class="middle"><img src="woodenBackBarButtonHighlighted@2x.png"></div>    
+    <div class="content">后退</div>
+</div>
+<br>
+<div class="b2 acw-button">
+	<div class="left"></div>
+    <div class="right"></div>
+    <div class="middle"><img src="woodenBackBarButtonHighlighted@2x.png"></div>
+    <div class="content">返回到...</div>
+</div>
+
+</body></html>
