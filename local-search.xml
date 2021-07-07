@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>blog更新</title>
+    <link href="/2021/07/07/20210707-blog-update/"/>
+    <url>/2021/07/07/20210707-blog-update/</url>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/update-blog.jpg"><br>之前的blog主题太多问题，越修越乱，于是换成了fluid<br>评论系统换成了cusdis, disqus一来太慢，二来有点复杂</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>生活</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>blog</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>项目</title>
     <link href="/2021/07/06/projects/"/>
     <url>/2021/07/06/projects/</url>
