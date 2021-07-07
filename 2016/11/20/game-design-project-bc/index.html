@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -242,7 +242,7 @@
             <h1 style="display: none">[Game Design] Battle System 02</h1>
             
             <div class="markdown-body">
-              <p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/11/project-bc.png" srcset="/img/loading.gif" lazyload alt="project-bc"> 最近体验了好几款游戏，琢磨了一个比较合口味的回合制战斗系统，看什么时候完善了整合到自己的游戏上边。 <strong>【系统简介】</strong> 玩家和对手可以使用3个角色进行游戏，每个角色有6张特有的指令卡，每回合从3个角色一共18张指令卡里随机出6张，让玩家选择其中3张作为当前回合激活的指令。(灵感来源于fgo和card hunter) 每个角色有不同的速度值，决定了出手的顺序。充能值满后可以释放角色自有的特殊技能。 战斗场地是12个格子，每个格子会随机出不同的地形：lava, water, sand等，每个角色占一格位，部分角色有地形特性。譬如角色A在lava地形上可以获得50%的攻击加成，但是在water地形上受到的伤害会增加50%。 <strong>【指令卡的种类】</strong> Attack(造成150%伤害，攻击有效距离2格，目标超过距离则判断该次攻击失效) Ranged Attack(造成100%伤害，攻击有效距离4格) Dash Attack(造成60%伤害，同时该角色往前移动1格) Dash(角色往前移动2格) Impact Attack(造成60%伤害，同时让目标后退一格) Impact(让目标后退一格) Cast Attack(造成60%伤害，增加自身充能值) Cast(极大的增加自身充能值) 不同的角色定位会配有不同的卡组，譬如角色B定位是近战推进的角色，那么B的6张角色卡分别是：A,Da,Da,D,D,Ca。角色C的定位是快速撰气释放特殊技能，那么C的配卡可能是：Ra,Da,Ca,Ca,C,C <strong>【战斗策略】</strong> 可以用不同的角色组成有特定战斗策略的队伍，譬如： 击退队：配以I卡为主的角色，快速挤压对手前线，把对手打到墙角，由于攻击时可以让目标当前格子上的所有角色受到伤害，当对手被逼到墙角时候就可以造成成吨伤害，收益比一般的攻击高很多。(灵感来源于克鲁赛德战记) 特殊技能队：配卡以C卡为主，快速释放特殊技能 稳定战线队：配卡以D卡为主，以灵活的移动卡，让队伍时刻处于有利地形上，提高战斗力。(灵感来源于螺旋境界线) 像fgo和cardhunter这种选指令卡的模式能简化掉传统RPG里复杂的操作，用在移动端上挺不错的，缺点就是会增加一些不确定性，然而优点也是这种不确定性，会带来一些意外的惊喜感。</p>
+              <p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/11/project-bc.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="project-bc"> 最近体验了好几款游戏，琢磨了一个比较合口味的回合制战斗系统，看什么时候完善了整合到自己的游戏上边。 <strong>【系统简介】</strong> 玩家和对手可以使用3个角色进行游戏，每个角色有6张特有的指令卡，每回合从3个角色一共18张指令卡里随机出6张，让玩家选择其中3张作为当前回合激活的指令。(灵感来源于fgo和card hunter) 每个角色有不同的速度值，决定了出手的顺序。充能值满后可以释放角色自有的特殊技能。 战斗场地是12个格子，每个格子会随机出不同的地形：lava, water, sand等，每个角色占一格位，部分角色有地形特性。譬如角色A在lava地形上可以获得50%的攻击加成，但是在water地形上受到的伤害会增加50%。 <strong>【指令卡的种类】</strong> Attack(造成150%伤害，攻击有效距离2格，目标超过距离则判断该次攻击失效) Ranged Attack(造成100%伤害，攻击有效距离4格) Dash Attack(造成60%伤害，同时该角色往前移动1格) Dash(角色往前移动2格) Impact Attack(造成60%伤害，同时让目标后退一格) Impact(让目标后退一格) Cast Attack(造成60%伤害，增加自身充能值) Cast(极大的增加自身充能值) 不同的角色定位会配有不同的卡组，譬如角色B定位是近战推进的角色，那么B的6张角色卡分别是：A,Da,Da,D,D,Ca。角色C的定位是快速撰气释放特殊技能，那么C的配卡可能是：Ra,Da,Ca,Ca,C,C <strong>【战斗策略】</strong> 可以用不同的角色组成有特定战斗策略的队伍，譬如： 击退队：配以I卡为主的角色，快速挤压对手前线，把对手打到墙角，由于攻击时可以让目标当前格子上的所有角色受到伤害，当对手被逼到墙角时候就可以造成成吨伤害，收益比一般的攻击高很多。(灵感来源于克鲁赛德战记) 特殊技能队：配卡以C卡为主，快速释放特殊技能 稳定战线队：配卡以D卡为主，以灵活的移动卡，让队伍时刻处于有利地形上，提高战斗力。(灵感来源于螺旋境界线) 像fgo和cardhunter这种选指令卡的模式能简化掉传统RPG里复杂的操作，用在移动端上挺不错的，缺点就是会增加一些不确定性，然而优点也是这种不确定性，会带来一些意外的惊喜感。</p>
 
             </div>
             <hr>
@@ -307,23 +307,28 @@
                   
                 
                 
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script>
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
-          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function() {
-            new DisqusJS({
-              shortname: 'Ceil Profile',
-              apikey: 'eLPa2ZBgNwFOKsbfPXTC67GiiffkVes24AptMX7fUwpq3jQ1VWKtimmP5KMORXhY'
-            });
-          });
-        });
-      </script>
-    
-    <noscript>Please enable JavaScript to view the comments</noscript>
+  <div class="cusdis" style="width:100%">
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="01230e13-bbee-4d2d-9d89-a1fac17edc31"
+      data-page-id="0f7d4b3bb888a521695f60548a46e6e1"
+      data-page-url="2016/11/20/game-design-project-bc/"
+      data-page-title="[Game Design] Battle System 02"
+      data-theme="auto"
+    >
+    </div>
   </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#cusdis_thread', function() {
+      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
+      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema) {
+        document.querySelector('#cusdis_thread').dataset.theme = schema
+      }
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>

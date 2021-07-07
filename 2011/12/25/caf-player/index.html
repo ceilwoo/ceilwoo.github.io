@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -244,7 +244,7 @@
             <div class="markdown-body">
               <p><strong>v2.0测试版 (20151108)</strong> 现在改成用 html5实现了 =&gt; <strong><a href="https://ceilwoo.com/lab/caf_player/caf_player_v2.html" title="caf player v2">测试地址</a></strong> <strong>支持情况：</strong></p>
 <p>+———————+—–+—–+—–+—–+<br>| Browser             | Ogg | MP3 | AAC | Wav |<br>+———————+—–+—–+—–+—–+<br>| Internet Explorer 9 | No  | Yes | Yes | No  |<br>| Firefox 5           | Yes | No  | No  | Yes |<br>| Chrome 12           | Yes | Yes | Yes | Yes |<br>| Safari 5            | No  | Yes | Yes | Yes |<br>| Opera 11.5          | Yes | No  | No  | Yes |<br>+———————+—–+—–+—–+—–+</p>
-<p>-——— 现在貌似除了apple自家的QuickTime，其他播放器对caf格式的音频文件都不怎么支持，偏偏QuickTime又很龌蹉，连个播放列表都没，要听多个caf音乐的时候简直是个折磨。 google了一下无果，决定折腾一个出来凑合用用。 这个是用HTML5的File API配合firefox的QuickTime插件实现的，使用方法很简单： 1. 打开 <a href="https://ceilwoo.com/lab/caf_player/caf_player.html" title="https://ceilwoo.com/lab/caf_player/caf_player.html">https://ceilwoo.com/lab/caf_player/caf_player.html</a>   (只支持Firefox, 其他浏览器有空再说) 2. 然后把你本地的caf音频文件拖拽到播放器右上角那个dropbox区域(支持多选)，松开后就会在下方插入一个所拖放文件的列表，点击其中一个音乐就可以播放了。 3. 点音乐右边的X可以把该音乐从播放列表删除   <a href="https://ceilwoo.com/2011/12/caf_player/caf_player-2/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/12/caf_player.png" srcset="/img/loading.gif" lazyload title="caf_player"></a> <strong>使用条件：</strong> 1.Firefox 2.安装了QuickTime   <strong>实现原理：</strong> 其实是现在盛行的html5拖拽上传功能的一部分，拖放的时候可以用window.URL.createObjectURL()获取到文件的地址，然后赋值给页面上的QuickTime embed播放。 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en/Using_files_from_web_applications">mozilla的doc</a>有详细介绍这种拖拽文件的方法。 另外获取到的文件地址是 moz-filedata:38c69692-XXX 这样的一种的格式，可以直接当url来使用(譬如是图片的话把img的src改成这个就可以在页面显示出来的) 估计是出于安全因素而不直接显示 “file:///c:/“ 这样的明文路径。 PS: 虽然说是caf play，其实wav mp3等都是可以拖进去放的。 PS: 随机播放、顺序播放、播放列表等这些花哨的功能等寡人哪天心情好再加上去，啊哈哈哈</p>
+<p>-——— 现在貌似除了apple自家的QuickTime，其他播放器对caf格式的音频文件都不怎么支持，偏偏QuickTime又很龌蹉，连个播放列表都没，要听多个caf音乐的时候简直是个折磨。 google了一下无果，决定折腾一个出来凑合用用。 这个是用HTML5的File API配合firefox的QuickTime插件实现的，使用方法很简单： 1. 打开 <a href="https://ceilwoo.com/lab/caf_player/caf_player.html" title="https://ceilwoo.com/lab/caf_player/caf_player.html">https://ceilwoo.com/lab/caf_player/caf_player.html</a>   (只支持Firefox, 其他浏览器有空再说) 2. 然后把你本地的caf音频文件拖拽到播放器右上角那个dropbox区域(支持多选)，松开后就会在下方插入一个所拖放文件的列表，点击其中一个音乐就可以播放了。 3. 点音乐右边的X可以把该音乐从播放列表删除   <a href="https://ceilwoo.com/2011/12/caf_player/caf_player-2/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/12/caf_player.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload title="caf_player"></a> <strong>使用条件：</strong> 1.Firefox 2.安装了QuickTime   <strong>实现原理：</strong> 其实是现在盛行的html5拖拽上传功能的一部分，拖放的时候可以用window.URL.createObjectURL()获取到文件的地址，然后赋值给页面上的QuickTime embed播放。 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en/Using_files_from_web_applications">mozilla的doc</a>有详细介绍这种拖拽文件的方法。 另外获取到的文件地址是 moz-filedata:38c69692-XXX 这样的一种的格式，可以直接当url来使用(譬如是图片的话把img的src改成这个就可以在页面显示出来的) 估计是出于安全因素而不直接显示 “file:///c:/“ 这样的明文路径。 PS: 虽然说是caf play，其实wav mp3等都是可以拖进去放的。 PS: 随机播放、顺序播放、播放列表等这些花哨的功能等寡人哪天心情好再加上去，啊哈哈哈</p>
 
             </div>
             <hr>
@@ -315,23 +315,28 @@
                   
                 
                 
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script>
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
-          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function() {
-            new DisqusJS({
-              shortname: 'Ceil Profile',
-              apikey: 'eLPa2ZBgNwFOKsbfPXTC67GiiffkVes24AptMX7fUwpq3jQ1VWKtimmP5KMORXhY'
-            });
-          });
-        });
-      </script>
-    
-    <noscript>Please enable JavaScript to view the comments</noscript>
+  <div class="cusdis" style="width:100%">
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="01230e13-bbee-4d2d-9d89-a1fac17edc31"
+      data-page-id="0b97f606ac2335d72022257f027fd15c"
+      data-page-url="2011/12/25/caf-player/"
+      data-page-title="Caf播放器 (caf player v1.0)"
+      data-theme="auto"
+    >
+    </div>
   </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#cusdis_thread', function() {
+      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
+      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema) {
+        document.querySelector('#cusdis_thread').dataset.theme = schema
+      }
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>

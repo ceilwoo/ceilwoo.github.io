@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -242,11 +242,11 @@
             <h1 style="display: none">[踩坑记] 把vim当unity3d的代码编辑器</h1>
             
             <div class="markdown-body">
-              <p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/11/img_581cd230a21b1.png" srcset="/img/loading.gif" lazyload><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/11/img_581cd2c90f503.png" srcset="/img/loading.gif" lazyload> 双开unity有个坑爹的问题，就是monodevelop只能同时打开一个。然后我就想着一个用monodevelop，另外一个用vim，这样就可以两面开工。 先上谷爹扒了一下资料：<a target="_blank" rel="noopener" href="https://forum.unity3d.com/threads/unity3d-with-vim.355814/">参考文章</a> 作者介绍了写c#需要用到的插件:</p>
+              <p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/11/img_581cd230a21b1.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/11/img_581cd2c90f503.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload> 双开unity有个坑爹的问题，就是monodevelop只能同时打开一个。然后我就想着一个用monodevelop，另外一个用vim，这样就可以两面开工。 先上谷爹扒了一下资料：<a target="_blank" rel="noopener" href="https://forum.unity3d.com/threads/unity3d-with-vim.355814/">参考文章</a> 作者介绍了写c#需要用到的插件:</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="http://vimawesome.com/plugin/youcompleteme">http://vimawesome.com/plugin/youcompleteme</a> <a target="_blank" rel="noopener" href="http://vimawesome.com/plugin/syntastic">http://vimawesome.com/plugin/syntastic</a> <a target="_blank" rel="noopener" href="https://github.com/OmniSharp/omnisharp-vim">https://github.com/OmniSharp/omnisharp-vim</a> (还需要装个vim-dispatch)</p>
 </blockquote>
-<p>这里先用vundle啪啪啪一下子装好，然后到unity里面把默认编辑器换成macvim。 然后，噔噔噔(vim干掉monodeveloper的时候要到了吗？！) <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/11/img_581cd4ba89f47.png" srcset="/img/loading.gif" lazyload> <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/11/img_581cd4ffd9115.png" srcset="/img/loading.gif" lazyload> 代码提示还算到位，然而find usage杯具了，打开vim之后必须得等好一阵子才能跑起来，不然会一直提示找不到，但是跑起来之后呢。。只能找到当前文件的使用情况，复杂点的项目用起来要跪。有空再看看怎么折腾这个吧，解决掉的话当个monodevelope后备也是不错的。</p>
+<p>这里先用vundle啪啪啪一下子装好，然后到unity里面把默认编辑器换成macvim。 然后，噔噔噔(vim干掉monodeveloper的时候要到了吗？！) <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/11/img_581cd4ba89f47.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload> <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/11/img_581cd4ffd9115.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload> 代码提示还算到位，然而find usage杯具了，打开vim之后必须得等好一阵子才能跑起来，不然会一直提示找不到，但是跑起来之后呢。。只能找到当前文件的使用情况，复杂点的项目用起来要跪。有空再看看怎么折腾这个吧，解决掉的话当个monodevelope后备也是不错的。</p>
 
             </div>
             <hr>
@@ -311,23 +311,28 @@
                   
                 
                 
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script>
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
-          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function() {
-            new DisqusJS({
-              shortname: 'Ceil Profile',
-              apikey: 'eLPa2ZBgNwFOKsbfPXTC67GiiffkVes24AptMX7fUwpq3jQ1VWKtimmP5KMORXhY'
-            });
-          });
-        });
-      </script>
-    
-    <noscript>Please enable JavaScript to view the comments</noscript>
+  <div class="cusdis" style="width:100%">
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="01230e13-bbee-4d2d-9d89-a1fac17edc31"
+      data-page-id="fc81f17974b292aa42352cf5c973df2b"
+      data-page-url="2016/11/05/unity3d-vim/"
+      data-page-title="[踩坑记] 把vim当unity3d的代码编辑器"
+      data-theme="auto"
+    >
+    </div>
   </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#cusdis_thread', function() {
+      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
+      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema) {
+        document.querySelector('#cusdis_thread').dataset.theme = schema
+      }
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>

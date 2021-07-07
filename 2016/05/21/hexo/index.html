@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -242,7 +242,7 @@
             <h1 style="display: none">hexo踩到的坑</h1>
             
             <div class="markdown-body">
-              <p>先贴个完成图: <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/05/hexo-theme1.jpg" srcset="/img/loading.gif" lazyload alt="hexo-theme1">  <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/05/hexo-theme2.jpg" srcset="/img/loading.gif" lazyload alt="hexo-theme2"> 最近正在做一个studio的apps展示页面，主要就是放最新app的介绍。开始打算用wordpress，找个兼容移动端的用于展示app的主题。后来感觉太重口味了，迁移也麻烦了，还得搭服务器，一堆用不上的功能也太多了。。 考察一下决定用静态blog，考虑的是jekyll和hexo。首先尝试的是hexo。 然后楼主跳了两个小时的坑才把hexo搭起来orz。 简单记录一下遇到的坑点（macos） <strong>hexo命令运行时显示 “Module version mismatch. Expected 48, got 47” 或者是 “Cannot find module XX”</strong> 解决方法：npm uninstall hexo; npm install hexo –no-optional –save 不过这个对我不管用，后来我试了一下把node的版本从6.0降到5.0.0就不会报错了  <strong>hexo-renderer-sass安装失败，或者安装成功后运行hexo clean时这个模块会报错，导致页面加载需要的css资源失败</strong> 解决方法： brew install libsass 先给系统装个libsass，然后重新执行 npm install hexo-renderer-sass –save 如果还是继续失败的话就把node_modules的文件夹del掉，重新安装node-sass，然后运行hexo的时候可能会提示你要重新初始化，跟着做一次 <strong>ERROR Deployer not found: git</strong> 解决方法：npm install hexo-deployer-git –save 老实说，我觉得node社区的包平均质量比ruby gem低好多。。用gem时基本不会踩到什么坑。如果还有再来一次的机会我会试用ruby写的jekyll。。</p>
+              <p>先贴个完成图: <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/05/hexo-theme1.jpg" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="hexo-theme1">  <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/05/hexo-theme2.jpg" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="hexo-theme2"> 最近正在做一个studio的apps展示页面，主要就是放最新app的介绍。开始打算用wordpress，找个兼容移动端的用于展示app的主题。后来感觉太重口味了，迁移也麻烦了，还得搭服务器，一堆用不上的功能也太多了。。 考察一下决定用静态blog，考虑的是jekyll和hexo。首先尝试的是hexo。 然后楼主跳了两个小时的坑才把hexo搭起来orz。 简单记录一下遇到的坑点（macos） <strong>hexo命令运行时显示 “Module version mismatch. Expected 48, got 47” 或者是 “Cannot find module XX”</strong> 解决方法：npm uninstall hexo; npm install hexo –no-optional –save 不过这个对我不管用，后来我试了一下把node的版本从6.0降到5.0.0就不会报错了  <strong>hexo-renderer-sass安装失败，或者安装成功后运行hexo clean时这个模块会报错，导致页面加载需要的css资源失败</strong> 解决方法： brew install libsass 先给系统装个libsass，然后重新执行 npm install hexo-renderer-sass –save 如果还是继续失败的话就把node_modules的文件夹del掉，重新安装node-sass，然后运行hexo的时候可能会提示你要重新初始化，跟着做一次 <strong>ERROR Deployer not found: git</strong> 解决方法：npm install hexo-deployer-git –save 老实说，我觉得node社区的包平均质量比ruby gem低好多。。用gem时基本不会踩到什么坑。如果还有再来一次的机会我会试用ruby写的jekyll。。</p>
 
             </div>
             <hr>
@@ -305,23 +305,28 @@
                   
                 
                 
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script>
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
-          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function() {
-            new DisqusJS({
-              shortname: 'Ceil Profile',
-              apikey: 'eLPa2ZBgNwFOKsbfPXTC67GiiffkVes24AptMX7fUwpq3jQ1VWKtimmP5KMORXhY'
-            });
-          });
-        });
-      </script>
-    
-    <noscript>Please enable JavaScript to view the comments</noscript>
+  <div class="cusdis" style="width:100%">
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="01230e13-bbee-4d2d-9d89-a1fac17edc31"
+      data-page-id="1172e5ab34accd7c32f2072681f65ab3"
+      data-page-url="2016/05/21/hexo/"
+      data-page-title="hexo踩到的坑"
+      data-theme="auto"
+    >
+    </div>
   </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#cusdis_thread', function() {
+      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
+      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema) {
+        document.querySelector('#cusdis_thread').dataset.theme = schema
+      }
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>

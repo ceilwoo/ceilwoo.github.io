@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -247,20 +247,20 @@
 <hr>
 <p>一般来说页面上的图标会用下边的两种形式撰写：</p>
 <blockquote>
-<p><a href="#" title="Edit"><img src="\[url\]" srcset="/img/loading.gif" lazyload alt="Edit" /></a></p>
+<p><a href="#" title="Edit"><img src="\[url\]" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="Edit" /></a></p>
 </blockquote>
 <blockquote>
 <p><a href="#" class="btn\_edit" title="Edit">Edit</a></p>
 </blockquote>
-<p>前者：直接插入图标的图片，好处是该按钮是inline-block，可以很方便的插入到页面任何地方。譬如说放到一段文字的中间。 [caption id=”attachment_359” align=”alignnone” width=”308” caption=”Example_01”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_01.png" srcset="/img/loading.gif" lazyload alt="Example_01" title="mc_icon_01">[/caption] 后者：用CSS背景定位的把图标显示出来，并且把Edit文字隐去，相比前者降低了表现与逻辑的耦合性，更好的Html语义化。不过为了让图标有高度和宽度，一般情况会 把<a>加上display:block，然后用background-image把图标放进去。那么弊端也是显而易见的，假设我需要把一个 图标插入到一句话的中间，那么由于display:block的存在会直接导致图标与其他文字换行显示。 [caption id=”attachment_360” align=”alignnone” width=”181” caption=”Example_02”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_02.png" srcset="/img/loading.gif" lazyload alt="Example_02" title="mc_icon_02">[/caption] 综合两者的优点，我在TAPD中是这么定义一个图标的:</p>
+<p>前者：直接插入图标的图片，好处是该按钮是inline-block，可以很方便的插入到页面任何地方。譬如说放到一段文字的中间。 [caption id=”attachment_359” align=”alignnone” width=”308” caption=”Example_01”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_01.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="Example_01" title="mc_icon_01">[/caption] 后者：用CSS背景定位的把图标显示出来，并且把Edit文字隐去，相比前者降低了表现与逻辑的耦合性，更好的Html语义化。不过为了让图标有高度和宽度，一般情况会 把<a>加上display:block，然后用background-image把图标放进去。那么弊端也是显而易见的，假设我需要把一个 图标插入到一句话的中间，那么由于display:block的存在会直接导致图标与其他文字换行显示。 [caption id=”attachment_360” align=”alignnone” width=”181” caption=”Example_02”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_02.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="Example_02" title="mc_icon_02">[/caption] 综合两者的优点，我在TAPD中是这么定义一个图标的:</p>
 <blockquote>
 <p><a href="#" class="tag\_bug"><i>Bug</i></a></p>
 </blockquote>
-<p>[caption id=”attachment_363” align=”alignnone” width=”415” caption=”CSS”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_03.png" srcset="/img/loading.gif" lazyload alt="CSS" title="mc_icon_03">[/caption] 这样TAPD的图标的不但具有<img>形式的灵活性，同时减少耦合性、更好SEO、更好的HTML语义化…etc (因为要兼顾IE6/7/8、Firefox、Safari、Chrome中display:inline-block的实现，所以迫不得已要额外加一个<i>标签用于将文字隐藏。) 按照yahoo的rules for high performance web sites的原则，应当减少Client与Server端间的HTTP请求次数。 我还用到CSS Sprite，将多张图标图片组装成单独的一张图片，用background-position显示不同的图标 [caption id=”attachment_366” align=”alignnone” width=”160” caption=”CSS Sprite”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/tags.gif" srcset="/img/loading.gif" lazyload alt="CSS Sprite" title="tags">[/caption] 也许有人会问：</p>
+<p>[caption id=”attachment_363” align=”alignnone” width=”415” caption=”CSS”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_03.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="CSS" title="mc_icon_03">[/caption] 这样TAPD的图标的不但具有<img>形式的灵活性，同时减少耦合性、更好SEO、更好的HTML语义化…etc (因为要兼顾IE6/7/8、Firefox、Safari、Chrome中display:inline-block的实现，所以迫不得已要额外加一个<i>标签用于将文字隐藏。) 按照yahoo的rules for high performance web sites的原则，应当减少Client与Server端间的HTTP请求次数。 我还用到CSS Sprite，将多张图标图片组装成单独的一张图片，用background-position显示不同的图标 [caption id=”attachment_366” align=”alignnone” width=”160” caption=”CSS Sprite”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/tags.gif" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="CSS Sprite" title="tags">[/caption] 也许有人会问：</p>
 <blockquote>
 <p><a class="btn\_edit"></a></p>
 </blockquote>
-<p>这么写不会更简单么？并且可以减少html和CSS代码？何必要写成<a class="btn\_edit"><i>Edit</i></a> 其实我坚持在标签里写文字一方面是基于SEO的考虑，另外还考虑到一种情况，假设突然有一天我们的客户觉得编辑按钮图标太糟糕了！要求直接直接用文字。那么我稍微修改一下CSS文件便可以巧妙的把原来的图标变成一个文字链接了。又或者是客户由于某些原因访问不了TAPD的CSS文件，标签里没有文字的会变得一片空白，无法使用。 [caption id=”attachment_367” align=”alignnone” width=”409” caption=”Example_04”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_04.png" srcset="/img/loading.gif" lazyload alt="Example_04" title="mc_icon_04">[/caption] 另外由于IE6对透明背景的PNG图片支持不好，所以大部分不规则图标我都是用gif格式。但是有时候gif的256色不能满足设计师的设计要求(设计师A：俺的作品多姿多彩，256色怎么够用！！)。 所以在CSS sprite的时候我是合成了两张图片，一张对色彩要求不高并且需要透明背景的GIF图片和一张对色彩要求高的PNG图片。</p>
+<p>这么写不会更简单么？并且可以减少html和CSS代码？何必要写成<a class="btn\_edit"><i>Edit</i></a> 其实我坚持在标签里写文字一方面是基于SEO的考虑，另外还考虑到一种情况，假设突然有一天我们的客户觉得编辑按钮图标太糟糕了！要求直接直接用文字。那么我稍微修改一下CSS文件便可以巧妙的把原来的图标变成一个文字链接了。又或者是客户由于某些原因访问不了TAPD的CSS文件，标签里没有文字的会变得一片空白，无法使用。 [caption id=”attachment_367” align=”alignnone” width=”409” caption=”Example_04”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_04.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="Example_04" title="mc_icon_04">[/caption] 另外由于IE6对透明背景的PNG图片支持不好，所以大部分不规则图标我都是用gif格式。但是有时候gif的256色不能满足设计师的设计要求(设计师A：俺的作品多姿多彩，256色怎么够用！！)。 所以在CSS sprite的时候我是合成了两张图片，一张对色彩要求不高并且需要透明背景的GIF图片和一张对色彩要求高的PNG图片。</p>
 
             </div>
             <hr>
@@ -327,23 +327,28 @@
                   
                 
                 
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script>
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
-          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function() {
-            new DisqusJS({
-              shortname: 'Ceil Profile',
-              apikey: 'eLPa2ZBgNwFOKsbfPXTC67GiiffkVes24AptMX7fUwpq3jQ1VWKtimmP5KMORXhY'
-            });
-          });
-        });
-      </script>
-    
-    <noscript>Please enable JavaScript to view the comments</noscript>
+  <div class="cusdis" style="width:100%">
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="01230e13-bbee-4d2d-9d89-a1fac17edc31"
+      data-page-id="0a364728711957002304aaafb46652f8"
+      data-page-url="2009/05/11/mc-1/"
+      data-page-title="模块化CSS设计(一) - 图标"
+      data-theme="auto"
+    >
+    </div>
   </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#cusdis_thread', function() {
+      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
+      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema) {
+        document.querySelector('#cusdis_thread').dataset.theme = schema
+      }
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>

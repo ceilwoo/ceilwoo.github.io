@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -242,7 +242,7 @@
             <h1 style="display: none">在iPhone上写代码</h1>
             
             <div class="markdown-body">
-              <p>前段时间由于经常要搭和谐号，长达2小时的车程让我有了种浪费生命的感觉  T^T 后来经过一番折腾，成功用iphone+蓝牙键盘搭好个简单的网页开发IDE+调试环境。 先来个预览效果： <a href="https://ceilwoo.com/2012/12/coding-on-iphone/coding_on_iphone/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/coding_on_iphone.jpg" srcset="/img/loading.gif" lazyload alt="coding_on_iphone"></a> 为神马ip要放在键盘下方呢？ 如果放在键盘上方的话首先需要一个支架把ip倾斜撑起来，距离太远看得有点吃力(屏幕小)，还要另外带个支架出门，太麻烦了！砍了这个方案。 而放在键盘下方， 低头就看得一清二楚，另外还方便拇指对屏幕的操作，写code效率up!!!  然后介绍一下软件方面： ip需要越狱,然后装个 Cydia (不解释)，ifile (用来预览和调试网页), mobile terminal(写code就靠这个了). 另外在Cydia里把vim装上，这样就可以在mobile terminal里用来写code了，我主要写的是html, css和javascript，服务端那些就不用整了先。 另外还有一个严重的问题要解决，就是蓝牙键盘在mobile terminal上有许多按键默认是没有映射的，譬如方向键，alt，esc之类的。 神马？！！没有ESC？！众所周知，esc键对于一个vimer来说简直是生命一般的存在，只能用其他按键取代esc了，我把它改成iphone手势，屏幕往右滑动=esc(这个在mobile terminal里面可以设置)。 接下来就可以正式开工了。 打开mobile ternimal <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1608/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1608.png" srcset="/img/loading.gif" lazyload alt="IMG_1608"></a> 建个工作目录，最好直接放在mobile用户的目录下，因为命令行启动的时候默认就是打开这个目录，操作起来会比较方便。 <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1609/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1609.png" srcset="/img/loading.gif" lazyload alt="IMG_1609"></a> 蹬蹬蹬，振奋人心的vim界面出来了！默认的软键盘会比较碍事，遮住半个屏幕，在mobile ternimal里面可以设个手势隐藏掉(我设的是两个手指双击)。 写code时一边在键盘上啪啪啪，一边用大拇指划屏幕(按esc键)的感觉非常新颖。 然后介绍一下如何预览刚才写的页面效果，:w 保存一下，切出去打开ifile <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1610/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1610.png" srcset="/img/loading.gif" lazyload alt="IMG_1610"></a> 定位到工作目录，点一下刚才保存的html <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1611/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1611.png" srcset="/img/loading.gif" lazyload alt="IMG_1611"></a> 选择网页浏览器 <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1612/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1612.png" srcset="/img/loading.gif" lazyload alt="IMG_1612"></a> 刚才的劳动成果就出来啦！链接都可以正常点击，就是有个小缺点，用ifile看网页的话有时会缓存得比较厉害，要多开几次才会刷新。 剩下的跟在台式机上的IDE+浏览器开发流程差不多样子，不断的在ifile(调试)和terminal(写代码)之间切换。 当然，按这么多次home会很伤按钮，我另外还装了一个Activator，设定了一个手势用来打开ip的任务管理器，配合开头介绍的上键盘下ip体位，写代码时两拇指往上轻轻扫一下就可以切换到ifile里面看效果。 =v= 就这样搭了几次和谐号就把几个页面写的七七八八，回到家里加工一下就可以交货了，哦嚯嚯嚯。 除了写网页前端，写ruby也是不在话下, Cydia里面装个ruby运行库就又可以开工了，简直就是一部微型开发机 *-*。 另外终端软件除了mobile terminal还有issh也是不错的，有兴趣的可以试试。 再贴个vim编辑多文件时的状态 <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1615/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1615.png" srcset="/img/loading.gif" lazyload alt="IMG_1615"></a> (不小心截了个菊花进去，请无视)</p>
+              <p>前段时间由于经常要搭和谐号，长达2小时的车程让我有了种浪费生命的感觉  T^T 后来经过一番折腾，成功用iphone+蓝牙键盘搭好个简单的网页开发IDE+调试环境。 先来个预览效果： <a href="https://ceilwoo.com/2012/12/coding-on-iphone/coding_on_iphone/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/coding_on_iphone.jpg" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="coding_on_iphone"></a> 为神马ip要放在键盘下方呢？ 如果放在键盘上方的话首先需要一个支架把ip倾斜撑起来，距离太远看得有点吃力(屏幕小)，还要另外带个支架出门，太麻烦了！砍了这个方案。 而放在键盘下方， 低头就看得一清二楚，另外还方便拇指对屏幕的操作，写code效率up!!!  然后介绍一下软件方面： ip需要越狱,然后装个 Cydia (不解释)，ifile (用来预览和调试网页), mobile terminal(写code就靠这个了). 另外在Cydia里把vim装上，这样就可以在mobile terminal里用来写code了，我主要写的是html, css和javascript，服务端那些就不用整了先。 另外还有一个严重的问题要解决，就是蓝牙键盘在mobile terminal上有许多按键默认是没有映射的，譬如方向键，alt，esc之类的。 神马？！！没有ESC？！众所周知，esc键对于一个vimer来说简直是生命一般的存在，只能用其他按键取代esc了，我把它改成iphone手势，屏幕往右滑动=esc(这个在mobile terminal里面可以设置)。 接下来就可以正式开工了。 打开mobile ternimal <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1608/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1608.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="IMG_1608"></a> 建个工作目录，最好直接放在mobile用户的目录下，因为命令行启动的时候默认就是打开这个目录，操作起来会比较方便。 <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1609/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1609.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="IMG_1609"></a> 蹬蹬蹬，振奋人心的vim界面出来了！默认的软键盘会比较碍事，遮住半个屏幕，在mobile ternimal里面可以设个手势隐藏掉(我设的是两个手指双击)。 写code时一边在键盘上啪啪啪，一边用大拇指划屏幕(按esc键)的感觉非常新颖。 然后介绍一下如何预览刚才写的页面效果，:w 保存一下，切出去打开ifile <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1610/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1610.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="IMG_1610"></a> 定位到工作目录，点一下刚才保存的html <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1611/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1611.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="IMG_1611"></a> 选择网页浏览器 <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1612/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1612.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="IMG_1612"></a> 刚才的劳动成果就出来啦！链接都可以正常点击，就是有个小缺点，用ifile看网页的话有时会缓存得比较厉害，要多开几次才会刷新。 剩下的跟在台式机上的IDE+浏览器开发流程差不多样子，不断的在ifile(调试)和terminal(写代码)之间切换。 当然，按这么多次home会很伤按钮，我另外还装了一个Activator，设定了一个手势用来打开ip的任务管理器，配合开头介绍的上键盘下ip体位，写代码时两拇指往上轻轻扫一下就可以切换到ifile里面看效果。 =v= 就这样搭了几次和谐号就把几个页面写的七七八八，回到家里加工一下就可以交货了，哦嚯嚯嚯。 除了写网页前端，写ruby也是不在话下, Cydia里面装个ruby运行库就又可以开工了，简直就是一部微型开发机 *-*。 另外终端软件除了mobile terminal还有issh也是不错的，有兴趣的可以试试。 再贴个vim编辑多文件时的状态 <a href="https://ceilwoo.com/2012/12/coding-on-iphone/img_1615/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2012/12/IMG_1615.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="IMG_1615"></a> (不小心截了个菊花进去，请无视)</p>
 
             </div>
             <hr>
@@ -311,23 +311,28 @@
                   
                 
                 
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script>
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
-          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function() {
-            new DisqusJS({
-              shortname: 'Ceil Profile',
-              apikey: 'eLPa2ZBgNwFOKsbfPXTC67GiiffkVes24AptMX7fUwpq3jQ1VWKtimmP5KMORXhY'
-            });
-          });
-        });
-      </script>
-    
-    <noscript>Please enable JavaScript to view the comments</noscript>
+  <div class="cusdis" style="width:100%">
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="01230e13-bbee-4d2d-9d89-a1fac17edc31"
+      data-page-id="abca851998b1b4c110e86b5f58f42a4a"
+      data-page-url="2012/12/18/coding-on-iphone-1/"
+      data-page-title="在iPhone上写代码"
+      data-theme="auto"
+    >
+    </div>
   </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#cusdis_thread', function() {
+      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
+      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema) {
+        document.querySelector('#cusdis_thread').dataset.theme = schema
+      }
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>

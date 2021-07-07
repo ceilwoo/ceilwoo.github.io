@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -246,7 +246,7 @@
 <blockquote>
 <p>.demobox{<br>  width:200px;<br>  overflow:hidden;<br>  height:2em;<br>  line-height:2em;<br>  word-break:break-all;<br>  text-overflow:ellipsis; /* IE中截断后加上… */<br>  white-space:nowrap;     /* 不换行 */<br>}</p>
 </blockquote>
-<p>效果: <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/07/css-cut-01.gif" srcset="/img/loading.gif" lazyload alt="css-cut-01" title="css-cut-01"> 如果不考虑长字符串的情况那么只需要 overflow:hidden和height属性就可以了，把换行的数据都hidden掉，间接实现截断效果，嘿嘿。 PS: FF中去掉white-space:nowrap属性就不会出现截断半个中文字的情况了 <strong>2.自适应宽度截断</strong> 如果内容有长字符串或者是加了white-space:nowrap的话，那么是会把外部容器撑破的，于是就不能自适应宽度截断了。 这里我利用了一下table的table-layout:fixed来间接实现。table在fixed模式中,td(或th)不会因为里面内容的大小而改变大小。[Gmail和QQmail的邮件列表都是采用这种方法 :D] 先简单看一下效果： <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/07/css-cut-02.gif" srcset="/img/loading.gif" lazyload alt="css-cut-02" title="css-cut-02"> table用了fixed模式并且设置了width:100%,那么table以及td的宽度就只有200px了，溢出的内容用overflow:hidden隐藏掉，于是便实现了自适应宽度的截断效果。 当然这方法也是有弊端的，首先为了实现效果把html结构弄复杂了，其次是(看下图) <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/07/css-cut-03.gif" srcset="/img/loading.gif" lazyload alt="css-cut-03" title="css-cut-03"> 截断的单元格与旁边的数据贴得太近了，并且padding-right是控制不了的。Gmail用了个十分懒的方法，在两个td中间塞多一个空白的td把两列数据分开，看起来会美观些。而QQmail是在次列td里面放置一个div元素，设置适当的margin把截断的数据撑开，让数据看起来不会连成一块。我决定塞个&amp;nbsp进去好了，省事 :D</p>
+<p>效果: <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/07/css-cut-01.gif" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="css-cut-01" title="css-cut-01"> 如果不考虑长字符串的情况那么只需要 overflow:hidden和height属性就可以了，把换行的数据都hidden掉，间接实现截断效果，嘿嘿。 PS: FF中去掉white-space:nowrap属性就不会出现截断半个中文字的情况了 <strong>2.自适应宽度截断</strong> 如果内容有长字符串或者是加了white-space:nowrap的话，那么是会把外部容器撑破的，于是就不能自适应宽度截断了。 这里我利用了一下table的table-layout:fixed来间接实现。table在fixed模式中,td(或th)不会因为里面内容的大小而改变大小。[Gmail和QQmail的邮件列表都是采用这种方法 :D] 先简单看一下效果： <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/07/css-cut-02.gif" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="css-cut-02" title="css-cut-02"> table用了fixed模式并且设置了width:100%,那么table以及td的宽度就只有200px了，溢出的内容用overflow:hidden隐藏掉，于是便实现了自适应宽度的截断效果。 当然这方法也是有弊端的，首先为了实现效果把html结构弄复杂了，其次是(看下图) <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/07/css-cut-03.gif" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="css-cut-03" title="css-cut-03"> 截断的单元格与旁边的数据贴得太近了，并且padding-right是控制不了的。Gmail用了个十分懒的方法，在两个td中间塞多一个空白的td把两列数据分开，看起来会美观些。而QQmail是在次列td里面放置一个div元素，设置适当的margin把截断的数据撑开，让数据看起来不会连成一块。我决定塞个&amp;nbsp进去好了，省事 :D</p>
 
             </div>
             <hr>
@@ -313,23 +313,28 @@
                   
                 
                 
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script>
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
-          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function() {
-            new DisqusJS({
-              shortname: 'Ceil Profile',
-              apikey: 'eLPa2ZBgNwFOKsbfPXTC67GiiffkVes24AptMX7fUwpq3jQ1VWKtimmP5KMORXhY'
-            });
-          });
-        });
-      </script>
-    
-    <noscript>Please enable JavaScript to view the comments</noscript>
+  <div class="cusdis" style="width:100%">
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="01230e13-bbee-4d2d-9d89-a1fac17edc31"
+      data-page-id="ca7ca4eef954be31ec8d5c51eae614ca"
+      data-page-url="2009/07/30/using-css-to-cut-long-word/"
+      data-page-title="用CSS截断过长数据"
+      data-theme="auto"
+    >
+    </div>
   </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#cusdis_thread', function() {
+      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
+      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema) {
+        document.querySelector('#cusdis_thread').dataset.theme = schema
+      }
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>

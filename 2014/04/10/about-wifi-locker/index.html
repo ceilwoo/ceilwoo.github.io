@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -242,7 +242,7 @@
             <h1 style="display: none">关于wifi门锁的实现</h1>
             
             <div class="markdown-body">
-              <p>很久以前的一个想法，打算做个用wifi控制的门锁，开关的客户端放在手机上。 使用场景大概就是站在门附近，连上室内的wifi，然后用手机对门锁进行开关的操作，感觉比掏钥匙开锁会节省不少时间。不过没想到什么省时省力的实现方式就搁置了，然后刚才洗澡时突然灵光闪现 :D，先记录一下免得过几天忘了。 <a href="https://ceilwoo.com/2014/04/about-wifi-locker/wifi-locker/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2014/04/wifi-locker.png" srcset="/img/loading.gif" lazyload alt="wifi-locker"></a> 主要方向是实现一个简单的电磁阀，中间的绿色部分是一块树莓派，用来控制电磁铁的通电和断电。 当电磁铁通电时金属块会被吸起来，这时候就是解锁，断电的时候金属块由于重力作用会从门锁下方的出口掉下，卡住门(要在地板上钻个小坑)。 这样一来早上就可以钻被窝里远程给公司开门了，啊哈哈哈哈哈。。。 存在的问题： 1.室内断电，会变成锁着的状态，可以在里边加个方便的物理开关，如果人在外边的话就。。。 2.路由器或者树莓派的意外损坏</p>
+              <p>很久以前的一个想法，打算做个用wifi控制的门锁，开关的客户端放在手机上。 使用场景大概就是站在门附近，连上室内的wifi，然后用手机对门锁进行开关的操作，感觉比掏钥匙开锁会节省不少时间。不过没想到什么省时省力的实现方式就搁置了，然后刚才洗澡时突然灵光闪现 :D，先记录一下免得过几天忘了。 <a href="https://ceilwoo.com/2014/04/about-wifi-locker/wifi-locker/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2014/04/wifi-locker.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="wifi-locker"></a> 主要方向是实现一个简单的电磁阀，中间的绿色部分是一块树莓派，用来控制电磁铁的通电和断电。 当电磁铁通电时金属块会被吸起来，这时候就是解锁，断电的时候金属块由于重力作用会从门锁下方的出口掉下，卡住门(要在地板上钻个小坑)。 这样一来早上就可以钻被窝里远程给公司开门了，啊哈哈哈哈哈。。。 存在的问题： 1.室内断电，会变成锁着的状态，可以在里边加个方便的物理开关，如果人在外边的话就。。。 2.路由器或者树莓派的意外损坏</p>
 
             </div>
             <hr>
@@ -305,23 +305,28 @@
                   
                 
                 
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script>
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqusjs.css');
-          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/disqus.js', function() {
-            new DisqusJS({
-              shortname: 'Ceil Profile',
-              apikey: 'eLPa2ZBgNwFOKsbfPXTC67GiiffkVes24AptMX7fUwpq3jQ1VWKtimmP5KMORXhY'
-            });
-          });
-        });
-      </script>
-    
-    <noscript>Please enable JavaScript to view the comments</noscript>
+  <div class="cusdis" style="width:100%">
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="01230e13-bbee-4d2d-9d89-a1fac17edc31"
+      data-page-id="01a5ee923a737b52c67b16fc1989d759"
+      data-page-url="2014/04/10/about-wifi-locker/"
+      data-page-title="关于wifi门锁的实现"
+      data-theme="auto"
+    >
+    </div>
   </div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#cusdis_thread', function() {
+      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
+      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema) {
+        document.querySelector('#cusdis_thread').dataset.theme = schema
+      }
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>
