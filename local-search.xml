@@ -8,7 +8,7 @@
     <link href="/2021/07/12/20210712-hexo-filter-image/"/>
     <url>/2021/07/12/20210712-hexo-filter-image/</url>
     
-    <content type="html"><![CDATA[<p><img src="/uploads/2021/07/hexo-github.jpg"></p><p>不大喜欢hexo官方推荐的图片存储方式，图片和文章会混在一个文件夹里。<br>我按照wordpress的规则把所有图片资源放在uploads文件夹，按照年月存放，这样的好处是文章和资源分离，但是也产生了个新问题，就是每次md添加图片的时候得写一长串地址，于是诞生了这个简单的hexo图片过滤器。</p><p>写文章时只需要简单写上图片名字，渲染时候可以自动生成需要的地址(包括相对地址、绝对地址)</p><p>markdown里的图片</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">内容</span>](<span class="hljs-link">图 片.jpg</span>)<br></code></pre></td></tr></table></figure><p>渲染后:</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">内容</span>](<span class="hljs-link">https://cdn.jsdelivr.net/XXXX/XXXX/图片.jpg</span>)<br></code></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * simle hexo image filter by ceil</span><br><span class="hljs-comment"> * 保存成js文件放在hexo项目的script(默认没有，需要自建)文件即可生效</span><br><span class="hljs-comment"> **/</span><br><br><span class="hljs-comment">//图片需要增加的前缀，可以用来添加cdn前缀</span><br><span class="hljs-comment">//PREFIX = &quot;https://cdn.jsdelivr.net/gh/USERNAME/USERNAME.github.io@latest&quot;</span><br>PREFIX = <span class="hljs-string">&quot;&quot;</span><br><br><span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;*** [reformatImg plugin begin] ****&quot;</span>);<br><br><span class="hljs-keyword">var</span> format_img = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>&#123;<br><span class="hljs-keyword">if</span>(data.layout == <span class="hljs-string">&#x27;post&#x27;</span>)&#123;<br><span class="hljs-keyword">const</span> &#123;date, content&#125; = data;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * 修改markdown图片链接</span><br><span class="hljs-comment"> */</span><br><span class="hljs-comment">//匹配不以http开头或者/开头，自动把图片名修改成 /uploads/$&#123;year&#125;/$&#123;month&#125;/ 格式</span><br><span class="hljs-keyword">let</span> regExp = <span class="hljs-regexp">/\((?!http)(?!\/)([^\?\\]*?)(\.jpg|\.png)\)/g</span><br><span class="hljs-keyword">const</span> year = date.year().toString();<br><span class="hljs-keyword">const</span> month = (date.month() + <span class="hljs-number">1</span>).toString().padStart(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;0&quot;</span>);<br>data.content = data.content.replace(regExp, <span class="hljs-string">`(<span class="hljs-subst">$&#123;PREFIX&#125;</span>/uploads/<span class="hljs-subst">$&#123;year&#125;</span>/<span class="hljs-subst">$&#123;month&#125;</span>/$1$2)`</span>);<br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * 修改index_img, 部分主题需要用到</span><br><span class="hljs-comment"> */</span><br>   <span class="hljs-keyword">if</span>(data.index_img &amp;&amp; !data.index_img.includes(<span class="hljs-string">&quot;/&quot;</span>))&#123;<br><span class="hljs-built_in">console</span>.info(<span class="hljs-string">`--- 优化图片路径： <span class="hljs-subst">$&#123;data.path&#125;</span> ---------------------`</span>);<br>data.index_img = <span class="hljs-string">`<span class="hljs-subst">$&#123;PREFIX&#125;</span>/uploads/<span class="hljs-subst">$&#123;year&#125;</span>/<span class="hljs-subst">$&#123;month&#125;</span>/`</span> + data.index_img;<br>&#125;<br>&#125;<br><span class="hljs-keyword">return</span> data;<br>&#125;<br><br>hexo.extend.filter.register(<span class="hljs-string">&#x27;before_post_render&#x27;</span>, format_img, <span class="hljs-number">9</span>);<br></code></pre></td></tr></table></figure><span id="more"></span><p>PS: 今天的大部分时间耗在正则上，每用一次都得查字典 orz<br><img src="/uploads/2021/07/javascript-regex.png"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/hexo-github.jpg"></p><p>不大喜欢hexo官方推荐的图片存储方式，图片和文章会混在一个文件夹里。<br>我按照wordpress的规则把所有图片资源放在uploads文件夹，按照年月存放，这样的好处是文章和资源分离，但是也产生了个新问题，就是每次md添加图片的时候得写一长串地址，于是诞生了这个简单的hexo图片过滤器。</p><p>写文章时只需要简单写上图片名字，渲染时候可以自动生成需要的地址(包括相对地址、绝对地址)</p><p>markdown里的图片</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">内容</span>](<span class="hljs-link">图 片.jpg</span>)<br></code></pre></td></tr></table></figure><p>渲染后:</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">内容</span>](<span class="hljs-link">https://cdn.jsdelivr.net/XXXX/XXXX/图片.jpg</span>)<br></code></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * simle hexo image filter by ceil</span><br><span class="hljs-comment"> * 保存成js文件放在hexo项目的script(默认没有，需要自建)文件即可生效</span><br><span class="hljs-comment"> **/</span><br><br><span class="hljs-comment">//图片需要增加的前缀，可以用来添加cdn前缀</span><br><span class="hljs-comment">//PREFIX = &quot;https://cdn.jsdelivr.net/gh/USERNAME/USERNAME.github.io@latest&quot;</span><br>PREFIX = <span class="hljs-string">&quot;&quot;</span><br><br><span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;*** [reformatImg plugin begin] ****&quot;</span>);<br><br><span class="hljs-keyword">var</span> format_img = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>&#123;<br><span class="hljs-keyword">if</span>(data.layout == <span class="hljs-string">&#x27;post&#x27;</span>)&#123;<br><span class="hljs-keyword">const</span> &#123;date, content&#125; = data;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * 修改markdown图片链接</span><br><span class="hljs-comment"> */</span><br><span class="hljs-comment">//匹配不以http开头或者/开头，自动把图片名修改成 /uploads/$&#123;year&#125;/$&#123;month&#125;/ 格式</span><br><span class="hljs-keyword">let</span> regExp = <span class="hljs-regexp">/\((?!http)(?!\/)([^\?\\]*?)(\.jpg|\.png)\)/g</span><br><span class="hljs-keyword">const</span> year = date.year().toString();<br><span class="hljs-keyword">const</span> month = (date.month() + <span class="hljs-number">1</span>).toString().padStart(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;0&quot;</span>);<br>data.content = data.content.replace(regExp, <span class="hljs-string">`(<span class="hljs-subst">$&#123;PREFIX&#125;</span>/uploads/<span class="hljs-subst">$&#123;year&#125;</span>/<span class="hljs-subst">$&#123;month&#125;</span>/$1$2)`</span>);<br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * 修改index_img, 部分主题需要用到</span><br><span class="hljs-comment"> */</span><br>   <span class="hljs-keyword">if</span>(data.index_img &amp;&amp; !data.index_img.includes(<span class="hljs-string">&quot;/&quot;</span>))&#123;<br><span class="hljs-built_in">console</span>.info(<span class="hljs-string">`--- 优化图片路径： <span class="hljs-subst">$&#123;data.path&#125;</span> ---------------------`</span>);<br>data.index_img = <span class="hljs-string">`<span class="hljs-subst">$&#123;PREFIX&#125;</span>/uploads/<span class="hljs-subst">$&#123;year&#125;</span>/<span class="hljs-subst">$&#123;month&#125;</span>/`</span> + data.index_img;<br>&#125;<br>&#125;<br><span class="hljs-keyword">return</span> data;<br>&#125;<br><br>hexo.extend.filter.register(<span class="hljs-string">&#x27;before_post_render&#x27;</span>, format_img, <span class="hljs-number">9</span>);<br></code></pre></td></tr></table></figure><span id="more"></span><p>PS: 今天的大部分时间耗在正则上，每用一次都得查字典 orz<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/javascript-regex.png"></p>]]></content>
     
     
     <categories>
@@ -37,7 +37,7 @@
     <link href="/2021/07/12/20210712-trine4/"/>
     <url>/2021/07/12/20210712-trine4/</url>
     
-    <content type="html"><![CDATA[<p><img src="/uploads/2021/07/trine4-1.jpg" alt="三位一体4 trine4"><br><img src="/uploads/2021/07/trine4-2.jpg" alt="三位一体4 trine4"><br><img src="/uploads/2021/07/trine4-3.jpg" alt="三位一体4 trine4"><br><img src="/uploads/2021/07/trine4-4.jpg" alt="三位一体4 trine4"></p><p>好久没通过游戏了，偶然入了switch的三位一体4，跟老婆在友好合作(相杀相爱)的环境下花了20小时通关。<br>物理解密+RPG的挺好玩的。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/trine4-1.jpg" alt="三位一体4 trine4"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/trine4-2.jpg" alt="三位一体4 trine4"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/trine4-3.jpg" alt="三位一体4 trine4"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/trine4-4.jpg" alt="三位一体4 trine4"></p><p>好久没通过游戏了，偶然入了switch的三位一体4，跟老婆在友好合作(相杀相爱)的环境下花了20小时通关。<br>物理解密+RPG的挺好玩的。</p>]]></content>
     
     
     <categories>
@@ -62,7 +62,7 @@
     <link href="/2021/07/10/20210710-houjie/"/>
     <url>/2021/07/10/20210710-houjie/</url>
     
-    <content type="html"><![CDATA[<p>找好友蹭饭，吃吃喝喝一整天，哈哈。</p><p><img src="/uploads/2021/07/houjie1.png" alt="李先生的咖啡店"><br>李先生的咖啡店很有格调，吃喝的都长得很好看。<br><img src="/uploads/2021/07/houjie2.png" alt="李先生的咖啡店"><br><img src="/uploads/2021/07/houjie3.png" alt="碌鹅"><br>碌鹅-类似于酱油鹅<br><img src="/uploads/2021/07/houjie4.png" alt="罗氏虾"><br>姜葱罗氏虾，罗氏虾的操作比较优秀，里面切开后盖在碟子上显得特别大只。<br><img src="/uploads/2021/07/houjie5.png" alt="藕饼"><br>鱼肉和墨鱼肉酿藕饼，很劲道<br><img src="/uploads/2021/07/houjie6.png" alt="烧鹅濑"><br>烧鹅濑粉-东莞招牌菜，跟桂林米粉吃起来不太一样，据说以前是用剩饭做的面条。</p>]]></content>
+    <content type="html"><![CDATA[<p>找好友蹭饭，吃吃喝喝一整天，哈哈。</p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/houjie1.png" alt="李先生的咖啡店"><br>李先生的咖啡店很有格调，吃喝的都长得很好看。<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/houjie2.png" alt="李先生的咖啡店"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/houjie3.png" alt="碌鹅"><br>碌鹅-类似于酱油鹅<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/houjie4.png" alt="罗氏虾"><br>姜葱罗氏虾，罗氏虾的操作比较优秀，里面切开后盖在碟子上显得特别大只。<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/houjie5.png" alt="藕饼"><br>鱼肉和墨鱼肉酿藕饼，很劲道<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/houjie6.png" alt="烧鹅濑"><br>烧鹅濑粉-东莞招牌菜，跟桂林米粉吃起来不太一样，据说以前是用剩饭做的面条。</p>]]></content>
     
     
     <categories>
@@ -285,7 +285,7 @@
     <link href="/2020/04/28/20200428-food/"/>
     <url>/2020/04/28/20200428-food/</url>
     
-    <content type="html"><![CDATA[<p><img src="/uploads/2020/04/food1.jpg" alt="香格里拉自助餐"><br><img src="/uploads/2020/04/food2.png" alt="香格里拉自助餐"><br><img src="/uploads/2020/04/food3.jpg" alt="横河佬茶市"><br>茶点堆在一起的视觉效果很好<br><img src="/uploads/2020/04/food4.png" alt="横河佬茶市"><br><img src="/uploads/2020/04/food5.jpg" alt="试试网红奶茶"><br><img src="/uploads/2020/04/food6.jpg" alt="最近吃到一个比较厚道的沙拉"><br><img src="/uploads/2020/04/food7.jpg" alt="大馥烧肉井饭"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/food1.jpg" alt="香格里拉自助餐"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/food2.png" alt="香格里拉自助餐"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/food3.jpg" alt="横河佬茶市"><br>茶点堆在一起的视觉效果很好<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/food4.png" alt="横河佬茶市"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/food5.jpg" alt="试试网红奶茶"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/food6.jpg" alt="最近吃到一个比较厚道的沙拉"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/food7.jpg" alt="大馥烧肉井饭"></p>]]></content>
     
     
     <categories>
@@ -387,7 +387,7 @@
     <link href="/2020/04/18/20200408-plant/"/>
     <url>/2020/04/18/20200408-plant/</url>
     
-    <content type="html"><![CDATA[<p><img src="/uploads/2020/04/plant1.jpg"><br><img src="/uploads/2020/04/plant2.jpg"><br>这颗肉儿长太长自己把自己压断了，于是变成了2颗。<br><img src="/uploads/2020/04/plant3.jpg"><br><img src="/uploads/2020/04/plant4.jpg"><br>最近新撸了两盆多肉叶子，长势不错。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/plant1.jpg"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/plant2.jpg"><br>这颗肉儿长太长自己把自己压断了，于是变成了2颗。<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/plant3.jpg"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/plant4.jpg"><br>最近新撸了两盆多肉叶子，长势不错。</p>]]></content>
     
     
     <categories>
@@ -412,7 +412,7 @@
     <link href="/2020/04/15/20200415-bike/"/>
     <url>/2020/04/15/20200415-bike/</url>
     
-    <content type="html"><![CDATA[<p><img src="/uploads/2020/04/bike.jpg" alt="功学社KHS-T3F"><br>踩了8年的坐骑，就换了个刹车和把手，质量杠杠的。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/bike.jpg" alt="功学社KHS-T3F"><br>踩了8年的坐骑，就换了个刹车和把手，质量杠杠的。</p>]]></content>
     
     
     <categories>
@@ -439,7 +439,7 @@
     <link href="/2020/04/08/20200408-stock/"/>
     <url>/2020/04/08/20200408-stock/</url>
     
-    <content type="html"><![CDATA[<p><img src="/uploads/2020/04/stock.jpg"><br>今年的黑天鹅-新冠疫情导致暴跌。再跌的话要把上一年的收入吐出来了。<br>最近把一些收益好的医疗行业出了，放到5G和消费基上，感觉医疗行业涨的差不多了。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/stock.jpg"><br>今年的黑天鹅-新冠疫情导致暴跌。再跌的话要把上一年的收入吐出来了。<br>最近把一些收益好的医疗行业出了，放到5G和消费基上，感觉医疗行业涨的差不多了。</p>]]></content>
     
     
     <categories>
@@ -464,7 +464,7 @@
     <link href="/2020/04/05/20200405-cat/"/>
     <url>/2020/04/05/20200405-cat/</url>
     
-    <content type="html"><![CDATA[<p><img src="/uploads/2020/04/cat.jpg" alt="橘爷太优秀了"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/cat.jpg" alt="橘爷太优秀了"></p>]]></content>
     
     
     <categories>
@@ -489,7 +489,7 @@
     <link href="/2020/04/02/20200402-brace/"/>
     <url>/2020/04/02/20200402-brace/</url>
     
-    <content type="html"><![CDATA[<p>有几颗牙齿长歪了，因为不容易清洁坏了几颗，为了健康问题狠下心矫正一下。</p><p><img src="/uploads/2020/04/brace1.png" alt="时代天使冠军版"><br><img src="/uploads/2020/04/brace2.png" alt="时代天使冠军版"></p><p>我选的是时代天使，牙科门诊优惠后需要 38K，比隐适美便宜几K (医生说效果都一样)<br>矫正途中因为牙齿移动到目标位置需要比较长的时间，期间容易牙齿合不上，这时就需要带着牙套吃东西。<br>时代天使牙套的硬度真不错，带上比自己的牙齿还好使。用了大约一个月适应后带着牙套基本无感，很舒服的矫正过程。</p><p>掐指一算还有36副x10=360天就能解决牙齿的健康问题了。</p>]]></content>
+    <content type="html"><![CDATA[<p>有几颗牙齿长歪了，因为不容易清洁坏了几颗，为了健康问题狠下心矫正一下。</p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/brace1.png" alt="时代天使冠军版"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/04/brace2.png" alt="时代天使冠军版"></p><p>我选的是时代天使，牙科门诊优惠后需要 38K，比隐适美便宜几K (医生说效果都一样)<br>矫正途中因为牙齿移动到目标位置需要比较长的时间，期间容易牙齿合不上，这时就需要带着牙套吃东西。<br>时代天使牙套的硬度真不错，带上比自己的牙齿还好使。用了大约一个月适应后带着牙套基本无感，很舒服的矫正过程。</p><p>掐指一算还有36副x10=360天就能解决牙齿的健康问题了。</p>]]></content>
     
     
     <categories>
@@ -541,7 +541,7 @@
     <link href="/2020/03/15/20200315-%E9%AC%BC%E7%81%AD%E4%B9%8B%E5%88%83/"/>
     <url>/2020/03/15/20200315-%E9%AC%BC%E7%81%AD%E4%B9%8B%E5%88%83/</url>
     
-    <content type="html"><![CDATA[<p><img src="/uploads/2020/03/%E9%AC%BC%E7%81%AD%E4%B9%8B%E5%88%83.jpg" alt="鬼灭之刃"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2020/03/%E9%AC%BC%E7%81%AD%E4%B9%8B%E5%88%83.jpg" alt="鬼灭之刃"></p>]]></content>
     
     
     <categories>
@@ -1911,9 +1911,9 @@
     
     <tags>
       
-      <tag>Food</tag>
-      
       <tag>Program</tag>
+      
+      <tag>Food</tag>
       
       <tag>iDea</tag>
       
@@ -1971,11 +1971,11 @@
     
     <tags>
       
+      <tag>Program</tag>
+      
       <tag>Life</tag>
       
       <tag>Food</tag>
-      
-      <tag>Program</tag>
       
       <tag>iDea</tag>
       
@@ -2004,11 +2004,11 @@
     
     <tags>
       
+      <tag>Program</tag>
+      
       <tag>Life</tag>
       
       <tag>Food</tag>
-      
-      <tag>Program</tag>
       
       <tag>iDea</tag>
       
@@ -2700,7 +2700,7 @@
     <link href="/2016/09/22/soul-knights/"/>
     <url>/2016/09/22/soul-knights/</url>
     
-    <content type="html"><![CDATA[<p><img src="/uploads/2016/09/soul-knights-01.jpg"><br><img src="/uploads/2016/09/soul-knights-02.jpg"></p><p> 最近体验了一款日游《Soul Knights》，人物画风挺合口味。 战斗方式是设定好队伍后，每回合攻击一次，回合之间可以设置切换战斗队列，设置切换的话下一回合第二排会变成第一排，第一排就插到最后。 </p><p> <img src="/uploads/2016/09/soul-knights-03.jpg"></p><p> 每个角色有3个阵列技能和一次魔法技能，根据角色在不同的阵列位置，会自动使用对应的阵列技能，但是第一排的阵列技能是没有回复的，譬如游戏里的奶妈，第一个阵列技是普通攻击，二三才是回复，也就是说打持久战的时候需要不断的切换队列，让前线队伍切换到后排回血，这个设定能搭配出许多有趣的组队方式。 </p><p> 成长方面是典型的cost+吃卡升级+吃自己突破，卡面从1星到7星分布，每多一星数值碾压了十分厉害，但是cost的存在会让组队不会这么单一性，像60多级队伍里就只能塞3只7星角色，所以会有很多的队伍搭配方法。我的主力队主攻手是一只7星满破满级的国王(成长极限)，国王后面有一只军乐，增加国王50%攻击，国王同列有一个魔王，增加人类伤害12%，然后国王是整排攻击，目前在竞技场就这么一排排的秒着过去(数值碾压太厉害)。</p><p> <img src="/uploads/2016/09/soul-knights-04.jpg"><br> <img src="/uploads/2016/09/soul-knights-05.jpg"><br> <img src="/uploads/2016/09/soul-knights-06.jpg"><br> <img src="/uploads/2016/09/soul-knights-07.jpg"><br> <img src="/uploads/2016/09/soul-knights-08.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/09/soul-knights-01.jpg"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/09/soul-knights-02.jpg"></p><p> 最近体验了一款日游《Soul Knights》，人物画风挺合口味。 战斗方式是设定好队伍后，每回合攻击一次，回合之间可以设置切换战斗队列，设置切换的话下一回合第二排会变成第一排，第一排就插到最后。 </p><p> <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/09/soul-knights-03.jpg"></p><p> 每个角色有3个阵列技能和一次魔法技能，根据角色在不同的阵列位置，会自动使用对应的阵列技能，但是第一排的阵列技能是没有回复的，譬如游戏里的奶妈，第一个阵列技是普通攻击，二三才是回复，也就是说打持久战的时候需要不断的切换队列，让前线队伍切换到后排回血，这个设定能搭配出许多有趣的组队方式。 </p><p> 成长方面是典型的cost+吃卡升级+吃自己突破，卡面从1星到7星分布，每多一星数值碾压了十分厉害，但是cost的存在会让组队不会这么单一性，像60多级队伍里就只能塞3只7星角色，所以会有很多的队伍搭配方法。我的主力队主攻手是一只7星满破满级的国王(成长极限)，国王后面有一只军乐，增加国王50%攻击，国王同列有一个魔王，增加人类伤害12%，然后国王是整排攻击，目前在竞技场就这么一排排的秒着过去(数值碾压太厉害)。</p><p> <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/09/soul-knights-04.jpg"><br> <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/09/soul-knights-05.jpg"><br> <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/09/soul-knights-06.jpg"><br> <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/09/soul-knights-07.jpg"><br> <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2016/09/soul-knights-08.jpg"></p>]]></content>
     
     
     <categories>
@@ -2970,9 +2970,9 @@
     
     <tags>
       
-      <tag>Life</tag>
-      
       <tag>Program</tag>
+      
+      <tag>Life</tag>
       
       <tag>Firefox</tag>
       
@@ -3656,9 +3656,9 @@
     
     <tags>
       
-      <tag>Life</tag>
-      
       <tag>Program</tag>
+      
+      <tag>Life</tag>
       
       <tag>conoha</tag>
       
@@ -3712,9 +3712,9 @@
     
     <tags>
       
-      <tag>Life</tag>
-      
       <tag>Program</tag>
+      
+      <tag>Life</tag>
       
     </tags>
     
@@ -4316,9 +4316,9 @@
     
     <tags>
       
-      <tag>Life</tag>
-      
       <tag>Program</tag>
+      
+      <tag>Life</tag>
       
     </tags>
     
@@ -5289,9 +5289,9 @@
     
     <tags>
       
-      <tag>Life</tag>
-      
       <tag>Program</tag>
+      
+      <tag>Life</tag>
       
       <tag>iPhone</tag>
       
@@ -5758,7 +5758,7 @@
     <link href="/2012/05/16/big-wood-games/"/>
     <url>/2012/05/16/big-wood-games/</url>
     
-    <content type="html"><![CDATA[<p>♪(ﾟ▽^*)ﾉ⌒☆ 公司刚成立，目前有iOS游戏作品《Battle Frontier: The Adventures of Arthur》，发展前景广阔，期待你的加盟 :D 另外设有推荐奖金，欢迎同学们推荐！！ 更多公司的信息请浏览 <a href="http://www.bigwoodgames.com/">http://www.bigwoodgames.com</a> (oﾟ▽ﾟ)o 简历投递地址：<a href="mailto:&#104;&#x72;&#x40;&#x62;&#105;&#x67;&#x77;&#111;&#111;&#x64;&#103;&#x61;&#x6d;&#x65;&#115;&#x2e;&#x63;&#111;&#109;">&#104;&#x72;&#x40;&#x62;&#105;&#x67;&#x77;&#111;&#111;&#x64;&#103;&#x61;&#x6d;&#x65;&#115;&#x2e;&#x63;&#111;&#109;</a> —————————————————— 招聘岗位： 一：游戏原画设计师 职位描述： 1. 有自己独特的设计风格 2. 能快速熟练绘制人物角色或场景 3. 能胜任各种不同的题材进行设计 4. 能独立完成一款迷你游戏的各项美术资源 职位要求： 1. 良好的美术基本功、对于游戏的相关元素有着专业的见解 2. 有手机游戏原画制作经验优先 3. 能接受策划和程序具体需求和美术组长所分配的任务要求 4. 具备良好的团队精神，有刻苦耐劳与积极务实的工作态度，热衷于游戏事业 注：投简历时请务必附上作品附件或提供可以阅览的在线地址。 二：游戏策划 职位描述： 1. 休闲游戏的关卡设计、文字描述； 2. 提出游戏创意/游戏玩法； 职位要求： 1. 大专以上学历 2. 有手机游戏、休闲游戏策划相关经验者优先； 3. 热爱游戏，对手机游戏有深刻的认识和独特的见解； 4. 具备较强的文字功底/沟通能力； 5. 做事认真细致，拥有良好的学习能力，能承受一定工作压力。 注：投简历时请务必附上以往案例 三：iOS开发工程师 职位描述: 1.    基于iOS系统进行游戏设计和开发； 2.    能按照项目计划独立完成客户端游戏任务需求； 3.    按时提交高质量的代码，完成开发任务； 4.    规范代码和文档的编写、维护； 职位要求： 1.    大专以上学历 2.    熟练掌握Objective-C/C++语言； 3.    有cocos2d、box2d开发经验优先； 4.    按照项目计划,在保证质量的前提下、按时完成开发任务； 5.    具备良好的团队工作精神，有较强的快速学习能力，独立分析解决问题的能力； 6.    做事认真细致，拥有良好的学习能力，能承受一定工作压力。 注：投简历时请务必附上部分代码作为语言能力参考   工作地址：广东省广州市天河区黄埔大道西505号易通大厦A座2702 联系电话：020-38077759</p>]]></content>
+    <content type="html"><![CDATA[<p>♪(ﾟ▽^*)ﾉ⌒☆ 公司刚成立，目前有iOS游戏作品《Battle Frontier: The Adventures of Arthur》，发展前景广阔，期待你的加盟 :D 另外设有推荐奖金，欢迎同学们推荐！！ 更多公司的信息请浏览 <a href="http://www.bigwoodgames.com/">http://www.bigwoodgames.com</a> (oﾟ▽ﾟ)o 简历投递地址：<a href="mailto:&#104;&#x72;&#64;&#x62;&#x69;&#x67;&#119;&#111;&#x6f;&#100;&#x67;&#x61;&#109;&#101;&#x73;&#x2e;&#99;&#x6f;&#109;">&#104;&#x72;&#64;&#x62;&#x69;&#x67;&#119;&#111;&#x6f;&#100;&#x67;&#x61;&#109;&#101;&#x73;&#x2e;&#99;&#x6f;&#109;</a> —————————————————— 招聘岗位： 一：游戏原画设计师 职位描述： 1. 有自己独特的设计风格 2. 能快速熟练绘制人物角色或场景 3. 能胜任各种不同的题材进行设计 4. 能独立完成一款迷你游戏的各项美术资源 职位要求： 1. 良好的美术基本功、对于游戏的相关元素有着专业的见解 2. 有手机游戏原画制作经验优先 3. 能接受策划和程序具体需求和美术组长所分配的任务要求 4. 具备良好的团队精神，有刻苦耐劳与积极务实的工作态度，热衷于游戏事业 注：投简历时请务必附上作品附件或提供可以阅览的在线地址。 二：游戏策划 职位描述： 1. 休闲游戏的关卡设计、文字描述； 2. 提出游戏创意/游戏玩法； 职位要求： 1. 大专以上学历 2. 有手机游戏、休闲游戏策划相关经验者优先； 3. 热爱游戏，对手机游戏有深刻的认识和独特的见解； 4. 具备较强的文字功底/沟通能力； 5. 做事认真细致，拥有良好的学习能力，能承受一定工作压力。 注：投简历时请务必附上以往案例 三：iOS开发工程师 职位描述: 1.    基于iOS系统进行游戏设计和开发； 2.    能按照项目计划独立完成客户端游戏任务需求； 3.    按时提交高质量的代码，完成开发任务； 4.    规范代码和文档的编写、维护； 职位要求： 1.    大专以上学历 2.    熟练掌握Objective-C/C++语言； 3.    有cocos2d、box2d开发经验优先； 4.    按照项目计划,在保证质量的前提下、按时完成开发任务； 5.    具备良好的团队工作精神，有较强的快速学习能力，独立分析解决问题的能力； 6.    做事认真细致，拥有良好的学习能力，能承受一定工作压力。 注：投简历时请务必附上部分代码作为语言能力参考   工作地址：广东省广州市天河区黄埔大道西505号易通大厦A座2702 联系电话：020-38077759</p>]]></content>
     
     
     <categories>
@@ -6723,7 +6723,7 @@
     <link href="/2011/05/30/icon-previewer/"/>
     <url>/2011/05/30/icon-previewer/</url>
     
-    <content type="html"><![CDATA[<p>分享一下我做iPhone图标设计时使用的辅助工具 Icon Previewer 因为图片在iPhone/iPad的显示效果与PC机相比经常会有一些差异(颜色、大小)，所以图标设计完后习惯上我都会放到真机上看看效果，再对比一下做做修改。刚开始的时候每次修改图标都要build一次项目，然后是一次又一次的漫长等待。。。于是便诞生了这个在iPhone上快速预览图标的东西。 介绍一下Icon Previewer的结构： iconpv -Icon.png <a href="mailto:&#x2d;&#x49;&#x63;&#x6f;&#x6e;&#x40;&#50;&#120;&#x2e;&#112;&#x6e;&#103;">&#x2d;&#x49;&#x63;&#x6f;&#x6e;&#x40;&#50;&#120;&#x2e;&#112;&#x6e;&#103;</a> -main-bg@2x.png -index.html</p><h3 id="下载地址在这里-或-这里"><a href="#下载地址在这里-或-这里" class="headerlink" title="下载地址在这里 或 这里"></a><a href="https://ceilwoo.com/lab/iconpv.7z" title="Icon Previewer"><strong>下载地址在这里</strong></a> 或 <a href="http://www.nekoq.com/iconpv/iconpv.7z">这里</a></h3><p><a href="http://www.nekoq.com/iconpv">预览</a>   使用时请自行替换icon.png和<a href="mailto:&#105;&#x63;&#111;&#110;&#x40;&#x32;&#120;&#46;&#112;&#x6e;&#103;">&#105;&#x63;&#111;&#110;&#x40;&#x32;&#120;&#46;&#112;&#x6e;&#103;</a>成你的项目图标，默认Size与iPhone App的图标一直，分别是57x57和114x114 然后在iPhone上打开index.html，怎么打开？up到自己的服务器或者自己架一个，然后在safari输入你的server地址… <a href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-01.png"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-01.png" title="iconpv-01"></a> Safari默认的上下两根导航条很影响预览的效果，如果你不想看见他们的话(譬如我…)需要点一下下边的收藏按钮，选择添加至主屏幕 <a href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-02.png"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-02.png" title="iconpv-02"></a> 然后iPhone上就会多了个名为Icon PV的图标，点击打开它后就是这个样子 <a href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-03.png"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-03.png" title="iconpv-03"></a> Safari的两根menu栏就不见啦，点一下右上角绿色的preview按钮就可以看到最终效果了 <a href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-04.png"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-04.png" title="iconpv-04"></a> 界面上My App的位置就是你刚才替换掉的<a href="mailto:&#x49;&#99;&#x6f;&#x6e;&#x40;&#50;&#x78;&#46;&#112;&#x6e;&#x67;">&#x49;&#99;&#x6f;&#x6e;&#x40;&#50;&#x78;&#46;&#112;&#x6e;&#x67;</a>，每次修改好图标后点击上边的Refresh按钮就可以预览新图标了。 PS:预览的是Retina的效果，iPhone4以下的版本还没测试，有bug或效果不佳的话请反馈给我 PS2:我想做成online版的previewer，这样使用时就省去了架服务器的麻烦，不过后台的东西我不太熟悉，如果有PHPer觉得这工具有用并且有兴趣开发online版的话请联系我 ceilwoo#gmail.com   Icon Previewer provide an easy way to preview icons on the iPhone，it’s base on HTML &amp; CSS. <a href="https://ceilwoo.com/lab/iconpv.7z" title="Icon Previewer">Download</a> <a href="http://www.nekoq.com/iconpv">Demo</a> How to use: 1. upload the folder to your server 2. replace the Icon.png and <a href="mailto:&#73;&#99;&#x6f;&#x6e;&#x40;&#x32;&#x78;&#x2e;&#x70;&#x6e;&#x67;">&#73;&#99;&#x6f;&#x6e;&#x40;&#x32;&#x78;&#x2e;&#x70;&#x6e;&#x67;</a> as your project icon. 3. open icon previewer like <a href="http://xxxx/iconpv">http://xxxx/iconpv</a> in the mobile safari. 4. tap the fav button and save to home screen. 5. tap the webapp “Icon PV” on the iPhone to preview your icon. I want to develop an online version, then ppl can drag their icons to “Icon PV” and preview on the iphone/ipad at once, but im not good at the backend language, if u are a PHPer, and interest on “Icon PV” online version, contact me plz [ceilwoo#gmail.com], im eager for ur help T-T.</p>]]></content>
+    <content type="html"><![CDATA[<p>分享一下我做iPhone图标设计时使用的辅助工具 Icon Previewer 因为图片在iPhone/iPad的显示效果与PC机相比经常会有一些差异(颜色、大小)，所以图标设计完后习惯上我都会放到真机上看看效果，再对比一下做做修改。刚开始的时候每次修改图标都要build一次项目，然后是一次又一次的漫长等待。。。于是便诞生了这个在iPhone上快速预览图标的东西。 介绍一下Icon Previewer的结构： iconpv -Icon.png <a href="mailto:&#45;&#x49;&#x63;&#x6f;&#x6e;&#64;&#50;&#120;&#x2e;&#x70;&#x6e;&#103;">&#45;&#x49;&#x63;&#x6f;&#x6e;&#64;&#50;&#120;&#x2e;&#x70;&#x6e;&#103;</a> -main-bg@2x.png -index.html</p><h3 id="下载地址在这里-或-这里"><a href="#下载地址在这里-或-这里" class="headerlink" title="下载地址在这里 或 这里"></a><a href="https://ceilwoo.com/lab/iconpv.7z" title="Icon Previewer"><strong>下载地址在这里</strong></a> 或 <a href="http://www.nekoq.com/iconpv/iconpv.7z">这里</a></h3><p><a href="http://www.nekoq.com/iconpv">预览</a>   使用时请自行替换icon.png和<a href="mailto:&#x69;&#x63;&#x6f;&#110;&#64;&#50;&#x78;&#46;&#x70;&#110;&#x67;">&#x69;&#x63;&#x6f;&#110;&#64;&#50;&#x78;&#46;&#x70;&#110;&#x67;</a>成你的项目图标，默认Size与iPhone App的图标一直，分别是57x57和114x114 然后在iPhone上打开index.html，怎么打开？up到自己的服务器或者自己架一个，然后在safari输入你的server地址… <a href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-01.png"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-01.png" title="iconpv-01"></a> Safari默认的上下两根导航条很影响预览的效果，如果你不想看见他们的话(譬如我…)需要点一下下边的收藏按钮，选择添加至主屏幕 <a href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-02.png"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-02.png" title="iconpv-02"></a> 然后iPhone上就会多了个名为Icon PV的图标，点击打开它后就是这个样子 <a href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-03.png"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-03.png" title="iconpv-03"></a> Safari的两根menu栏就不见啦，点一下右上角绿色的preview按钮就可以看到最终效果了 <a href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-04.png"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/05/iconpv-04.png" title="iconpv-04"></a> 界面上My App的位置就是你刚才替换掉的<a href="mailto:&#73;&#99;&#x6f;&#110;&#64;&#x32;&#x78;&#46;&#112;&#110;&#x67;">&#73;&#99;&#x6f;&#110;&#64;&#x32;&#x78;&#46;&#112;&#110;&#x67;</a>，每次修改好图标后点击上边的Refresh按钮就可以预览新图标了。 PS:预览的是Retina的效果，iPhone4以下的版本还没测试，有bug或效果不佳的话请反馈给我 PS2:我想做成online版的previewer，这样使用时就省去了架服务器的麻烦，不过后台的东西我不太熟悉，如果有PHPer觉得这工具有用并且有兴趣开发online版的话请联系我 ceilwoo#gmail.com   Icon Previewer provide an easy way to preview icons on the iPhone，it’s base on HTML &amp; CSS. <a href="https://ceilwoo.com/lab/iconpv.7z" title="Icon Previewer">Download</a> <a href="http://www.nekoq.com/iconpv">Demo</a> How to use: 1. upload the folder to your server 2. replace the Icon.png and <a href="mailto:&#x49;&#99;&#111;&#110;&#x40;&#50;&#x78;&#x2e;&#112;&#110;&#103;">&#x49;&#99;&#111;&#110;&#x40;&#50;&#x78;&#x2e;&#112;&#110;&#103;</a> as your project icon. 3. open icon previewer like <a href="http://xxxx/iconpv">http://xxxx/iconpv</a> in the mobile safari. 4. tap the fav button and save to home screen. 5. tap the webapp “Icon PV” on the iPhone to preview your icon. I want to develop an online version, then ppl can drag their icons to “Icon PV” and preview on the iphone/ipad at once, but im not good at the backend language, if u are a PHPer, and interest on “Icon PV” online version, contact me plz [ceilwoo#gmail.com], im eager for ur help T-T.</p>]]></content>
     
     
     <categories>
@@ -8138,7 +8138,7 @@
     <link href="/2010/03/22/jobs-of-kapnet/"/>
     <url>/2010/03/22/jobs-of-kapnet/</url>
     
-    <content type="html"><![CDATA[<p>Lvyou师兄的公司 :D 要求：具备扎实的美术基础，良好的审美观，熟悉web页面的设计和切图排版，有两年以上的web页面设计经验，能熟练运用PhotoShop、Fireworks进行web页面的绘图与切片，熟悉HTML标准与CSS样式设计，熟悉table和div+css两种排版方法，同时能设计制作简单的Flash动画（会简单的action编程，会结合xml文档实现图片播放器等基本应用）。工作认真负责，积极进取，领悟力强，性格沉稳，团队合作意识强，工作效率高，同时具备javascript脚本编写和了解基本的web编程技术的优先。 待遇：待遇从优，并且提供社保，提供项目奖金（项目总利润的5%～10%，按时按质完成项目，至少提供5％奖金，完成质量高，效率高，客户非常满意，即可有高至10%的奖金），有突出能力与贡献的，可以发展为设计部门骨干，并可以提供在职股份。根据公司效益与个人贡献，有定期调薪制度，表现优秀的会逐步提高月薪水平。 工作装备：高性能的AMD X3平台（显示系统为迪兰恒进HDG4670雷钻独立显卡+AOC iF22 IPS 178度宽视角真色彩硬屏液晶显示器）电脑，是平面设计的出色工具。 公司地点：深圳市南山区南海大道西 西海岸大厦10层E室 入职时间：2010 年3月中下旬 详情： <a href="http://www.kapnet.cn/NewsContent.aspx?ID=172">http://www.kapnet.cn/NewsContent.aspx?ID=172</a>﻿ 简历投递邮箱：<a href="mailto:&#x4c;&#x75;&#103;&#115;&#x40;&#x4b;&#97;&#x70;&#x6e;&#x65;&#116;&#x2e;&#x63;&#110;">&#x4c;&#x75;&#103;&#115;&#x40;&#x4b;&#97;&#x70;&#x6e;&#x65;&#116;&#x2e;&#x63;&#110;</a>   OR  我代投 发展初期，前景不错，嗯！</p>]]></content>
+    <content type="html"><![CDATA[<p>Lvyou师兄的公司 :D 要求：具备扎实的美术基础，良好的审美观，熟悉web页面的设计和切图排版，有两年以上的web页面设计经验，能熟练运用PhotoShop、Fireworks进行web页面的绘图与切片，熟悉HTML标准与CSS样式设计，熟悉table和div+css两种排版方法，同时能设计制作简单的Flash动画（会简单的action编程，会结合xml文档实现图片播放器等基本应用）。工作认真负责，积极进取，领悟力强，性格沉稳，团队合作意识强，工作效率高，同时具备javascript脚本编写和了解基本的web编程技术的优先。 待遇：待遇从优，并且提供社保，提供项目奖金（项目总利润的5%～10%，按时按质完成项目，至少提供5％奖金，完成质量高，效率高，客户非常满意，即可有高至10%的奖金），有突出能力与贡献的，可以发展为设计部门骨干，并可以提供在职股份。根据公司效益与个人贡献，有定期调薪制度，表现优秀的会逐步提高月薪水平。 工作装备：高性能的AMD X3平台（显示系统为迪兰恒进HDG4670雷钻独立显卡+AOC iF22 IPS 178度宽视角真色彩硬屏液晶显示器）电脑，是平面设计的出色工具。 公司地点：深圳市南山区南海大道西 西海岸大厦10层E室 入职时间：2010 年3月中下旬 详情： <a href="http://www.kapnet.cn/NewsContent.aspx?ID=172">http://www.kapnet.cn/NewsContent.aspx?ID=172</a>﻿ 简历投递邮箱：<a href="mailto:&#x4c;&#x75;&#x67;&#115;&#64;&#x4b;&#97;&#x70;&#x6e;&#101;&#116;&#46;&#x63;&#x6e;">&#x4c;&#x75;&#x67;&#115;&#64;&#x4b;&#97;&#x70;&#x6e;&#101;&#116;&#46;&#x63;&#x6e;</a>   OR  我代投 发展初期，前景不错，嗯！</p>]]></content>
     
     
     <categories>
@@ -9929,9 +9929,9 @@
     
     <tags>
       
-      <tag>Life</tag>
-      
       <tag>Program</tag>
+      
+      <tag>Life</tag>
       
     </tags>
     
@@ -11699,7 +11699,7 @@
     <link href="/2007/04/09/%E6%9C%80%E8%BF%91%E7%8E%A9%E7%9A%84%E6%B8%B8%E6%88%8F/"/>
     <url>/2007/04/09/%E6%9C%80%E8%BF%91%E7%8E%A9%E7%9A%84%E6%B8%B8%E6%88%8F/</url>
     
-    <content type="html"><![CDATA[<p><img src="/uploads/2007/04/guild_wars1.jpg" alt="激战 guild wars 祭祀"><br><img src="/uploads/2007/04/guild_wars2.jpg" alt="激战 guild wars 死灵 战士"><br><img src="/uploads/2007/04/guild_wars3.jpg" alt="激战 guild wars"><br><img src="/uploads/2007/04/guild_wars4.jpg" alt="激战 guild wars"></p><p>激战！ *-* ，这game实在是太强了，网游理念极度新颖。啊~~~感动啊。原来网游是可以做成这样的！</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/04/guild_wars1.jpg" alt="激战 guild wars 祭祀"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/04/guild_wars2.jpg" alt="激战 guild wars 死灵 战士"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/04/guild_wars3.jpg" alt="激战 guild wars"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/04/guild_wars4.jpg" alt="激战 guild wars"></p><p>激战！ *-* ，这game实在是太强了，网游理念极度新颖。啊~~~感动啊。原来网游是可以做成这样的！</p>]]></content>
     
     
     <categories>
@@ -11751,7 +11751,7 @@
     <link href="/2007/04/09/%E4%BB%8A%E5%A4%A9%E5%88%9A%E4%B9%B0%E7%9A%84%E7%89%88%E5%AD%90/"/>
     <url>/2007/04/09/%E4%BB%8A%E5%A4%A9%E5%88%9A%E4%B9%B0%E7%9A%84%E7%89%88%E5%AD%90/</url>
     
-    <content type="html"><![CDATA[<p><img src="/uploads/2007/04/%E8%B4%B5%E5%87%A1640.jpg"><br>今晚要继续奋斗毕设，fight~</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/04/%E8%B4%B5%E5%87%A1640.jpg"><br>今晚要继续奋斗毕设，fight~</p>]]></content>
     
     
     <categories>
