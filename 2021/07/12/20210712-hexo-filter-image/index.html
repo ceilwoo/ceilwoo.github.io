@@ -199,7 +199,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      421 字
+      408 字
     </span>
   
 
@@ -242,11 +242,11 @@
             <h1 style="display: none">一个简单的hexo图片过滤器</h1>
             
             <div class="markdown-body">
-              <p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/hexo-github.jpg" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload></p>
+              <p><img src="/uploads/2021/07/hexo-github.jpg" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload></p>
 <p>不大喜欢hexo官方推荐的图片存储方式，图片和文章会混在一个文件夹里。<br>我按照wordpress的规则把所有图片资源放在uploads文件夹，按照年月存放，这样的好处是文章和资源分离，但是也产生了个新问题，就是每次md添加图片的时候得写一长串地址，于是诞生了这个简单的hexo图片过滤器。</p>
-<p>写文章时只需要简单写上图片名字，渲染时候可以自动生成需要的地址(<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/%E5%8C%85%E6%8B%AC%E7%9B%B8%E5%AF%B9%E5%9C%B0%E5%9D%80%E3%80%81%E7%BB%9D%E5%AF%B9%E5%9C%B0%E5%9D%80">https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/包括相对地址、绝对地址</a>)</p>
+<p>写文章时只需要简单写上图片名字，渲染时候可以自动生成需要的地址(包括相对地址、绝对地址)</p>
 <p>markdown里的图片</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">内容</span>](<span class="hljs-link">图片.jpg</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">内容</span>](<span class="hljs-link">图 片.jpg</span>)<br></code></pre></td></tr></table></figure>
 <p>渲染后:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">内容</span>](<span class="hljs-link">https://cdn.jsdelivr.net/XXXX/XXXX/图片.jpg</span>)<br></code></pre></td></tr></table></figure>
 
