@@ -199,7 +199,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      40 字
+      44 字
     </span>
   
 
@@ -242,8 +242,7 @@
             <h1 style="display: none">给vultr的debian主机加上swap</h1>
             
             <div class="markdown-body">
-              <p><strong>设置 1g的swap文件</strong><br><code>fallocate -l 1G /swapfile chmod 600 /swapfile mkswap /swapfile swapon /swapfile</code><br><strong>检查一下是否启用成功</strong><br><code>swapon --show</code><br><strong>加到启动项</strong><br><code>vim /etc/fstab</code><br><code>/swapfile swap swap defaults 0 0</code></p>
-
+              <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">**设置 1g的swap文件**<br>`fallocate -l 1G /swapfile chmod 600 /swapfile mkswap /swapfile swapon /swapfile`<br>**检查一下是否启用成功**<br>`swapon --show`<br>**加到启动项**<br>`vim /etc/fstab`<br>`/swapfile swap swap defaults 0 0`<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>

@@ -199,7 +199,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      557 字
+      570 字
     </span>
   
 
@@ -249,7 +249,7 @@
 <p>Vi Improved</p>
 <p>3proxy</p>
 <p>MobileTerminal</p>
-<p>Debian Utilities  (一些常用unix命令行软件)</p>
+<p>Debian Utilities  (<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2014/10/%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8unix%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BD%AF%E4%BB%B6">https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2014/10/一些常用unix命令行软件</a>)</p>
 <p>然后搞定免验证ssh到服务器上的东西，这部分不详细描叙。（关键字：ssh rsa key 自动登录） <strong>命令行打上</strong> <code>/usr/bin/autossh -M 0 -fN username@123.123.123.123 -p 22 -D 0.0.0.0:8087</code> 这样就搞定了ssh tunnel的部分，建立起一个8087的socks5代理，超时断线的时候autossh会帮你自动重连。不过iphone默认不支持用socks5代理，所以要用3proxy把socks5转成http。 接下来在iphone里找个顺眼的地方新建一个3proxy.cfg文件，写入下面的内容： <code>#!/usr/bin/3proxy daemon auth iponly log /var/log/3proxy.log D rotate 5 fakeresolve internal 127.0.0.1 allow * 127.0.0.1 * parent 1000 socks5+ 127.0.0.1 8087 proxy -p8088 -a -i127.0.0.1</code> 这个是3proxy的配置文件，用来告诉3proxy怎么运行。 内容大概就是让3proxy后台执行、只允许本机连接、把本机8087端口的socks5转发到8088端口的http。 (想要测试3proxy有没运行成功的话可以把设置里的daemon去掉)</p>
 <p>然后命令行打上</p>
 <p><code>3proxy 3proxy.cfg</code> 让3proxy跑起来了 最后在设置里把搭好的http proxy填上就完工了。</p>

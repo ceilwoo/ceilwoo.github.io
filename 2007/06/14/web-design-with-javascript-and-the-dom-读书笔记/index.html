@@ -199,7 +199,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      1.3k 字
     </span>
   
 
@@ -209,7 +209,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      26
+      29
        分钟
     </span>
   
@@ -243,30 +243,45 @@
             
             <div class="markdown-body">
               <p>读书笔记…还差30页…要赶紧看了…真是相见恨晚啊….这么好的一本书书.. 最近googlepapes挂了后，东西放在mofile又忽然不见了几张图片…唉….算了，不吐槽了，赶紧看书 ，时日无多了  </p>
-<p>《Web Design with JavaScript and Document Object Model》<br>四、1.DOM1的setAttribute()<br>element.setAttribute(“value”,”the new value”);  </p>
+<p>《Web Design with JavaScript and Document Object Model》<br>四、1.DOM1的setAttribute()  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">element.setAttribute(<span class="hljs-string">&quot;value&quot;</span>,<span class="hljs-string">&quot;the new value&quot;</span>);  <br></code></pre></td></tr></table></figure>
+
 <p>2.<a href="test.jpg" title="test">testPic</a>  </p>
 <p>3.childNodes属性<br>返回一个数组，包含给定元素节点的全部子元素。<br>body元素的专用记号: document.body  </p>
 <p>4.nodeType属性<br>有12种可取值。<br>元素节点：1<br>属性节点：2<br>文本节点：3  </p>
 <p>5.nodeValue属性  </p>
 <p>aaaa</p>
-<p>alert(document.getElementById(“test”).childNodes[0].nodeValue)<br>文本是</p>
-<p>的第一个子元素  </p>
-<p>6.firstChild和lastChild属性<br>node.firstChild=node.childNodes[0]  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">alert(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;test&quot;</span>).childNodes\[<span class="hljs-number">0</span>\].nodeValue)  <br></code></pre></td></tr></table></figure>
+<p>文本是第一个子元素  </p>
+<p>6.firstChild和lastChild属性  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">node.firstChild=node.childNodes\[<span class="hljs-number">0</span>\]  <br></code></pre></td></tr></table></figure>
+
 <p>五、JavaScript编程原则和良好习惯<br>1.预留退路  </p>
 <p>2.避免使用”javascript”伪协议及内嵌的事件处理函数<br>利于searchbot的搜索<br><a href="#">Example</a> F<br>[<a href="http://www]">http://www]</a>(&lt;a href=)” &gt;Example Y  </p>
-<p>3.分离JavaScript<br>function prepareLinks(){<br>var links = document.getElementByTagName(“a”);<br>for(var i=0; i if(links[i].className == “popup”){<br>links[i].onclick = fuction(){<br>popUp(this.getAttribute(“href”));<br>return false;<br>}}}}  </p>
-<p>4.向后兼容性<br>if(method){statements}<br>对象检测技术  </p>
-<p>六、美术馆的改进<br>1.将多个JavaScript函数绑定到 onload事件处理函数上<br>window.onload = function(){<br>firstFunction();<br>secondFunction();<br>}  </p>
-<p>改进版：<br>function addLoadEvent(func){<br>var oldonload = window.onload;<br>if (typeof window.onload != ‘function’){<br>window.onload = func;<br>}else{<br>window.onload = function(){<br>oldonload();<br>func();<br>}<br>}<br>}  </p>
-<p>addLoadEvent(firstFunction);<br>addLoadEvent(secondFunction);  </p>
+<p>3.分离JavaScript</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareLinks</span>(<span class="hljs-params"></span>)</span>&#123;  <br><span class="hljs-keyword">var</span> links = <span class="hljs-built_in">document</span>.getElementByTagName(<span class="hljs-string">&quot;a&quot;</span>);  <br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i <span class="hljs-keyword">if</span>(links\[i\].className == <span class="hljs-string">&quot;popup&quot;</span>)&#123;  <br>links\[i\].onclick = <span class="hljs-function"><span class="hljs-title">fuction</span>(<span class="hljs-params"></span>)</span>&#123;  <br>popUp(<span class="hljs-built_in">this</span>.getAttribute(<span class="hljs-string">&quot;href&quot;</span>));  <br><span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;  <br>&#125;&#125;&#125;&#125;  <br><span class="hljs-string">``</span><span class="hljs-string">`  </span><br><span class="hljs-string">4.向后兼容性</span><br><span class="hljs-string">`</span><span class="hljs-string">``</span>javascript  <br><span class="hljs-keyword">if</span>(method)&#123;statements&#125;  <br></code></pre></td></tr></table></figure>
+<p>对象检测技术  </p>
+<p>六、美术馆的改进<br>1.将多个JavaScript函数绑定到 onload事件处理函数上</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;  <br>firstFunction();  <br>secondFunction();  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>改进版:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addLoadEvent</span>(<span class="hljs-params">func</span>)</span>&#123;  <br><span class="hljs-keyword">var</span> oldonload = <span class="hljs-built_in">window</span>.onload;  <br><span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span>.onload != <span class="hljs-string">&#x27;function&#x27;</span>)&#123;  <br><span class="hljs-built_in">window</span>.onload = func;  <br>&#125;<span class="hljs-keyword">else</span>&#123;  <br><span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;  <br>oldonload();  <br>func();  <br>&#125;  <br>&#125;  <br>&#125;    <br>addLoadEvent(firstFunction);  <br>addLoadEvent(secondFunction);  <br></code></pre></td></tr></table></figure>
+
 <p>2.JavaScript函数的优化 P95<br>3.DOM Core 和 Html-DOM  </p>
-<p>七、动态创建HTML内容<br>1.document.write() 和专利技术innerHTML<br>2.DOM<br>2.1 createElement()<br>document.createElement(“p”);<br>2.2 appendChild()<br>parent.appendChild(child) ;<br>2.3 createTextNode()<br>document.TextNode(“Hi”);<br>2.4 insertBefore()<br>把一个新元素插入到一个现有元素的前面<br>parentElement.insertBefore(newElement,targetElement)<br>2.5 insertAfter()函数的编写<br>function insertAfter(newElement,targetElement){<br>var parent = targetElement.parentNode;<br>if (parent.lastChild == targetElement){<br>parent.appendChild(newElement);<br>}else{<br>parent.insertBefore(newElement,targetElement.nextSibling);<br>}<br>}  </p>
-<p>八、充实文档的内容<br>即使某种特定的浏览器会引起问题，也没有必要使用浏览器嗅探代码。对浏览器的名称和版本号进行嗅探的办法很难做到面面俱到，而且往往会导致非常复杂难解的代码。<br>1.显示 “缩略词语表”<br>2.显示”文献来源链接表”<br>lastChildElement的编写<br>var quoteChildren = quotest[i].getElementByTagName(‘*‘);<br>if (quoteChildren.length&lt;1) continue;<br>var elem =quoteChildren[quoteChildren.length-1];<br>3.显示”快速访问键清单”<br>约定俗成的快速访问键：<br>accesskey=”1” 返回到本网站主页<br>accesskey=”2” 后退到前一页面<br>accesskey=”4” 打开本网站的搜索表单/页面<br>accesskey=”9” 本站联系办法<br>accesskey=”0” 查看本网站的快速访问键清单  </p>
+<p>七、动态创建HTML内容<br>1.document.write() 和专利技术innerHTML<br>2.DOM<br>2.1 createElement() </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;p&quot;</span>);  <br></code></pre></td></tr></table></figure>
+<p>2.2 appendChild()  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">parent.appendChild(child) ;  <br></code></pre></td></tr></table></figure>
+<p>2.3 createTextNode()  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">document</span>.TextNode(<span class="hljs-string">&quot;Hi&quot;</span>);  <br></code></pre></td></tr></table></figure>
+<p>2.4 insertBefore()<br>把一个新元素插入到一个现有元素的前面  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs javascript">parentElement.insertBefore(newElement,targetElement)  <br><span class="hljs-number">2.5</span> insertAfter()函数的编写  <br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">insertAfter</span>(<span class="hljs-params">newElement,targetElement</span>)</span>&#123;  <br><span class="hljs-keyword">var</span> parent = targetElement.parentNode;  <br><span class="hljs-keyword">if</span> (parent.lastChild == targetElement)&#123;  <br>parent.appendChild(newElement);  <br>&#125;<span class="hljs-keyword">else</span>&#123;  <br>parent.insertBefore(newElement,targetElement.nextSibling);  <br>&#125;  <br>&#125;  <br><span class="hljs-string">``</span><span class="hljs-string">`  </span><br><span class="hljs-string">八、充实文档的内容  </span><br><span class="hljs-string">即使某种特定的浏览器会引起问题，也没有必要使用浏览器嗅探代码。对浏览器的名称和版本号进行嗅探的办法很难做到面面俱到，而且往往会导致非常复杂难解的代码。  </span><br><span class="hljs-string">1.显示 &quot;缩略词语表&quot;  </span><br><span class="hljs-string">2.显示&quot;文献来源链接表&quot;  </span><br><span class="hljs-string">lastChildElement的编写  </span><br><span class="hljs-string">`</span><span class="hljs-string">``</span>javascript<br><span class="hljs-keyword">var</span> quoteChildren = quotest\[i\].getElementByTagName(<span class="hljs-string">&#x27;\*&#x27;</span>);  <br><span class="hljs-keyword">if</span> (quoteChildren.length&lt;<span class="hljs-number">1</span>) <span class="hljs-keyword">continue</span>;  <br><span class="hljs-keyword">var</span> elem =quoteChildren\[quoteChildren.length-<span class="hljs-number">1</span>\];  <br></code></pre></td></tr></table></figure>
+<p>3.显示”快速访问键清单”<br>约定俗成的快速访问键：<br>accesskey=”1” 返回到本网站主页<br>accesskey=”2” 后退到前一页面<br>accesskey=”4” 打开本网站的搜索表单/页面<br>accesskey=”9” 本站联系办法<br>accesskey=”0” 查看本网站的快速访问键清单  </p>
 <p>4.避免使用DOM插入核心内容<br>5.对文档里现有信息进行检索<br>getElementById(); getElementByTagName(); getAttribute();<br>6.把信息添加到文档<br>createElement(); createTextNode(); appendChild(); insertBefore(); setAttribute();  </p>
 <p>九、CSS-DOM<br>结构层、表示层、行为层<br>1.style属性 只能检索内嵌样式<br>2.样式信息的检索<br>element.style.fontFamily //Camel记号<br>3.className属性<br>通过JS代码刷新<br>4.对函数进行抽象化 P188  </p>
 <p>十、用JavaScript实现动画效果<br>1.位置<br>position属性<br>static: position的默认属性，有关元素将按照他们在HTML文档里的先后顺序出现在浏览器窗口里<br>relative: 与static相似，属性等于relative的元素可以(在float属性的作用下)从文档的正常显示顺序里脱离出来<br>absolute: 可以把元素摆放在它的”容器”(文档本身)里的任何位置，这个元素在原始HTML文档里出现的位置对此没有任何影响，它的显示位置将有top、left、right、bottom等属性决定<br>2.时间<br>2.1.setTimeout()函数<br>让某个函数在经过一段时间之后才开始执行<br>setTimeout(“function”,interval)<br>clearTimeout()取消等待执行队列里尚未执行的某个函数<br>movement = setTimeout(“moveMessage()”,5000);<br>clearTimeout(movement);  </p>
 <p>2.2.时间递增量<br>moveMessage()的逻辑：<br>(1) 获得元素的当前位置<br>(2)如果元素已经到达它的目的地，则退出这个函数<br>(3)如果元素尚未到达它的目的地，则把它想目的地移近一点<br>(4)经过一段时间间隔之后从步骤1开始重读上述步骤  </p>
-<p>2.3 抽象化<br>function moveElement(elementID,final_x,final_y,interval){<br>if(!document.getElementById) return false;<br>if(!document.getElementById(“elementID”)) return false;<br>var elem = document.getElementById(“elementID”);<br>/*parseInt(“39 steps”) =&gt; 39 小数的话用 parseFloar(string)*/<br>var xpos = parseInt(elem.style.left);<br>var ypos = parseInt(elem.style.top);<br>if (xpos == final_x &amp;&amp; ypos == final_y){<br>return true;<br>}<br>if (xpos &lt; final_x){xpos++;}<br>if (xpos &gt; final_x){xpos–;}<br>if(ypos &lt; final_y){ypos++;}<br>if(ypos &gt; final_y){ypos–;}<br>elem.style.left = xpos + “px”;<br>elem.style.top = ypos + “px”;<br>var repeat = “moveElement(‘“+elementID+”‘,”+final_x+”,”+final_y+”,”interval+”)”;<br>movement = setTimeout(repeat,interval);<br>}  </p>
+<p>2.3 抽象化 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">moveElement</span>(<span class="hljs-params">elementID,final\_x,final\_y,interval</span>)</span>&#123;  <br><span class="hljs-keyword">if</span>(!<span class="hljs-built_in">document</span>.getElementById) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;  <br><span class="hljs-keyword">if</span>(!<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;elementID&quot;</span>)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;  <br><span class="hljs-keyword">var</span> elem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;elementID&quot;</span>);  <br>/\*<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&quot;39 steps&quot;</span>) =&gt; <span class="hljs-number">39</span> 小数的话用 parseFloar(string)\*/  <br><span class="hljs-keyword">var</span> xpos = <span class="hljs-built_in">parseInt</span>(elem.style.left);  <br><span class="hljs-keyword">var</span> ypos = <span class="hljs-built_in">parseInt</span>(elem.style.top);  <br><span class="hljs-keyword">if</span> (xpos == final\_x &amp;&amp; ypos == final\_y)&#123;  <br><span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;  <br>&#125;  <br><span class="hljs-keyword">if</span> (xpos &lt; final\_x)&#123;xpos++;&#125;  <br><span class="hljs-keyword">if</span> (xpos &gt; final\_x)&#123;xpos--;&#125;  <br><span class="hljs-keyword">if</span>(ypos &lt; final\_y)&#123;ypos++;&#125;  <br><span class="hljs-keyword">if</span>(ypos &gt; final\_y)&#123;ypos--;&#125;  <br>elem.style.left = xpos + <span class="hljs-string">&quot;px&quot;</span>;  <br>elem.style.top = ypos + <span class="hljs-string">&quot;px&quot;</span>;  <br><span class="hljs-keyword">var</span> repeat = <span class="hljs-string">&quot;moveElement(&#x27;&quot;</span>+elementID+<span class="hljs-string">&quot;&#x27;,&quot;</span>+final\_x+<span class="hljs-string">&quot;,&quot;</span>+final\_y+<span class="hljs-string">&quot;,&quot;</span>interval+<span class="hljs-string">&quot;)&quot;</span>;  <br>movement = <span class="hljs-built_in">setTimeout</span>(repeat,interval);  <br>&#125;  <br></code></pre></td></tr></table></figure>
 <p>3. CSS<br>overflow属性<br>visible:不裁剪溢出的内容<br>hidden:裁剪溢出的内容<br>scroll:类似于hidden，浏览器将对溢出的内容进行裁剪，但会显示滚动条以便让用户能够看到内容的其他部分<br>auto:类似与scroll，但浏览器只在真的发生内容溢出时才显示滚动条  </p>
 <p><br /> @import url(“style/layout.css”); <br />  </p>
 <p>Math.ceil(number) Math.floor(number) Math.round(number)  </p>
@@ -281,7 +296,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+                      <a class="hover-with-bg" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
                     
                   </div>
                 
@@ -289,7 +304,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Life/">Life</a>
+                      <a class="hover-with-bg" href="/tags/%E4%BB%A3%E7%A0%81/">代码</a>
                     
                   </div>
                 
