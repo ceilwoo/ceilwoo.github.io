@@ -199,7 +199,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      227 字
+      229 字
     </span>
   
 
@@ -258,7 +258,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo defaults write /Library/Preferences/com.apple.security.libraryvalidation.plist DisableLibraryValidation -bool <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure></li>
 <li><p>将补丁包里的Hax.dylib文件放到个人目录下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">open ~<br><span class="hljs-comment">#放入Hax.dylib, 路径: big-sur-micropatcher-main/payloads/ASentientBot-Hax/Hax.dylib</span><br>launchctl setenv DYLD_INSERT_LIBRARIES <span class="hljs-variable">$PWD</span>/Hax.dylib<br></code></pre></td></tr></table></figure></li>
-<li><p>双击挂载下载好的bigsur镜像<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/bigsur.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload><br>双击安装</p>
+<li><p>双击挂载下载好的bigsur镜像<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/07/bigsur.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload><br>直接升级安装</p>
 </li>
 </ol>
 
