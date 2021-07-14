@@ -2079,7 +2079,7 @@
     <link href="/2017/12/16/respberry3b-network-printer-with-hp-deskjet-2520hc/"/>
     <url>/2017/12/16/respberry3b-network-printer-with-hp-deskjet-2520hc/</url>
     
-    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2017/12/img_5a34bcac7fa03.png"></p><p>2520hc这打印机型号有点老，按照大多数cups教程里的设置是跑不起来，需要额外安装一个hplip的驱动。详细步骤为：</p><blockquote><p>sudo apt-get update sudo apt-get install hplip sudo apt-get install cups</p></blockquote><p>然后把pi加到lpadmin里面，添加完成后重启一次树莓派</p><blockquote><p>sudo usermod -a -G lpadmin pi sudo reboot</p></blockquote><p>重启后查看一下 pi是否正常添加</p><blockquote><p>$ groups pi adm dialout cdrom sudo audio video plugdev games users netdev input spi gpio</p></blockquote><p>随后到树莓派的本地浏览器打开 <a href="http://127.0.0.1:631，到admin界面">http://127.0.0.1:631，到admin界面</a></p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2017/12/img_5a34bb76f0ae0.png"></p><p>打开这几个选项，这样其他机器才能用树莓派的打印功能以及远程管理树莓派的打印机，设置时会要求输入树莓派的登录账户和密码 然后add printer -&gt; 2520hc打印机(非hplip的版本) -&gt; 2520驱动 -&gt;保存默认设置，随后在mac里面添加打印机就可以发现2520了</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2017/12/img_5a34bcac7fa03.png"></p><p>2520hc这打印机型号有点老，按照大多数cups教程里的设置是跑不起来，需要额外安装一个hplip的驱动。详细步骤为：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update sudo apt-get install hplip sudo apt-get install cups<br></code></pre></td></tr></table></figure><p>然后把pi加到lpadmin里面，添加完成后重启一次树莓派</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo usermod -a -G lpadmin pi sudo reboot<br></code></pre></td></tr></table></figure><p>重启后查看一下 pi是否正常添加</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ groups pi adm dialout cdrom sudo audio video plugdev games users netdev input spi gpio<br></code></pre></td></tr></table></figure><p>随后到树莓派的本地浏览器打开 <a href="http://127.0.0.1:631，到admin界面">http://127.0.0.1:631，到admin界面</a></p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2017/12/img_5a34bb76f0ae0.png"></p><p>打开这几个选项，这样其他机器才能用树莓派的打印功能以及远程管理树莓派的打印机，设置时会要求输入树莓派的登录账户和密码 然后add printer -&gt; 2520hc打印机(非hplip的版本) -&gt; 2520驱动 -&gt;保存默认设置，随后在mac里面添加打印机就可以发现2520了</p>]]></content>
     
     
     <categories>
@@ -7451,12 +7451,12 @@
     <link href="/2010/11/02/web-design/"/>
     <url>/2010/11/02/web-design/</url>
     
-    <content type="html"><![CDATA[<p>飞机稿 <a href="https://ceilwoo.com/2010/11/web-design/byter-web/"><img src="https://ceilwoo.com/blog/wp-content/uploads/2010/11/byter-web-600x568.png" title="byter-web"></a> 我自认偶的服务态度还是不错的，没想到还能遇上这么恶劣的客户。 我跟这家东西绝对不会有第二次合作机会</p>]]></content>
+    <content type="html"><![CDATA[<p>飞机稿<br><a href="https://ceilwoo.com/2010/11/web-design/byter-web/"><img src="https://ceilwoo.com/blog/wp-content/uploads/2010/11/byter-web-600x568.png" title="byter-web"></a><br>我自认偶的服务态度还是不错的，没想到还能遇上这么恶劣的客户。 我跟这家东西绝对不会有第二次合作机会</p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -8686,7 +8686,7 @@
     <link href="/2009/06/11/faceli-cn-logowebdesign/"/>
     <url>/2009/06/11/faceli-cn-logowebdesign/</url>
     
-    <content type="html"><![CDATA[<p>[caption id=”attachment_402” align=”alignnone” width=”328” caption=”Faceli logo”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/06/faceli_logo.png" alt="Faceli logo" title="faceli_logo">[/caption] 最近突然很多事，然后我又很无脑的都答应了，于是每天都得燃烧寡人的小宇宙至天明。 过完这个月老子要去干大事了。闲人勿扰。 [caption id=”attachment_403” align=”alignnone” width=”476” caption=”Faceli.cn”]<img src="https://ceilwoo.com/blog/wp-content/uploads/2009/06/faceli-476x1024.png" alt="Faceli.cn" title="faceli">[/caption] 三个晚上堆砌出来的山寨作品。基本上同学们都很容易找到熟悉的细节or身影。所以只是some rights reserveds.</p>]]></content>
+    <content type="html"><![CDATA[<p>[caption id=”attachment_402” align=”alignnone” width=”328” caption=”Faceli logo”]<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/06/faceli_logo.png" alt="Faceli logo" title="faceli_logo"><br>[/caption]<br>最近突然很多事，然后我又很无脑的都答应了，于是每天都得燃烧寡人的小宇宙至天明。 过完这个月老子要去干大事了。闲人勿扰。<br>[caption id=”attachment_403” align=”alignnone” width=”476” caption=”Faceli.cn”]<br><img src="https://ceilwoo.com/blog/wp-content/uploads/2009/06/faceli-476x1024.png" alt="Faceli.cn" title="faceli"><br>[/caption]<br>三个晚上堆砌出来的山寨作品。基本上同学们都很容易找到熟悉的细节or身影。所以只是some rights reserveds.</p>]]></content>
     
     
     <categories>
@@ -9996,7 +9996,7 @@
     <link href="/2008/04/19/200804191/"/>
     <url>/2008/04/19/200804191/</url>
     
-    <content type="html"><![CDATA[<p>图标练习</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2008/04/lastorder.jpg"><br>图标练习</p>]]></content>
     
     
     <categories>
@@ -10235,12 +10235,12 @@
     <link href="/2008/02/25/a-small-page/"/>
     <url>/2008/02/25/a-small-page/</url>
     
-    <content type="html"><![CDATA[<p>图标都是借用的，做着玩玩</p><p><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/d0d93b8663b8466b97931b9933fc84e9"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/d0d93b8663b8466b97931b9933fc84e9"></a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2008/02/cmall_hp_02.jpg"><br>图标都是借用的，做着玩玩</p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10262,12 +10262,12 @@
     <link href="/2008/02/22/vio-crm/"/>
     <url>/2008/02/22/vio-crm/</url>
     
-    <content type="html"><![CDATA[<p><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/f054421b9aba426389e08c7ac5660b16"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/f054421b9aba426389e08c7ac5660b16"></a>  </p><p>这个页面的CSS写得有点郁闷，7k中估计有3k是冗余代码</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2008/02/viocrm.jpg"><br>这个页面的CSS写得有点郁闷，7k中估计有3k是冗余代码</p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10285,16 +10285,35 @@
   
   
   <entry>
-    <title>-_-|||就这样了。。</title>
-    <link href="/2008/01/10/%E5%B0%B1%E8%BF%99%E6%A0%B7%E4%BA%86%E3%80%82%E3%80%82/"/>
-    <url>/2008/01/10/%E5%B0%B1%E8%BF%99%E6%A0%B7%E4%BA%86%E3%80%82%E3%80%82/</url>
+    <title>卓越之剑活动</title>
+    <link href="/2008/02/21/20080221-ge/"/>
+    <url>/2008/02/21/20080221-ge/</url>
     
-    <content type="html"><![CDATA[<p>越看越悲愤。。。特别是那脚。。。<br>进行不下去了- -<br>先把ED2打爆再说。。<br><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/b31164a576d04f2e827c53f71b21d0b1">  </p><p>早上看了阿花的作品，感觉这么排列下来效果不错，所以就弄了一下。版权归阿花所有<br><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/b5547964e8684de9ad7c282b93936a71"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2008/02/20071019-ge.jpg"></p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>游戏</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>-_-|||就这样了。。</title>
+    <link href="/2008/01/10/%E5%B0%B1%E8%BF%99%E6%A0%B7%E4%BA%86%E3%80%82%E3%80%82/"/>
+    <url>/2008/01/10/%E5%B0%B1%E8%BF%99%E6%A0%B7%E4%BA%86%E3%80%82%E3%80%82/</url>
+    
+    <content type="html"><![CDATA[<p>越看越悲愤。。。特别是那脚。。。<br>进行不下去了- -<br>先把ED2打爆再说。。  </p><p>早上看了阿花的作品，感觉这么排列下来效果不错，所以就弄了一下。版权归阿花所有<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2008/01/flower.jpg"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>art</category>
       
     </categories>
     
@@ -10316,12 +10335,12 @@
     <link href="/2008/01/07/%E5%A4%A7%E8%8B%B9%E6%9E%9C%E4%B8%80%E5%8F%AA/"/>
     <url>/2008/01/07/%E5%A4%A7%E8%8B%B9%E6%9E%9C%E4%B8%80%E5%8F%AA/</url>
     
-    <content type="html"><![CDATA[<p>[<img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/260d8985261d4793a0bca2561cd20c76">](<a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/260d8985261d4793a0bca2561cd20c76">http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/260d8985261d4793a0bca2561cd20c76</a> target=)</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2008/01/apple_retro.jpg"></p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10520,12 +10539,12 @@
     <link href="/2007/11/24/%E9%98%BF%E6%8B%89%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%89%8C/"/>
     <url>/2007/11/24/%E9%98%BF%E6%8B%89%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%89%8C/</url>
     
-    <content type="html"><![CDATA[<p>下面的字体有偷懒嫌疑，其实主要原因是我用鼠标写的字太难看了（用笔写的比用鼠标还要难看-_-#）。<br>要是相片可以随便贴就好了，每天都能看看此方的大头感觉还是不错的<br><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/8bd836c62a844a9689d4db072616bac5"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/8bd836c62a844a9689d4db072616bac5"></a></p>]]></content>
+    <content type="html"><![CDATA[<p>下面的字体有偷懒嫌疑，其实主要原因是我用鼠标写的字太难看了（用笔写的比用鼠标还要难看-_-#）。<br>要是相片可以随便贴就好了，每天都能看看此方的大头感觉还是不错的<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/11/business_card_show.jpg"></p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10572,12 +10591,12 @@
     <link href="/2007/11/19/%E5%B7%A8%E6%BE%9C%E7%9F%AD%E4%BF%A1%E5%B0%8F%E7%A7%98%E4%B9%A6%E8%8D%89%E5%9B%BE/"/>
     <url>/2007/11/19/%E5%B7%A8%E6%BE%9C%E7%9F%AD%E4%BF%A1%E5%B0%8F%E7%A7%98%E4%B9%A6%E8%8D%89%E5%9B%BE/</url>
     
-    <content type="html"><![CDATA[<p>最近忙于GE。。。没时间做图标- -<br>感觉做一套图标大概需要一周时间的样子，是不是太长了？<br>公司的pc内存太小(显卡还是集成的！！)，做大一点儿的图就卡得死去活来，现在都是趁倒水的时候才去load psd。。。节约时间嘛。。。。<br>这个方案自我感觉是什么创意的。。。主要是想学习一些渐变，内发光的处理方法，很大程度上是参考msn的。不过作为我的第一个正式点点的IM设计，还是有纪念意义的。。(前面的版本都是直接html敲出来的…)<br><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/4375b1eac3054ac59b1c4c40756c3d0f"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/4375b1eac3054ac59b1c4c40756c3d0f"></a> 下个星期研究研究dzNT的皮肤</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/11/SM.jpg"></p><p>最近忙于GE。。。没时间做图标- -<br>感觉做一套图标大概需要一周时间的样子，是不是太长了？<br>公司的pc内存太小(显卡还是集成的！！)，做大一点儿的图就卡得死去活来，现在都是趁倒水的时候才去load psd。。。节约时间嘛。。。。<br>这个方案自我感觉是什么创意的。。。主要是想学习一些渐变，内发光的处理方法，很大程度上是参考msn的。不过作为我的第一个正式点点的IM设计，还是有纪念意义的。。(前面的版本都是直接html敲出来的…) </p><p>下个星期研究研究dzNT的皮肤</p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10599,12 +10618,12 @@
     <link href="/2007/11/08/%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%8B%E5%A4%B4%E5%8F%91%E7%9A%84%E7%9F%A2%E9%87%8F%E5%A4%84%E7%90%86%E3%80%82%E3%80%82%E3%80%82/"/>
     <url>/2007/11/08/%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%8B%E5%A4%B4%E5%8F%91%E7%9A%84%E7%9F%A2%E9%87%8F%E5%A4%84%E7%90%86%E3%80%82%E3%80%82%E3%80%82/</url>
     
-    <content type="html"><![CDATA[<p><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/0d4b71faf53e4bdbac68fb58ea21c6b6"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/0d4b71faf53e4bdbac68fb58ea21c6b6"></a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/11/hair.jpg"></p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10626,12 +10645,12 @@
     <link href="/2007/11/07/%E7%99%BB%E9%99%86%E9%A1%B5/"/>
     <url>/2007/11/07/%E7%99%BB%E9%99%86%E9%A1%B5/</url>
     
-    <content type="html"><![CDATA[<p>感谢petercui的tutorail<br>左边的效果比较满意。。至少把我的想法表达出来。。<br>其余的地方尚需推敲，先贴着<br><img src="http://pdjm03.mofile.com/p/1/2007/11/7/2L/2LEUMBCJ1X_103_1024_768.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<p>感谢petercui的tutorail<br>左边的效果比较满意。。至少把我的想法表达出来。。<br>其余的地方尚需推敲，先贴着<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/11/desktop_style_02.jpg"></p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10653,12 +10672,12 @@
     <link href="/2007/10/26/%E5%8D%B3%E5%B0%86%E8%A2%AB%E5%92%8C%E8%B0%90%E6%8E%89%E7%9A%84logo%E4%B8%8Eui%E8%AE%BE%E8%AE%A1/"/>
     <url>/2007/10/26/%E5%8D%B3%E5%B0%86%E8%A2%AB%E5%92%8C%E8%B0%90%E6%8E%89%E7%9A%84logo%E4%B8%8Eui%E8%AE%BE%E8%AE%A1/</url>
     
-    <content type="html"><![CDATA[<p><a href="http://pdkm02.mofile.com/p/1/2007/10/26/GG/GGY9LG15AP_103_500_320.jpg"><img src="http://pdkm02.mofile.com/p/1/2007/10/26/GG/GGY9LG15AP_103_500_320.jpg"></a>  </p><p><img src="http://pdkm03.mofile.com/p/1/2007/10/26/FI/FIDLRALGNR_103_1024_768.jpg"> 灵感来源明显就是变形金刚。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/10/33e9_th.jpg"><br>灵感来源明显就是变形金刚。</p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10680,12 +10699,12 @@
     <link href="/2007/10/24/%E6%9C%BA%E6%A2%B0%E8%AE%BE%E5%AE%9A02/"/>
     <url>/2007/10/24/%E6%9C%BA%E6%A2%B0%E8%AE%BE%E5%AE%9A02/</url>
     
-    <content type="html"><![CDATA[<p>明天开始画细节-_-||<br>还有很多很多纹理。。。很多很多图标。。很多很多窗口。。。要。。<img src="http://ic1.qq.com/qzone/em/e35.gif">  </p><p><img src="http://pdkm02.mofile.com/p/1/2007/10/24/HS/HS1LCFQL53_103_1024_768.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<p>明天开始画细节-_-||<br>还有很多很多纹理。。。很多很多图标。。很多很多窗口。。。要。。</p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/10/cmall_metal_02_%E5%BF%AB%E9%80%9F%E9%93%BE%E6%8E%A5%E4%B8%8E%E4%BB%BB%E5%8A%A1%E6%A0%8F.jpg"></p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10730,11 +10749,11 @@
   
   
   <entry>
-    <title>20071012</title>
+    <title>20071012 琥珀</title>
     <link href="/2007/10/12/20071012/"/>
     <url>/2007/10/12/20071012/</url>
     
-    <content type="html"><![CDATA[<p>背景随便塞个，细节日后处理。<br>图弄得太大了，果然卡得我死去活来。<br><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/c5e339d1e99b4c5fa7ddfccc29aabe97"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/c5e339d1e99b4c5fa7ddfccc29aabe97"></a><br>最近发觉寡人AI很小白，于是找了个教程练习一下<br><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/5d1c9e7608144e28914570a9350ce3b7"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/5d1c9e7608144e28914570a9350ce3b7"></a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/10/%E7%90%A5%E7%8F%801.jpg"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/10/%E7%90%A5%E7%8F%802.jpg"><br>背景随便塞个，细节日后处理。<br>图弄得太大了，果然卡得我死去活来。 </p>]]></content>
     
     
     <categories>
@@ -10761,7 +10780,7 @@
     <link href="/2007/10/11/%E7%BA%BF%E7%A8%BF/"/>
     <url>/2007/10/11/%E7%BA%BF%E7%A8%BF/</url>
     
-    <content type="html"><![CDATA[<p>上色又得搁置<br>时间啊！！！！！<br>sun<br><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/7d27496f44c84ceb8a58b40616149525"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/7d27496f44c84ceb8a58b40616149525"></a> <a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/2d4ecb19998447f1abb3865d8db70b9b"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/2d4ecb19998447f1abb3865d8db70b9b"></a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/10/%E7%90%A5%E7%8F%80_line.png"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/10/%E7%90%A5%E7%8F%80_color.png"><br>上色又得搁置<br>时间啊！！！！！<br>sun</p>]]></content>
     
     
     <categories>
@@ -10790,12 +10809,12 @@
     <link href="/2007/09/30/%E5%9B%9B%E4%B8%AA%E4%B8%8D%E7%9F%A5%E6%89%80%E8%B0%93%E7%9A%84icon/"/>
     <url>/2007/09/30/%E5%9B%9B%E4%B8%AA%E4%B8%8D%E7%9F%A5%E6%89%80%E8%B0%93%E7%9A%84icon/</url>
     
-    <content type="html"><![CDATA[<p>耗时:2hour<br>-_- 我对我的工作效率无语ing<br><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/e07ee63623734fe2a70fd5bec481ea97"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/09/icon20070929.jpg"></p><p>耗时:2hour<br>-_- 我对我的工作效率无语ing</p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10817,7 +10836,7 @@
     <link href="/2007/09/23/%E5%8D%93%E8%B6%8A%E4%B9%8B%E5%89%91hoho/"/>
     <url>/2007/09/23/%E5%8D%93%E8%B6%8A%E4%B9%8B%E5%89%91hoho/</url>
     
-    <content type="html"><![CDATA[<p>游戏性还没深入了解，暂不作评价<br>音乐、画质、界面一流，特别喜欢人设啊!!啊!!~<br>两年前就有这么凶狠的水平了!  </p><p><img src="http://pdkm03.mofile.com/p/1/2007/9/23/MZ/MZYOS9EWTQ_103_1024_768.jpg"><br><img src="http://pdkm03.mofile.com/p/1/2007/9/23/H1/H1O9XIYCR2_103_1024_768.jpg"><br><img src="http://pdkm03.mofile.com/p/1/2007/9/23/2S/2S1NC6YPFB_103_1024_768.jpg"><br><img src="http://pdkm03.mofile.com/p/1/2007/9/23/PQ/PQGWAEUO80_103_1024_768.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<p>![ge1.jpg]<br>![ge2.jpg]<br>![ge3.jpg]</p><p>游戏性还没深入了解，暂不作评价<br>音乐、画质、界面一流，特别喜欢人设啊!!啊!!~<br>两年前就有这么凶狠的水平了!  </p>]]></content>
     
     
     <categories>
@@ -10867,12 +10886,12 @@
     <link href="/2007/09/20/20070920-icon/"/>
     <url>/2007/09/20/20070920-icon/</url>
     
-    <content type="html"><![CDATA[<p>找了半天图标都没看见合适的。。最后还是决定自己做-_-|<br>仿The Last Older，ps画ICON真是痛苦。。。这几个家伙就是先在800X800弄完后再压成50x50，然后再进行像素级的修正。。ft。。<br>啊啊。。。明儿要用AI啊。。<br><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/34e10a81090d4230a32f624de3d803c4"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/09/09202007.jpg"><br>找了半天图标都没看见合适的。。最后还是决定自己做-_-|<br>仿The Last Older，ps画ICON真是痛苦。。。这几个家伙就是先在800X800弄完后再压成50x50，然后再进行像素级的修正。。ft。。<br>啊啊。。。明儿要用AI啊。。  </p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10919,7 +10938,7 @@
     <link href="/2007/09/03/misaki%E4%B8%B4%E6%91%B9/"/>
     <url>/2007/09/03/misaki%E4%B8%B4%E6%91%B9/</url>
     
-    <content type="html"><![CDATA[<p>耗时：2hour<br>主要是想学习一下动画的上色手法，要不是担心内存不足早就弄3XXX x 3XXX的了。。&gt;_&lt;<br>这种上色还真是简单明了，十分地省时间、空间而又不太大影响原画的画质<br>背景还没什么心得，先拿mac的背景客串一下<br>另外罗马拼音不知道有没拼错，自己按着声音写的。错了就。。。。就算了。。<br><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/e1c59452d1d84d4089d057642f7930f9"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/e1c59452d1d84d4089d057642f7930f9"></a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/09/misaki.jpg"></p><p>耗时：2hour<br>主要是想学习一下动画的上色手法，要不是担心内存不足早就弄3XXX x 3XXX的了。。&gt;_&lt;<br>这种上色还真是简单明了，十分地省时间、空间而又不太大影响原画的画质<br>背景还没什么心得，先拿mac的背景客串一下<br>另外罗马拼音不知道有没拼错，自己按着声音写的。错了就。。。。就算了。。  </p>]]></content>
     
     
     <categories>
@@ -10946,12 +10965,12 @@
     <link href="/2007/08/31/%E6%9E%9C%E7%84%B6%E8%BF%98%E6%98%AF%E8%BF%99%E6%A0%B7%E6%9C%89%E6%B0%94%E5%8A%BF%E5%91%80%E3%80%82%E3%80%82%E3%80%82/"/>
     <url>/2007/08/31/%E6%9E%9C%E7%84%B6%E8%BF%98%E6%98%AF%E8%BF%99%E6%A0%B7%E6%9C%89%E6%B0%94%E5%8A%BF%E5%91%80%E3%80%82%E3%80%82%E3%80%82/</url>
     
-    <content type="html"><![CDATA[<p><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/5612d8e113fc40d2b1ec2dfa5f11eca0"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/5612d8e113fc40d2b1ec2dfa5f11eca0"></a>  </p><p><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/ae884e09ed0a4b4cbf8774550f2d4b2b"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/ae884e09ed0a4b4cbf8774550f2d4b2b"></a>  </p><p>给boss看了不知会不会把我屠掉。。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/08/M_homepage.jpg"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/08/M_homepage_2.jpg"></p><p>给boss看了不知会不会把我屠掉。。</p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -10998,12 +11017,12 @@
     <link href="/2007/08/09/vista%E9%A3%8E%E6%A0%BCxbs%E7%AE%A1%E7%90%86%E5%90%8E%E5%8F%B0%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/"/>
     <url>/2007/08/09/vista%E9%A3%8E%E6%A0%BCxbs%E7%AE%A1%E7%90%86%E5%90%8E%E5%8F%B0%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</url>
     
-    <content type="html"><![CDATA[<p>具体的内容还没定下，所以部分分栏的名字应该会有不妥，不过没关系，到时可以随便改，<br>偷工减料的地方有若干处，例如logo就是一个(T-T没办法啦，这个要花上好几个小时)<br>接下来就要忙html部分了<del>闪人</del><br><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/bac6db34e0f341f0826521475e15ef2c"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/bac6db34e0f341f0826521475e15ef2c"></a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/08/%E5%90%8E%E5%8F%B0%E7%95%8C%E9%9D%A2.png"><br>具体的内容还没定下，所以部分分栏的名字应该会有不妥，不过没关系，到时可以随便改，<br>偷工减料的地方有若干处，例如logo就是一个(T-T没办法啦，这个要花上好几个小时)<br>接下来就要忙html部分了<del>闪人</del>  </p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -11025,12 +11044,12 @@
     <link href="/2007/08/07/ui%E5%8D%8A%E6%88%90%E5%93%81%E3%80%82%E3%80%82%E3%80%82/"/>
     <url>/2007/08/07/ui%E5%8D%8A%E6%88%90%E5%93%81%E3%80%82%E3%80%82%E3%80%82/</url>
     
-    <content type="html"><![CDATA[<p><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/cdb4a5c11b834dbb93dcbfdfe65bea76"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/cdb4a5c11b834dbb93dcbfdfe65bea76"></a><br>html+css<br>修改自半年前写的一个框架<br>啊。。。没时间改图标哪。。。先贴着<br>js部分的移动写好了，还差一个随意改框架大小的东东</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/08/im.jpg"><br>html+css<br>修改自半年前写的一个框架<br>啊。。。没时间改图标哪。。。先贴着<br>js部分的移动写好了，还差一个随意改框架大小的东东</p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -11052,12 +11071,12 @@
     <link href="/2007/08/03/t-t%E6%9E%9C%E7%84%B6%E7%94%BB%E4%BA%BA%E4%BD%93%E5%BE%88%E6%B8%A3%E5%95%8A%E3%80%82%E3%80%82/"/>
     <url>/2007/08/03/t-t%E6%9E%9C%E7%84%B6%E7%94%BB%E4%BA%BA%E4%BD%93%E5%BE%88%E6%B8%A3%E5%95%8A%E3%80%82%E3%80%82/</url>
     
-    <content type="html"><![CDATA[<p><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/4684fce6fc094378aa124c59420da30a"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/4684fce6fc094378aa124c59420da30a"></a><br><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/13464bd5a40748b68b5d08f3a7af9155"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/13464bd5a40748b68b5d08f3a7af9155"></a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/08/outlaw_line.jpg"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/08/outlaw_black.jpg"></p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -11079,12 +11098,12 @@
     <link href="/2007/08/01/%E4%BB%8A%E5%A4%A9%E7%9A%84%E7%A0%94%E7%A9%B6%E6%88%90%E6%9E%9C/"/>
     <url>/2007/08/01/%E4%BB%8A%E5%A4%A9%E7%9A%84%E7%A0%94%E7%A9%B6%E6%88%90%E6%9E%9C/</url>
     
-    <content type="html"><![CDATA[<p>还是临摹<br>手部分自己揣摩<br>脚部分找点图图参考后再动手<br><img src="http://pdjm01.mofile.com/p/1/2007/8/1/FS/FSRZ1QJYSB_103.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<p>还是临摹<br>手部分自己揣摩<br>脚部分找点图图参考后再动手<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/08/outlaw.jpg"></p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -11106,7 +11125,7 @@
     <link href="/2007/07/31/9%E4%BA%BA%E7%89%A9%E3%80%8A%E5%86%8D%E8%A7%81%EF%BC%81%E7%BB%9D%E6%9C%9B%E5%85%88%E7%94%9F%E3%80%8B-illustrator/"/>
     <url>/2007/07/31/9%E4%BA%BA%E7%89%A9%E3%80%8A%E5%86%8D%E8%A7%81%EF%BC%81%E7%BB%9D%E6%9C%9B%E5%85%88%E7%94%9F%E3%80%8B-illustrator/</url>
     
-    <content type="html"><![CDATA[<p>《再见！绝望先生》好看啊*-*<br>用AI把前面四集出场的学生都绘一遍，可符香那个怪异面具干脆也一人一个好了。<br>耗时:2h<br><img src="http://pdjm01.mofile.com/p/1/2007/7/31/T8/T8T0CIKTZG_103_500_320.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<p>《再见！绝望先生》好看啊*-*<br>用AI把前面四集出场的学生都绘一遍，可符香那个怪异面具干脆也一人一个好了。<br>耗时:2h<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/07/%E7%BB%9D%E6%9C%9B%E5%85%88%E7%94%9F.png"></p>]]></content>
     
     
     <categories>
@@ -11408,12 +11427,12 @@
     <link href="/2007/06/18/show%E4%BD%9C%E5%93%81%E7%9A%84%E9%A1%B5%E9%9D%A2/"/>
     <url>/2007/06/18/show%E4%BD%9C%E5%93%81%E7%9A%84%E9%A1%B5%E9%9D%A2/</url>
     
-    <content type="html"><![CDATA[<p><img src="http://pdyz02.mofile.com/p/1/2007/6/18/LY/LY4GR0SEUC_103_500_320.jpg"><br>耗时一天，这次制作过程比较危险。。。。一直找不到灵感，所以就一边写代码一边设计，差不多写完html部分后才开始绘图。。。 幸好页面布局改动不大。。。不然就郁闷了，今天努力一下把JS写完吧</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/06/aboutme.jpg"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/06/readme.jpg"><br>耗时一天，这次制作过程比较危险。。。。一直找不到灵感，所以就一边写代码一边设计，差不多写完html部分后才开始绘图。。。 幸好页面布局改动不大。。。不然就郁闷了，今天努力一下把JS写完吧</p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/06/bg.jpg" alt="弃用版本"></p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -11487,7 +11506,7 @@
     <link href="/2007/06/09/ai%E7%BB%83%E4%B9%A0%E4%BD%9C%E5%93%81-%E6%98%9F%E5%BA%A7%E5%9B%BE%E6%A0%87/"/>
     <url>/2007/06/09/ai%E7%BB%83%E4%B9%A0%E4%BD%9C%E5%93%81-%E6%98%9F%E5%BA%A7%E5%9B%BE%E6%A0%87/</url>
     
-    <content type="html"><![CDATA[<p>画着画着变风格了。。。= =b。。。原谅我吧  </p><p><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/1c52165a96ef4c97944fbf2a97cb43e3"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/1c52165a96ef4c97944fbf2a97cb43e3"></a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/06/constellate.jpg"><br>画着画着变风格了。。。= =b。。。原谅我吧  </p>]]></content>
     
     
     <categories>
@@ -11516,12 +11535,12 @@
     <link href="/2007/06/07/oj%E7%9A%84web-design/"/>
     <url>/2007/06/07/oj%E7%9A%84web-design/</url>
     
-    <content type="html"><![CDATA[<p>onlinejudge的webdesign，logo右边部分正在用AI磨，右边的那位MM是雅典娜同学  </p><p><a href="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/eb590da983fe4b62b0de477b0baa3d21"><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/eb590da983fe4b62b0de477b0baa3d21"></a><br>google的papes不能访问了，十分之郁闷，偶的作品哪。。。。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/06/oj.jpg" alt="onlinejudge"><br>onlinejudge的webdesign，logo右边部分正在用AI磨，右边的那位MM是雅典娜同学  </p><p>google的papes不能访问了，十分之郁闷，偶的作品哪。。。。</p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -11531,6 +11550,31 @@
       <tag>GUI Design</tag>
       
       <tag>Work</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>给自己设计的logo</title>
+    <link href="/2007/06/05/20070605-woo-logo/"/>
+    <url>/2007/06/05/20070605-woo-logo/</url>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/06/woo-logo.jpg"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>art</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>art</tag>
       
     </tags>
     
@@ -11568,12 +11612,12 @@
     <link href="/2007/05/28/illustrator%E5%9B%BE%E6%A0%87%E4%BD%9C/"/>
     <url>/2007/05/28/illustrator%E5%9B%BE%E6%A0%87%E4%BD%9C/</url>
     
-    <content type="html"><![CDATA[<p>教程作品。。<br>前后居然折腾了1hour！！啊<br>主要是教程里的AI是中文版，偶用的是英文版。<br>本来knife tools叫的好好的，中文版偏偏叫美工刀。。。。无语。。。。<br>颜色总是觉得有点异常。。难道是用了cmyk？<br>TvT做个图标真不容易。。。还是像素美啊。。。<br><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/fcbaad224b264848bf331e292727858f"></p>]]></content>
+    <content type="html"><![CDATA[<p>教程作品。。<br>前后居然折腾了1hour！！啊<br>主要是教程里的AI是中文版，偶用的是英文版。<br>本来knife tools叫的好好的，中文版偏偏叫美工刀。。。。无语。。。。<br>颜色总是觉得有点异常。。难道是用了cmyk？<br>TvT做个图标真不容易。。。还是像素美啊。。。<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/05/ico.jpg"></p>]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -11620,12 +11664,12 @@
     <link href="/2007/05/19/line-practise/"/>
     <url>/2007/05/19/line-practise/</url>
     
-    <content type="html"><![CDATA[<p>画线练习<br><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/6fb702ed39134e15a36756eeb8abafbd"><br>眼睛还是一大一小，疯了<br>变海盗去吧！<br><img src="http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/db81745cfc254fb9a9218cfae3c0e5d9"></p>]]></content>
+    <content type="html"><![CDATA[<p>画线练习<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/05/line-art.jpg"><br>眼睛还是一大一小，疯了<br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/05/line-art2.jpg"><br>变海盗去吧！</p><!--![](http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/6fb702ed39134e15a36756eeb8abafbd)  ![](http://api.photoshop.com/home_8809f423367943e29a483df103eb293d/adobe-px-assets/db81745cfc254fb9a9218cfae3c0e5d9)-->]]></content>
     
     
     <categories>
       
-      <category>work</category>
+      <category>art</category>
       
     </categories>
     
@@ -11647,7 +11691,7 @@
     <link href="/2007/05/14/%E6%B6%82%E9%B8%A6/"/>
     <url>/2007/05/14/%E6%B6%82%E9%B8%A6/</url>
     
-    <content type="html"><![CDATA[<p>2007/5/14<br>涂鸦=-=,做高数做的没瘾。。。涂两下  </p><p>荔园三PJ专访记  </p><p><img src="http://pdyz02.mofile.com/p/1/2007/6/8/TV/TVM55H4FW6_103.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<p>2007/5/14<br>涂鸦=-=,做高数做的没瘾。。。涂两下  </p><p>荔园三PJ专访记  </p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/05/pj2.jpg"></p>]]></content>
     
     
     <categories>
@@ -11741,6 +11785,25 @@
       <tag>Draft</tag>
       
     </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>选修课立体构成的作品</title>
+    <link href="/2007/04/28/20070428-%E7%AB%8B%E4%BD%93%E6%9E%84%E6%88%90/"/>
+    <url>/2007/04/28/20070428-%E7%AB%8B%E4%BD%93%E6%9E%84%E6%88%90/</url>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/04/litigoucheng.jpg"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>生活</category>
+      
+    </categories>
+    
     
   </entry>
   
@@ -11866,6 +11929,50 @@
     <tags>
       
       <tag>Food</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>space banner设计</title>
+    <link href="/2007/03/05/20070305-space-title/"/>
+    <url>/2007/03/05/20070305-space-title/</url>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/03/spacetitle.jpg"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>art</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>荔园晨风bbs站-站庆纪念书签</title>
+    <link href="/2007/03/03/20070303-bbs/"/>
+    <url>/2007/03/03/20070303-bbs/</url>
+    
+    <content type="html"><![CDATA[<h3 id="纪念书签"><a href="#纪念书签" class="headerlink" title="纪念书签"></a>纪念书签</h3><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/03/bookmark.jpg" alt="荔园晨风bbs站-站庆纪念书签"></p><h3 id="bbs新首页"><a href="#bbs新首页" class="headerlink" title="bbs新首页"></a>bbs新首页</h3><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/03/liyuan.jpg" alt="首页"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/03/moon2.jpg" alt="首页"><br><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2007/03/new.jpg" alt="新的导航条"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>art</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>荔园晨风</tag>
       
     </tags>
     
