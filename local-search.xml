@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>试了一下合约开发</title>
+    <link href="/2021/09/17/20210917_solidity/"/>
+    <url>/2021/09/17/20210917_solidity/</url>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2021/09/solidity.png"><br>用solidity写合约实在太爽了。用了大概100行代码就实现了一个完整的资金池模块。<br>包含了权限控制，所有权转移，出入账，合约升级，日志，并发控制，数据查询…等一大票功能，基本上直接就可以用于实际项目了，熟手的话半小时内搞完开发+部署。<br>要是用传统开发来实现差不多的功能大概需要准备：可扩容的服务器和数据库、全球高速接入点、接入一大票支付sdk、配置防火墙、防dos防sql注入、数据备份、读写缓存…等，开发效率和成本可以多数万倍。<br>这种感觉就像是用了10年dos之后突然遇见了windows。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>编程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>代码</tag>
+      
+      <tag>solidity</tag>
+      
+      <tag>区块链</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>小知识-各种动物的寿命</title>
     <link href="/2021/08/02/20210802-%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
     <url>/2021/08/02/20210802-%E5%B0%8F%E7%9F%A5%E8%AF%86/</url>
