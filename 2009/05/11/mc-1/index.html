@@ -1,48 +1,61 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
 <head>
   <meta charset="UTF-8">
+
   <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest//img/theme/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="Ceil">
   <meta name="keywords" content="">
+  
+    <meta name="description" content="前言：最近半年多的时间里我都在参与TAPD项目的设计与前端开发。之所以把设计和前端开发一起承担主要是考虑到一种较为理想的设计流程，在进行设觉设计 的同时把Html、CSS的实现都考虑进去，这样无论是设计还是代码都是统一的设计理念和风格，便于维护和后续开发。后来发现TAPD的规模远大于自己所 想，交互研究、视觉设计、代码设计每一部分都是一份庞大的工作，每个页面的设计与实现都没有太多的时间仔细琢磨…还">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块化CSS设计(一) - 图标">
+<meta property="og:url" content="https://ceilwoo.com/2009/05/11/mc-1/index.html">
+<meta property="og:site_name" content="Ceil Profile">
+<meta property="og:description" content="前言：最近半年多的时间里我都在参与TAPD项目的设计与前端开发。之所以把设计和前端开发一起承担主要是考虑到一种较为理想的设计流程，在进行设觉设计 的同时把Html、CSS的实现都考虑进去，这样无论是设计还是代码都是统一的设计理念和风格，便于维护和后续开发。后来发现TAPD的规模远大于自己所 想，交互研究、视觉设计、代码设计每一部分都是一份庞大的工作，每个页面的设计与实现都没有太多的时间仔细琢磨…还">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_01.png">
+<meta property="article:published_time" content="2009-05-11T12:17:27.000Z">
+<meta property="article:modified_time" content="2021-07-05T12:35:41.000Z">
+<meta property="article:author" content="Ceil">
+<meta property="article:tag" content="Program">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_01.png">
+  
+  
   
   <title>模块化CSS设计(一) - 图标 - Ceil Profile</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
 
+
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+
   <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
 
 
 
@@ -51,24 +64,70 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"ceilwoo.com","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"abd3e6cbc79a1f6c9626f35fd5f0ea22","google":null,"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"gtag":null,"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?abd3e6cbc79a1f6c9626f35fd5f0ea22";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
-  <header style="height: 30vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 30vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Ceil Profile</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Ceil Profile</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -85,9 +144,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -97,9 +156,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/%E7%BC%96%E7%A8%8B/">
+              <a class="nav-link" href="/categories/%E7%BC%96%E7%A8%8B/" target="_self">
                 <i class="iconfont icon-code"></i>
-                代码
+                <span>代码</span>
               </a>
             </li>
           
@@ -109,9 +168,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/art/">
+              <a class="nav-link" href="/categories/art/" target="_self">
                 <i class="iconfont icon-brush"></i>
-                设计
+                <span>设计</span>
               </a>
             </li>
           
@@ -121,9 +180,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/2021/07/06/projects/">
+              <a class="nav-link" href="/2021/07/06/projects/" target="_self">
                 <i class="iconfont icon-book"></i>
-                项目
+                <span>项目</span>
               </a>
             </li>
           
@@ -133,9 +192,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -145,9 +204,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -157,9 +216,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -169,9 +228,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -181,23 +240,26 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -205,62 +267,71 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/blog-header.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="模块化CSS设计(一) - 图标">
-              
-                模块化CSS设计(一) - 图标
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2009-05-11 20:17" pubdate>
-        2009年5月11日 晚上
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      1k 字
-    </span>
   
 
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      19
-       分钟
-    </span>
-  
-
-  
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/blog-header.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">模块化CSS设计(一) - 图标</span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2009-05-11 20:17" pubdate>
+          2009年5月11日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          9 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -269,73 +340,132 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">模块化CSS设计(一) - 图标</h1>
+            <h1 id="seo-header">模块化CSS设计(一) - 图标</h1>
             
-            <div class="markdown-body">
-              <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a><strong>前言：</strong></h1><p>最近半年多的时间里我都在参与TAPD项目的设计与前端开发。之所以把设计和前端开发一起承担主要是考虑到一种较为理想的设计流程，在进行设觉设计 的同时把Html、CSS的实现都考虑进去，这样无论是设计还是代码都是统一的设计理念和风格，便于维护和后续开发。后来发现TAPD的规模远大于自己所 想，交互研究、视觉设计、代码设计每一部分都是一份庞大的工作，每个页面的设计与实现都没有太多的时间仔细琢磨…还好后期英明的Boss把设觉与交互 设计部分交给了其他同事，我才得以对前端代码仔细研究，用了一个月的时间把所有Html与CSS进行重构。 本系列文章将跟大家分享我在TAPD项目上关于CSS架构设计的一些心得，譬如命名、灵活性等，不会涉及太多CSS技巧。 由于是想到什么就写什么，各章节之间没有什么必然的联系，希望大家看后有能有所收获。m(_ _)m -  by ceil  2009/5/11</p>
-<p><strong>模块化CSS设计(一) －－－ 图标</strong><br>index_img: <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_01.png">https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_01.png</a><br>categories: 编程</p>
-<hr>
-<p>一般来说页面上的图标会用下边的两种形式撰写：</p>
+            
+              <div class="markdown-body">
+                
+                <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a><strong>前言：</strong></h1><p>最近半年多的时间里我都在参与TAPD项目的设计与前端开发。之所以把设计和前端开发一起承担主要是考虑到一种较为理想的设计流程，在进行设觉设计 的同时把Html、CSS的实现都考虑进去，这样无论是设计还是代码都是统一的设计理念和风格，便于维护和后续开发。后来发现TAPD的规模远大于自己所 想，交互研究、视觉设计、代码设计每一部分都是一份庞大的工作，每个页面的设计与实现都没有太多的时间仔细琢磨…还好后期英明的Boss把设觉与交互 设计部分交给了其他同事，我才得以对前端代码仔细研究，用了一个月的时间把所有Html与CSS进行重构。 本系列文章将跟大家分享我在TAPD项目上关于CSS架构设计的一些心得，譬如命名、灵活性等，不会涉及太多CSS技巧。 由于是想到什么就写什么，各章节之间没有什么必然的联系，希望大家看后有能有所收获。m(_ _)m -  by ceil  2009&#x2F;5&#x2F;11</p>
+<h2 id="模块化CSS设计-一-－－－-图标index-img-https-cdn-jsdelivr-net-gh-ceilwoo-ceilwoo-github-io-latest-uploads-2009-05-mc-icon-01-pngcategories-编程"><a href="#模块化CSS设计-一-－－－-图标index-img-https-cdn-jsdelivr-net-gh-ceilwoo-ceilwoo-github-io-latest-uploads-2009-05-mc-icon-01-pngcategories-编程" class="headerlink" title="模块化CSS设计(一) －－－ 图标index_img: https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_01.pngcategories: 编程"></a><strong>模块化CSS设计(一) －－－ 图标</strong><br>index_img: <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_01.png">https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_01.png</a><br>categories: 编程</h2><p>一般来说页面上的图标会用下边的两种形式撰写：</p>
 <blockquote>
 <p><a href="#" title="Edit"><img src="\[url\]" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="Edit" /></a></p>
 </blockquote>
 <blockquote>
 <p><a href="#" class="btn\_edit" title="Edit">Edit</a></p>
 </blockquote>
-<p>前者：直接插入图标的图片，好处是该按钮是inline-block，可以很方便的插入到页面任何地方。譬如说放到一段文字的中间。 [caption id=”attachment_359” align=”alignnone” width=”308” caption=”Example_01”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_01.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="Example_01" title="mc_icon_01">[/caption] 后者：用CSS背景定位的把图标显示出来，并且把Edit文字隐去，相比前者降低了表现与逻辑的耦合性，更好的Html语义化。不过为了让图标有高度和宽度，一般情况会 把<a>加上display:block，然后用background-image把图标放进去。那么弊端也是显而易见的，假设我需要把一个 图标插入到一句话的中间，那么由于display:block的存在会直接导致图标与其他文字换行显示。 [caption id=”attachment_360” align=”alignnone” width=”181” caption=”Example_02”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_02.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="Example_02" title="mc_icon_02">[/caption] 综合两者的优点，我在TAPD中是这么定义一个图标的:</p>
+<p>前者：直接插入图标的图片，好处是该按钮是inline-block，可以很方便的插入到页面任何地方。譬如说放到一段文字的中间。 [caption id&#x3D;”attachment_359” align&#x3D;”alignnone” width&#x3D;”308” caption&#x3D;”Example_01”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_01.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="Example_01" title="mc_icon_01">[&#x2F;caption] 后者：用CSS背景定位的把图标显示出来，并且把Edit文字隐去，相比前者降低了表现与逻辑的耦合性，更好的Html语义化。不过为了让图标有高度和宽度，一般情况会 把<a>加上display:block，然后用background-image把图标放进去。那么弊端也是显而易见的，假设我需要把一个 图标插入到一句话的中间，那么由于display:block的存在会直接导致图标与其他文字换行显示。 [caption id&#x3D;”attachment_360” align&#x3D;”alignnone” width&#x3D;”181” caption&#x3D;”Example_02”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_02.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="Example_02" title="mc_icon_02">[&#x2F;caption] 综合两者的优点，我在TAPD中是这么定义一个图标的:</p>
 <blockquote>
 <p><a href="#" class="tag\_bug"><i>Bug</i></a></p>
 </blockquote>
-<p>[caption id=”attachment_363” align=”alignnone” width=”415” caption=”CSS”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_03.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="CSS" title="mc_icon_03">[/caption] 这样TAPD的图标的不但具有<img>形式的灵活性，同时减少耦合性、更好SEO、更好的HTML语义化…etc (因为要兼顾IE6/7/8、Firefox、Safari、Chrome中display:inline-block的实现，所以迫不得已要额外加一个<i>标签用于将文字隐藏。) 按照yahoo的rules for high performance web sites的原则，应当减少Client与Server端间的HTTP请求次数。 我还用到CSS Sprite，将多张图标图片组装成单独的一张图片，用background-position显示不同的图标 [caption id=”attachment_366” align=”alignnone” width=”160” caption=”CSS Sprite”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/tags.gif" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="CSS Sprite" title="tags">[/caption] 也许有人会问：</p>
+<p>[caption id&#x3D;”attachment_363” align&#x3D;”alignnone” width&#x3D;”415” caption&#x3D;”CSS”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_03.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="CSS" title="mc_icon_03">[&#x2F;caption] 这样TAPD的图标的不但具有<img>形式的灵活性，同时减少耦合性、更好SEO、更好的HTML语义化…etc (因为要兼顾IE6&#x2F;7&#x2F;8、Firefox、Safari、Chrome中display:inline-block的实现，所以迫不得已要额外加一个<i>标签用于将文字隐藏。) 按照yahoo的rules for high performance web sites的原则，应当减少Client与Server端间的HTTP请求次数。 我还用到CSS Sprite，将多张图标图片组装成单独的一张图片，用background-position显示不同的图标 [caption id&#x3D;”attachment_366” align&#x3D;”alignnone” width&#x3D;”160” caption&#x3D;”CSS Sprite”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/tags.gif" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="CSS Sprite" title="tags">[&#x2F;caption] 也许有人会问：</p>
 <blockquote>
 <p><a class="btn\_edit"></a></p>
 </blockquote>
-<p>这么写不会更简单么？并且可以减少html和CSS代码？何必要写成<a class="btn\_edit"><i>Edit</i></a> 其实我坚持在标签里写文字一方面是基于SEO的考虑，另外还考虑到一种情况，假设突然有一天我们的客户觉得编辑按钮图标太糟糕了！要求直接直接用文字。那么我稍微修改一下CSS文件便可以巧妙的把原来的图标变成一个文字链接了。又或者是客户由于某些原因访问不了TAPD的CSS文件，标签里没有文字的会变得一片空白，无法使用。 [caption id=”attachment_367” align=”alignnone” width=”409” caption=”Example_04”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_04.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="Example_04" title="mc_icon_04">[/caption] 另外由于IE6对透明背景的PNG图片支持不好，所以大部分不规则图标我都是用gif格式。但是有时候gif的256色不能满足设计师的设计要求(设计师A：俺的作品多姿多彩，256色怎么够用！！)。 所以在CSS sprite的时候我是合成了两张图片，一张对色彩要求不高并且需要透明背景的GIF图片和一张对色彩要求高的PNG图片。</p>
+<p>这么写不会更简单么？并且可以减少html和CSS代码？何必要写成<a class="btn\_edit"><i>Edit</i></a> 其实我坚持在标签里写文字一方面是基于SEO的考虑，另外还考虑到一种情况，假设突然有一天我们的客户觉得编辑按钮图标太糟糕了！要求直接直接用文字。那么我稍微修改一下CSS文件便可以巧妙的把原来的图标变成一个文字链接了。又或者是客户由于某些原因访问不了TAPD的CSS文件，标签里没有文字的会变得一片空白，无法使用。 [caption id&#x3D;”attachment_367” align&#x3D;”alignnone” width&#x3D;”409” caption&#x3D;”Example_04”]<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/05/mc_icon_04.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="Example_04" title="mc_icon_04">[&#x2F;caption] 另外由于IE6对透明背景的PNG图片支持不好，所以大部分不规则图标我都是用gif格式。但是有时候gif的256色不能满足设计师的设计要求(设计师A：俺的作品多姿多彩，256色怎么够用！！)。 所以在CSS sprite的时候我是合成了两张图片，一张对色彩要求不高并且需要透明背景的GIF图片和一张对色彩要求高的PNG图片。</p>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Program/">Program</a>
-                    
-                      <a class="hover-with-bg" href="/tags/CSS/">CSS</a>
-                    
-                      <a class="hover-with-bg" href="/tags/HTML/">HTML</a>
-                    
-                  </div>
                 
               </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Program/" class="print-no-link">#Program</a>
+      
+        <a href="/tags/CSS/" class="print-no-link">#CSS</a>
+      
+        <a href="/tags/HTML/" class="print-no-link">#HTML</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>模块化CSS设计(一) - 图标</div>
+      <div>https://ceilwoo.com/2009/05/11/mc-1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Ceil</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2009年5月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
               
               
-                <div class="post-prevnext">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2009/05/14/practice20090514/">
+                      <a href="/2009/05/14/practice20090514/" title="[Practice] 20090514">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">[Practice] 20090514</span>
                         <span class="visible-mobile">上一篇</span>
@@ -345,7 +475,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2009/05/09/%E6%B7%B1%E5%9C%B3%E5%88%B0%E6%83%A0%E5%B7%9E%E9%AA%91%E8%A1%8C%E8%AE%B0/">
+                      <a href="/2009/05/09/%E6%B7%B1%E5%9C%B3%E5%88%B0%E6%83%A0%E5%B7%9E%E9%AA%91%E8%A1%8C%E8%AE%B0/" title="深圳到惠州骑行记">
                         <span class="hidden-mobile">深圳到惠州骑行记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -357,12 +487,10 @@
             </div>
 
             
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
+  
+  
+    <article id="comments" lazyload>
+      
   <div class="cusdis" style="width:100%">
     <div id="cusdis_thread"
       data-host="https://cusdis.com"
@@ -387,31 +515,67 @@
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-              </article>
-            
+    </article>
+  
+
+
           </article>
         </div>
       </div>
     </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
-      </div>
-    
+
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
 
 
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -430,32 +594,33 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/script/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/script/duration.js"></script> </div> 
+    </div>
   
-
   
-</footer>
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
@@ -474,7 +639,8 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+
 
 
   
@@ -483,25 +649,99 @@
 
 
 
+
   
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
+  <script src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script>
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <script>Fluid.plugins.codeWidget();</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
 
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
 
-
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
 
@@ -509,48 +749,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    <!-- Baidu Analytics -->
-    <script defer>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?abd3e6cbc79a1f6c9626f35fd5f0ea22";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
