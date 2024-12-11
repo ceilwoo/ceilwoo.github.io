@@ -19,15 +19,15 @@
   <meta name="author" content="Ceil">
   <meta name="keywords" content="">
   
-    <meta name="description" content="最近在一些旧项目里加上google ads的时候又踩到坑了。 主要是打包时候的出错： 错误一： Unable to convert classes to dex format 通常是有重复的class，unity上报错信息显示不全，最好跑去看看Editor.log, log的路径在mac里是：~&#x2F;Library&#x2F;Logs&#x2F;Unity&#x2F;Editor.log，然">
+    <meta name="description" content="最近在一些旧项目里加上google ads的时候又踩到坑了。 主要是打包时候的出错：  错误一： Unable to convert classes to dex format通常是有重复的class，unity上报错信息显示不全，最好跑去看看Editor.log, log的路径在mac里是：~&#x2F;Library&#x2F;Logs&#x2F;Unity&#x2F;Editor.log，然">
 <meta property="og:type" content="article">
 <meta property="og:title" content="unity集成google ads打包android的问题小结">
 <meta property="og:url" content="https://ceilwoo.com/2016/09/13/unity-google-ads-for-android/index.html">
 <meta property="og:site_name" content="Ceil Profile">
-<meta property="og:description" content="最近在一些旧项目里加上google ads的时候又踩到坑了。 主要是打包时候的出错： 错误一： Unable to convert classes to dex format 通常是有重复的class，unity上报错信息显示不全，最好跑去看看Editor.log, log的路径在mac里是：~&#x2F;Library&#x2F;Logs&#x2F;Unity&#x2F;Editor.log，然">
+<meta property="og:description" content="最近在一些旧项目里加上google ads的时候又踩到坑了。 主要是打包时候的出错：  错误一： Unable to convert classes to dex format通常是有重复的class，unity上报错信息显示不全，最好跑去看看Editor.log, log的路径在mac里是：~&#x2F;Library&#x2F;Logs&#x2F;Unity&#x2F;Editor.log，然">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2016-09-12T17:20:31.000Z">
-<meta property="article:modified_time" content="2021-07-05T12:35:41.000Z">
+<meta property="article:modified_time" content="2024-12-11T22:47:03.858Z">
 <meta property="article:author" content="Ceil">
 <meta property="article:tag" content="Program">
 <meta name="twitter:card" content="summary_large_image">
@@ -350,7 +350,9 @@
             
               <div class="markdown-body">
                 
-                <p>最近在一些旧项目里加上google ads的时候又踩到坑了。 主要是打包时候的出错： <strong>错误一：</strong> <strong>Unable to convert classes to dex format</strong> 通常是有重复的class，unity上报错信息显示不全，最好跑去看看Editor.log, log的路径在mac里是：~&#x2F;Library&#x2F;Logs&#x2F;Unity&#x2F;Editor.log，然后在jar里把重复添加的class找出来删掉。这里我用是betterzip修改jar。 <strong>错误二：</strong> <strong>Failed to re-package resources</strong> 这个一般是整合AndroidManifest.xml的时候出的错，可能是某些属性重复定义或者出错了，看看报错提示，把plugin里面的AndroidManifest.xml都挖出来，找到报错的属性注释掉或者修改正确。 还有一些打包后出现的怪异问题，可以看看andoird的logcat，实时查看debug信息。 把要跑的android机插上：adb logcat -s Unity，或者存下来慢慢看adb logcat -d &gt; logcat.txt</p>
+                <p>最近在一些旧项目里加上google ads的时候又踩到坑了。 主要是打包时候的出错： </p>
+<h4 id="错误一：-Unable-to-convert-classes-to-dex-format"><a href="#错误一：-Unable-to-convert-classes-to-dex-format" class="headerlink" title="错误一： Unable to convert classes to dex format"></a><strong>错误一：</strong> <strong>Unable to convert classes to dex format</strong></h4><p>通常是有重复的class，unity上报错信息显示不全，最好跑去看看Editor.log, log的路径在mac里是：~&#x2F;Library&#x2F;Logs&#x2F;Unity&#x2F;Editor.log，然后在jar里把重复添加的class找出来删掉。这里我用是betterzip修改jar。 </p>
+<h4 id="错误二：-Failed-to-re-package-resources"><a href="#错误二：-Failed-to-re-package-resources" class="headerlink" title="错误二： Failed to re-package resources"></a><strong>错误二：</strong> <strong>Failed to re-package resources</strong></h4><p>这个一般是整合AndroidManifest.xml的时候出的错，可能是某些属性重复定义或者出错了，看看报错提示，把plugin里面的AndroidManifest.xml都挖出来，找到报错的属性注释掉或者修改正确。 还有一些打包后出现的怪异问题，可以看看andoird的logcat，实时查看debug信息。 把要跑的android机插上：adb logcat -s Unity，或者存下来慢慢看adb logcat -d &gt; logcat.txt</p>
 
                 
               </div>

@@ -19,16 +19,16 @@
   <meta name="author" content="Ceil">
   <meta name="keywords" content="">
   
-    <meta name="description" content="最近的项目在多次修修改改之后遗留下了一个悲剧的一二级菜单，html结构混乱不说，还用了N多全局变量，N多脚本去制作切换的效果。所以决定着手重构之。 首先考虑是最激进的方法。只用CSS实现，具体的实现看这里 重构后的效果 -&gt; 这里 除了hover的时候反应速度很快以外也没啥问题了。 后来收到一个feedback  用户从“Bug”按钮移动到“Search bug”的时候，会触发到“报表”的h">
+    <meta name="description" content="最近的项目在多次修修改改之后遗留下了一个悲剧的一二级菜单，html结构混乱不说，还用了N多全局变量，N多脚本去制作切换的效果。所以决定着手重构之。 首先考虑是最激进的方法。只用CSS实现，具体的实现看这里 重构后的效果 -&gt; 这里 除了hover的时候反应速度很快以外也没啥问题了。 后来收到一个feedback    用户从“Bug”按钮移动到“Search bug”的时候，会触发到“报表”">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一个菜单的优化经历">
 <meta property="og:url" content="https://ceilwoo.com/2009/11/19/optimize-a-menu/index.html">
 <meta property="og:site_name" content="Ceil Profile">
-<meta property="og:description" content="最近的项目在多次修修改改之后遗留下了一个悲剧的一二级菜单，html结构混乱不说，还用了N多全局变量，N多脚本去制作切换的效果。所以决定着手重构之。 首先考虑是最激进的方法。只用CSS实现，具体的实现看这里 重构后的效果 -&gt; 这里 除了hover的时候反应速度很快以外也没啥问题了。 后来收到一个feedback  用户从“Bug”按钮移动到“Search bug”的时候，会触发到“报表”的h">
+<meta property="og:description" content="最近的项目在多次修修改改之后遗留下了一个悲剧的一二级菜单，html结构混乱不说，还用了N多全局变量，N多脚本去制作切换的效果。所以决定着手重构之。 首先考虑是最激进的方法。只用CSS实现，具体的实现看这里 重构后的效果 -&gt; 这里 除了hover的时候反应速度很快以外也没啥问题了。 后来收到一个feedback    用户从“Bug”按钮移动到“Search bug”的时候，会触发到“报表”">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/11/menu_bug.png">
 <meta property="article:published_time" content="2009-11-19T10:38:25.000Z">
-<meta property="article:modified_time" content="2021-07-05T12:35:41.000Z">
+<meta property="article:modified_time" content="2024-12-11T22:26:07.894Z">
 <meta property="article:author" content="Ceil">
 <meta property="article:tag" content="Program">
 <meta property="article:tag" content="Javascript">
@@ -353,7 +353,9 @@
             
               <div class="markdown-body">
                 
-                <p>最近的项目在多次修修改改之后遗留下了一个悲剧的一二级菜单，html结构混乱不说，还用了N多全局变量，N多脚本去制作切换的效果。所以决定着手重构之。 首先考虑是最激进的方法。只用CSS实现，具体的实现看<a href="https://ceilwoo.com/blog/2009/09/css-menu/">这里</a> 重构后的效果 -&gt; <a href="https://ceilwoo.com/lab/tapd_menu/tapd_menu.html">这里</a> 除了hover的时候反应速度很快以外也没啥问题了。 后来收到一个feedback <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/11/menu_bug.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="menu_bug" title="menu_bug"> 用户从“Bug”按钮移动到“Search bug”的时候，会触发到“报表”的hover效果，以至于难以点到“Search bug”的按钮。 （<a href="https://ceilwoo.com/lab/tapd_menu.html">这里</a>可以体验一下） 第一时间想到的是延迟hover的效果，查了一下相关资料未果，于是写下代码(用到了Jquery)：</p>
+                <p>最近的项目在多次修修改改之后遗留下了一个悲剧的一二级菜单，html结构混乱不说，还用了N多全局变量，N多脚本去制作切换的效果。所以决定着手重构之。 首先考虑是最激进的方法。只用CSS实现，具体的实现看<a href="https://ceilwoo.com/blog/2009/09/css-menu/">这里</a> 重构后的效果 -&gt; <a href="https://ceilwoo.com/lab/tapd_menu/tapd_menu.html">这里</a> 除了hover的时候反应速度很快以外也没啥问题了。 后来收到一个feedback</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/11/menu_bug.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="menu_bug" title="menu_bug"> </p>
+<p>用户从“Bug”按钮移动到“Search bug”的时候，会触发到“报表”的hover效果，以至于难以点到“Search bug”的按钮。 （<a href="https://ceilwoo.com/lab/tapd_menu.html">这里</a>可以体验一下） 第一时间想到的是延迟hover的效果，查了一下相关资料未果，于是写下代码(用到了Jquery)：</p>
 <blockquote>
 <p>function navSwitcher(){ var topNav &#x3D; $(“#navigation li.menu”); topNav.hover( function(){ var item &#x3D; $(this); setTimeout(function(){item.addClass(‘menu_hover’);},300); }, function(){ var item &#x3D; $(this); setTimeout(function(){item.removeClass(‘menu_hover’)}, 300); } ); }</p>
 </blockquote>
@@ -361,7 +363,9 @@
 <blockquote>
 <p>function navSwitcher(){ var topNav &#x3D; $(“#navigation li.menu”); topNav.hover( function(){ var item &#x3D; $(this); clearTimeout(item.data(‘timeout’)); var t &#x3D; setTimeout(function(){ item.addClass(‘menu_hover’); },100); item.data(‘timeout’, t); }, function(){ var item &#x3D; $(this); clearTimeout(item.data(‘timeout’)); var t &#x3D; setTimeout(function(){ item.removeClass(‘menu_hover’) }, 200); item.data(‘timeout’, t); } ); }</p>
 </blockquote>
-<p>嗯。。代码有点丑陋。。不过当我尝试把他封装一下时候发现会额外消耗5ms左右的时间。。于是还是这样好了， 在我的机器上FF3的测试结果: <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/11/script_time.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="script_time" title="script_time"> 尚在可以接受的范围:D 于是此次优化工作暂告一段落。</p>
+<p>嗯。。代码有点丑陋。。不过当我尝试把他封装一下时候发现会额外消耗5ms左右的时间。。于是还是这样好了， 在我的机器上FF3的测试结果:</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2009/11/script_time.png" srcset="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/theme/loading.gif" lazyload alt="script_time" title="script_time"></p>
+<p> 尚在可以接受的范围:D 于是此次优化工作暂告一段落。</p>
 
                 
               </div>
