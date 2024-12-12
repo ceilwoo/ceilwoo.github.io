@@ -31,8 +31,8 @@
 <meta property="article:modified_time" content="2024-12-11T22:47:27.611Z">
 <meta property="article:author" content="Ceil">
 <meta property="article:tag" content="Work">
-<meta property="article:tag" content="hierophant">
 <meta property="article:tag" content="Draft">
+<meta property="article:tag" content="hierophant">
 <meta property="article:tag" content="line art">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/2011/02/hierophant.png">
@@ -392,9 +392,9 @@
       
         <a href="/tags/Work/" class="print-no-link">#Work</a>
       
-        <a href="/tags/hierophant/" class="print-no-link">#hierophant</a>
-      
         <a href="/tags/Draft/" class="print-no-link">#Draft</a>
+      
+        <a href="/tags/hierophant/" class="print-no-link">#hierophant</a>
       
         <a href="/tags/line-art/" class="print-no-link">#line art</a>
       
@@ -479,28 +479,40 @@
   
     <article id="comments" lazyload>
       
-  <div class="cusdis" style="width:100%">
-    <div id="cusdis_thread"
-      data-host="https://cusdis.com"
-      data-app-id="01230e13-bbee-4d2d-9d89-a1fac17edc31"
-      data-page-id="bd8c0375f8018956548219051c3a6efa"
-      data-page-url="2011/02/25/20110225-line-art/"
-      data-page-title="20110225 - line art"
-      data-theme="auto"
-    >
-    </div>
-  </div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#cusdis_thread', function() {
-      Fluid.utils.createScript('https://cusdis.com/js/widget/lang/zh-cn.js');
-      Fluid.utils.createScript('https://cusdis.com/js/cusdis.es.js');
-      var schema = document.documentElement.getAttribute('data-user-color-scheme');
-      if (schema) {
-        document.querySelector('#cusdis_thread').dataset.theme = schema
-      }
-    });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"ceilwoo/ceilwoo.github.io","repo-id":"MDEwOlJlcG9zaXRvcnk1NDYxODA0OA==","category":"Announcements","category-id":"DIC_kwDOA0FnwM4ClKVf","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN","strict":0,"theme":"preferred_color_scheme","loading":"lazy","crossorigin":"anonymous"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
 
 
     </article>
