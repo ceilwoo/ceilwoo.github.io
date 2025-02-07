@@ -8,12 +8,31 @@
     <link href="/2025/02/08/lost-sword-game/"/>
     <url>/2025/02/08/lost-sword-game/</url>
     
-    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword1.png" alt="lostsword1"></p><p>前几天入坑的新游戏lost sword。画风很对胃口。</p><p>画风上算是第七史诗的精神续作，养成系统是剑与远征，每天主要睡觉收收菜，战斗力上去了就闯闯关，挺休闲的模式。</p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword2.png" alt="lostsword2"></p><p>Lostsword3<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword3.png" alt="image-20250208055810992"></p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword4.png" alt="lostsword4"></p><p>目前玩了3天进度到23-18，主力是卤鸭，6s一下的小技能清小怪起飞。</p><p>Lostsword5<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword5.png" alt="image-20250208060039575"></p><p>Lostsword6<img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword6.png" alt="image-20250208060054696"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword1.png" alt="lostsword1"></p><p>前几天入坑的新游戏lost sword。画风很对胃口。</p><p>画风上算是第七史诗的精神续作，养成系统是剑与远征，每天主要睡觉收收菜，战斗力上去了就闯闯关，挺休闲的模式。</p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword2.png" alt="lostsword2"></p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword3.png" alt="Lostsword3"></p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword4.png" alt="lostsword4"></p><p>目前玩了3天进度到23-18，主力是卤鸭，6s一下的小技能清小怪起飞。</p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword5.png" alt="Lostsword5"></p><p><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/uploads/files/lost-sword-game/lostsword6.png" alt="Lostsword6"></p>]]></content>
     
     
     <categories>
       
       <category>游戏</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>项目</title>
+    <link href="/2025/02/08/projects/"/>
+    <url>/2025/02/08/projects/</url>
+    
+    <content type="html"><![CDATA[<p>制作的游戏以及各种小工具。<br>动态天气雨云图, 安特伊苏拉语翻译机, Har Exporter, 《信长之野望online-飞龙之章》资料站…etc</p><span id="more"></span><h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><table><thead><tr><th align="center"></th><th align="center"></th><th align="left">代表作品</th></tr></thead><tbody><tr><td align="center"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/project/icefang-logo.png"></td><td align="center"><a href="https://icefang.com" target="_blank">Icefang工作室</a></td><td align="left">麻将宗师(三消,2013-2021), 泡泡龙(2018), Blackjack(2017), Rings Puzzle(三消,2021)</td></tr><tr><td align="center"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/project/taoqi-logo.png"></td><td align="center"><a href="http://www.taoqi001.com/" target="_blank">淘气游戏</a></td><td align="left">温泉村物语(合成经营类,2020), 钓鱼大师(角色养成,2021)</td></tr><tr><td align="center"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/project/bigwoodgames-logo.png"></td><td align="center">达木游戏</td><td align="left">Battle Frontier(SLG,2011)</td></tr></tbody></table><h3 id="小工具"><a href="#小工具" class="headerlink" title="小工具"></a>小工具</h3><table><thead><tr><th align="left">语言</th><th align="center">简介</th><th align="center">项目地址</th></tr></thead><tbody><tr><td align="left"><strong>动态天气雨云图</strong><br />可以动态显示方圆256千米的下雨情况，看得懂的话可以大概预测未来半小时内某个地方是否会下雨，多大雨和下多久。有台风的时候可以看到一个螺旋丸飞着过来 :D</td><td align="center">node<br />javascript</td><td align="center"><a href="http://ceilwoo.com/lab/weather" target="_blank">地址</a></td></tr><tr><td align="left"><strong>安特伊苏拉语翻译机 Ente isla translator</strong><br /> 用javascript写的小翻译器，提供安特伊苏拉语和英语的互译，支持桌面和ios浏览器。</td><td align="center">javascript<br />html<br />css</td><td align="center"><a href="https://ceilwoo.com/lab/ente_isla_translator/" target="_blank">地址</a></td></tr><tr><td align="left"><strong>Har Exporter</strong><br /> ruby实现的har导出器，导出har里的各种文件(json,图片,音乐等…)，需要导出的内容可以在@type配置</td><td align="center">ruby</td><td align="center"><a href="https://github.com/ceilwoo/har_exporter" target="_blank">地址</a></td></tr><tr><td align="left"><strong>Terminal Translator</strong><br /> 命令行中英翻译脚本，ruby translate.rb 要查询的单词</td><td align="center">ruby</td><td align="center"><a href="/2015/09/09/terminal-translator-1/" target="_blank">地址</a></td></tr><tr><td align="left"><strong>Emoji Input for Twitter,Sina,QQ微博 (停止维护)</strong><br /> 为了提高同学们输入绮罗星手势的速度（&lt;ゝω・）~☆，所以就产生了这个GreasMonkey插件</td><td align="center">javascript</td><td align="center"><a href="/2011/04/07/emoji-input/" target="_blank">地址</a></td></tr><tr><td align="left"><strong>caf批量转wav (for mac os)</strong></td><td align="center">ruby</td><td align="center"><a href="/2012/01/13/caf2wav/" target="_blank">地址</a></td></tr><tr><td align="left"><strong>Excel导出json</strong><br /> 策划用工具，根据excel生成json数据，支持类型定义和类型嵌套</td><td align="center">typescript</td><td align="center"></td></tr><tr><td align="left"><strong>Cocos creator项目翻译辅助</strong><br /> 自动提取项目中所有需要翻译的字段，生成excel，导出key-value json翻译文本，支持使用百度翻译api自动机翻</td><td align="center">typescript</td><td align="center"></td></tr></tbody></table><h3 id="资料站"><a href="#资料站" class="headerlink" title="资料站"></a>资料站</h3><table><thead><tr><th align="center">Icon</th><th align="left">简介</th><th align="center">项目地址</th></tr></thead><tbody><tr><td align="center"><a href="https://ceilwoo.com/xconline/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/xconline-logo.jpg" alt="信长之野望online-飞龙之章"></a></td><td align="left"><strong>《信长之野望online-飞龙之章》资料站</strong><br />旧版gamebase的备份站，部分场合应该还能用上</td><td align="center"><a href="https://ceilwoo.com/xconline/" target="_blank">地址</a></td></tr></tbody></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>work</category>
       
     </categories>
     
@@ -527,25 +546,6 @@
       <tag>blog</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>项目</title>
-    <link href="/2021/07/06/projects/"/>
-    <url>/2021/07/06/projects/</url>
-    
-    <content type="html"><![CDATA[<p>制作的游戏以及各种小工具。<br>动态天气雨云图, 安特伊苏拉语翻译机, Har Exporter, 《信长之野望online-飞龙之章》资料站…etc</p><span id="more"></span><h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><table><thead><tr><th align="center"></th><th align="center"></th><th align="left">代表作品</th></tr></thead><tbody><tr><td align="center"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/project/icefang-logo.png"></td><td align="center"><a href="https://icefang.com" target="_blank">Icefang工作室</a></td><td align="left">麻将宗师(三消,2013-2021), 泡泡龙(2018), Blackjack(2017), Rings Puzzle(三消,2021)</td></tr><tr><td align="center"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/project/taoqi-logo.png"></td><td align="center"><a href="http://www.taoqi001.com/" target="_blank">淘气游戏</a></td><td align="left">温泉村物语(合成经营类,2020), 钓鱼大师(角色养成,2021)</td></tr><tr><td align="center"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/project/bigwoodgames-logo.png"></td><td align="center">达木游戏</td><td align="left">Battle Frontier(SLG,2011)</td></tr></tbody></table><h3 id="小工具"><a href="#小工具" class="headerlink" title="小工具"></a>小工具</h3><table><thead><tr><th align="left">语言</th><th align="center">简介</th><th align="center">项目地址</th></tr></thead><tbody><tr><td align="left"><strong>动态天气雨云图</strong><br />可以动态显示方圆256千米的下雨情况，看得懂的话可以大概预测未来半小时内某个地方是否会下雨，多大雨和下多久。有台风的时候可以看到一个螺旋丸飞着过来 :D</td><td align="center">node<br />javascript</td><td align="center"><a href="http://ceilwoo.com/lab/weather" target="_blank">地址</a></td></tr><tr><td align="left"><strong>安特伊苏拉语翻译机 Ente isla translator</strong><br /> 用javascript写的小翻译器，提供安特伊苏拉语和英语的互译，支持桌面和ios浏览器。</td><td align="center">javascript<br />html<br />css</td><td align="center"><a href="https://ceilwoo.com/lab/ente_isla_translator/" target="_blank">地址</a></td></tr><tr><td align="left"><strong>Har Exporter</strong><br /> ruby实现的har导出器，导出har里的各种文件(json,图片,音乐等…)，需要导出的内容可以在@type配置</td><td align="center">ruby</td><td align="center"><a href="https://github.com/ceilwoo/har_exporter" target="_blank">地址</a></td></tr><tr><td align="left"><strong>Terminal Translator</strong><br /> 命令行中英翻译脚本，ruby translate.rb 要查询的单词</td><td align="center">ruby</td><td align="center"><a href="/2015/09/09/terminal-translator-1/" target="_blank">地址</a></td></tr><tr><td align="left"><strong>Emoji Input for Twitter,Sina,QQ微博 (停止维护)</strong><br /> 为了提高同学们输入绮罗星手势的速度（&lt;ゝω・）~☆，所以就产生了这个GreasMonkey插件</td><td align="center">javascript</td><td align="center"><a href="/2011/04/07/emoji-input/" target="_blank">地址</a></td></tr><tr><td align="left"><strong>caf批量转wav (for mac os)</strong></td><td align="center">ruby</td><td align="center"><a href="/2012/01/13/caf2wav/" target="_blank">地址</a></td></tr><tr><td align="left"><strong>Excel导出json</strong><br /> 策划用工具，根据excel生成json数据，支持类型定义和类型嵌套</td><td align="center">typescript</td><td align="center"></td></tr><tr><td align="left"><strong>Cocos creator项目翻译辅助</strong><br /> 自动提取项目中所有需要翻译的字段，生成excel，导出key-value json翻译文本，支持使用百度翻译api自动机翻</td><td align="center">typescript</td><td align="center"></td></tr></tbody></table><h3 id="资料站"><a href="#资料站" class="headerlink" title="资料站"></a>资料站</h3><table><thead><tr><th align="center">Icon</th><th align="left">简介</th><th align="center">项目地址</th></tr></thead><tbody><tr><td align="center"><a href="https://ceilwoo.com/xconline/"><img src="https://cdn.jsdelivr.net/gh/ceilwoo/ceilwoo.github.io@latest/img/xconline-logo.jpg" alt="信长之野望online-飞龙之章"></a></td><td align="left"><strong>《信长之野望online-飞龙之章》资料站</strong><br />旧版gamebase的备份站，部分场合应该还能用上</td><td align="center"><a href="https://ceilwoo.com/xconline/" target="_blank">地址</a></td></tr></tbody></table>]]></content>
-    
-    
-    <categories>
-      
-      <category>work</category>
-      
-    </categories>
-    
     
   </entry>
   
